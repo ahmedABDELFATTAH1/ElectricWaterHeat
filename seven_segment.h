@@ -9,11 +9,7 @@
 #ifndef SEVEN_SEGMENT_H
 #define	SEVEN_SEGMENT_H
 
-void writeNumber(unsigned char number,unsigned char lcdNumber);
-void clearLCD(unsigned char lcdNumber);
-
-
-
+void lcd_writeNumber(unsigned char number);
 #endif
 
 

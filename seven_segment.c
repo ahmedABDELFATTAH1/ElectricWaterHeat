@@ -2,17 +2,16 @@
 
 #include"seven_segment.h"
 
-unsigned char segments_code[]={0xFC,0x60,0xDA,0xF2,0x66,0xB6,0xBE,0xE0,0xFE,0xF6};
+unsigned char segments_code[]={0xBF,0x06,0xDA,0x4F,0x66,0x6D,0x7D,0x07,0xFF,0x6F};
 //this function should write number to specific 7segment
-void writeNumber(unsigned char number,unsigned char lcdNumber)
+void lcd_writeNumber(unsigned char number)
 {
-    if(number>0 && number<10 )
+    if(number>=0 && number<10 )
     {
         unsigned char code=segments_code[number];
         PORTD=code;
     }    
-}
-void clearLCD(unsigned char lcdNumber)
-{
-   PORTD=segments_code[0];
+    else{
+        PORTD=0;
+    }
 }
