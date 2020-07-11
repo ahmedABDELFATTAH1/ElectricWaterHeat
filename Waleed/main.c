@@ -12,7 +12,11 @@
 #include "lcd.h"
 #include"7-Segment.h"
 #define _XTAL_FREQ 8000000
+enum States{
+    OFF_STATE,ON_STATE,SETTING_STATE
+};
 // global flag to control the program flow
+unsigned char state;
 int tempinit = 0;
 int stayIn = 1;
 int flag = 0;
@@ -21,8 +25,14 @@ unsigned int tmp;
 unsigned char str[6];
 void IRQ_RB0_init ();
 void init_temperature (unsigned int tmp, unsigned char str[6]);
-void main(void) {
-    
+
+void off_state()
+{
+
+
+
+}
+void main(void) {    
     
     IRQ_RB0_init ();
     // here we set the register a to be able to use him with the ADC 
@@ -39,7 +49,8 @@ void main(void) {
     TRISB5 = 0;
     RB5 =0;
     adc_init();
-    
+    state=OFF_STATE;
+    off_state();
     while(flag)
     {
         if (!tempinit)
@@ -91,12 +102,22 @@ void __interrupt() ISR(void)
   if (INTF)   // Check The Flag
   {
     INTF = 0;  //  Clear The Flag
-    if (flag)
+    if(state==OFF_STATE)
     {
-        flag = 0;
-    }else{
-        flag = 1;
-    } 
+        state=ON_STATE;
+    }
+    else if(state==ON_STATE)
+    {
+        state=OFF_STATE;
+        off_state();
+    }
+    else
+    {
+        state=OFF_STATE;
+        off_state();
+
+    }
+    
   }
 }
 

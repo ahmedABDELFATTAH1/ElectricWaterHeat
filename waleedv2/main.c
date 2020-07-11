@@ -10,30 +10,186 @@
 #include "adc.h"
 #include "itoa.h"
 #include "lcd.h"
-#include"7-Segment.h"
+#include "seven_segment.h"
+
 #define _XTAL_FREQ 8000000
+#define NUMBER_READINGS 10
+#define true 1
+#define false 0
+#define MAX_TEMP 75
+#define MIN_TEMP 35
+#define UP PORTBbits.RB3
+#define DOWN PORTBbits.RB4
+typedef  unsigned char bool;
+
 // global flag to control the program flow
-int tempinit = 0;
-int stayIn = 1;
-int flag = 0;
-int wantedTemp = 50;
-int heater_flag = 0;
-int cooler_flag = 0;
-unsigned int tmp;
+int TargetTempreture = 40;
+unsigned int TEMPRETURE;
+unsigned int accumilated_tmeperature;
 unsigned char str[6];
-unsigned int accumilated_tmeperature = 0;
-int C = 0;
-int timer1counter =0;
+enum States{ON_STATE,OFF_STATE,SETTING_STATE};
+enum Temp_Status{OK_state,UPOVE_state,DOWN_state};
+unsigned char state;
+unsigned char temp_state;
+unsigned char Number_Tempreture;
+unsigned char timer1counter;
+bool ReadTemp;
 void IRQ_RB0_init ();
 void TIMER1_init ();
-void init_temperature (unsigned int x, unsigned char y[6]);
-void temperature_increase (unsigned int x, unsigned char y[6]);
-void temperature_decrease (unsigned int x, unsigned char y[6]);
+void displayTempreture();
+void update_tempreture();
+void displayDeiredTempreture();
+void flashDisplay();
+void off_state()
+{
+    RC2=0;
+    RC5=0;
+}
+
+
+enum Prev_Button_Status{PREV_UN_STABLE,PREV_STABLE};
+void flashDisplay()
+{
+    static unsigned char count=0;
+    static unsigned char prev_status=PREV_STABLE;
+    if(UP&&DOWN)
+    {
+        if(count==10)
+        {
+            state=ON_STATE;
+            count=0;
+            return;
+        }
+        else{
+            prev_status=PREV_STABLE;
+            count++;
+        }
+
+    }
+   for(int i=0;i<25;i++)
+   {
+    displayDeiredTempreture();
+    if(UP==0&&prev_status==PREV_STABLE)
+       {
+           if(TargetTempreture<MAX_TEMP)
+           {
+               TargetTempreture += 5;
+           __delay_ms(30);
+           prev_status=PREV_UN_STABLE;
+           }
+       } 
+         
+    if(DOWN==0&&prev_status==PREV_STABLE)
+    {
+        if(TargetTempreture>MIN_TEMP)
+        {
+         TargetTempreture -= 5;
+        __delay_ms(30);
+         prev_status=PREV_UN_STABLE;
+        }
+       
+    }
+     
+
+   }    
+    PORTAbits.RA4=0;
+    PORTAbits.RA5=0;   
+
+    
+      for(int i=0;i<25;i++)
+   {
+       __delay_ms(20);       
+       if(UP==0&&prev_status==PREV_STABLE)
+       {
+           if(TargetTempreture<MAX_TEMP)
+           {
+               TargetTempreture += 5;
+           __delay_ms(30);
+           prev_status=PREV_UN_STABLE;
+           }
+       }
+         
+         
+     if(DOWN==0&&prev_status==PREV_STABLE)
+     {
+        if(TargetTempreture>MIN_TEMP)
+        {
+         TargetTempreture -= 5;
+        __delay_ms(30);
+         prev_status=PREV_UN_STABLE;
+        }
+     }
+      
+   }
+
+}
+void changeStatus()
+{
+    if(TEMPRETURE>TargetTempreture+5)
+    {
+        temp_state=UPOVE_state;
+
+    }else if(TEMPRETURE<TargetTempreture-5)
+    {
+        temp_state=DOWN_state; 
+    }
+    else{
+        temp_state=OK_state;
+    }
+}
+
+
+void heaterOn()
+{
+    RC2=1;
+    RC5=0;
+}
+
+void coolerOn()
+{
+    RC5 = 1;
+    RC2=0;
+
+}
+void on_state()
+{  
+    TMR1ON = 1; 
+    if(UP==0||DOWN==0)
+    {
+        state=SETTING_STATE;      
+        return;
+    }
+    displayTempreture();
+    changeStatus();
+   
+    switch (temp_state)
+    {
+    case OK_state:
+        break;
+    case UPOVE_state:       
+        heaterOn();
+        break;    
+    case DOWN_state:     
+        coolerOn();
+        break;
+    default:
+        break;
+    }
+
+}
+
+void setting_state()
+{
+     TMR1ON = 0; 
+     RC2=0;
+     RC5=0;
+     flashDisplay();
+
+}
 void main(void) {
     
     TIMER1_init ();
     IRQ_RB0_init ();
-    
     // here we set the register a to be able to use him with the ADC 
     // to read the temperature and also control the seven segments 
     TRISA = 0x07;
@@ -45,201 +201,130 @@ void main(void) {
     TRISC5 = 0;
     TRISC2 = 0;
     RC2 = 0;
+    RC5 = 0;
     TRISB7 = 0;
+    TRISB3 = 1;
+    TRISB4 = 1;
     RB7 =0;
     TRISB5 = 0;
     RB5 =0;
-    adc_init();
-    while(1){
-        if(flag)
-        {
-            if (tempinit == 0)
-            {
-                init_temperature (tmp, str);
-            }else{
-                if (heater_flag == 1)
-                {
-                    temperature_increase (tmp, str);
-                }
-                if (cooler_flag == 1)
-                {
-                    temperature_decrease (tmp, str);
-                }
-                tmp=(adc_amostra(2)*10)/2;
-                itoa(tmp,str);
-                RA5 = 0;
-                RA4 = 1;
-                unsigned char y= str[2];
-                PORTD=display7s(y);
-                __delay_ms(30);
-                RA4 = 0;
-                RA5 = 1;
-                unsigned char x= str[3];
-                PORTD=display7s(x);
-                __delay_ms(30);
-            }
-        }else
-        {
-            RA5 = 0;
-            RA4 = 0;
-        }
-    }
-    return;
-}
-
-void init_temperature (unsigned int x, unsigned char y[6])
-{
-    int res = 0;
-    while (flag && res <= wantedTemp){
-        RC5 = 1;
-        tmp=(adc_amostra(2)*10)/2;
-        itoa(tmp,str);
-        RA5 = 0;
-        RA4 = 1;
-        unsigned char y= str[2];
-        PORTD=display7s(y);
-        __delay_ms(30);
-        RA4 = 0;
-        RA5 = 1;
-        unsigned char x= str[3];
-        PORTD=display7s(x);
-        __delay_ms(30); 
-        res = (y*10)+x;    
-    }
-    if (res >= wantedTemp)
+    Number_Tempreture=0;
+    //adc_init();
+    state=OFF_STATE;
+    temp_state=OK_state;
+    ReadTemp=false;
+    timer1counter=0;
+    accumilated_tmeperature=0;
+while (1)
+{  
+    switch(state)
     {
-        tempinit = 1;
+        case ON_STATE:            
+            on_state();
+            break;
+        case OFF_STATE:
+            off_state();
+            break;      
+        case SETTING_STATE:
+            setting_state();  
+            break;
+        default:
+            break;     
     }
-    RA5 = 0;
-    RA4 = 0;
-    RC5 = 0;
-    return;
+  
 }
-
-
-void temperature_increase (unsigned int x, unsigned char y[6])
+}
+void displayTempreture()
 {
-    int res = 0;
-    while (res <= wantedTemp+10){
-        if (flag == 1){
-            RC5 = 1;
-            tmp=(adc_amostra(2)*10)/2;
-            itoa(tmp,str);
-            RA5 = 0;
-            RA4 = 1;
-            unsigned char y= str[2];
-            PORTD=display7s(y);
-            __delay_ms(30);
-            RA4 = 0;
-            RA5 = 1;
-            unsigned char x= str[3];
-            PORTD=display7s(x);
-            __delay_ms(30); 
-            res = (y*10)+x;
-        }else
-        {
-            RA5 = 0;
-            RA4 = 0;
-            RC5 = 0;
-        }
-    }
-    heater_flag = 0;
-    RA5 = 0;
-    RA4 = 0;
-    RC5 = 0;
+    unsigned char low=TEMPRETURE%10;
+    unsigned char high=TEMPRETURE/10;
+     PORTAbits.RA5=1;   
+    lcd_writeNumber(low);     
+    __delay_ms(10);
+    PORTAbits.RA5=0;
+   lcd_writeNumber(high);
+   PORTAbits.RA4=1;    
+   __delay_ms(10);
+    PORTAbits.RA4=0;
+}
+
+void displayDeiredTempreture()
+{
+    unsigned char low=TargetTempreture%10;
+    unsigned char high=TargetTempreture/10;
+     PORTAbits.RA5=1;   
+    lcd_writeNumber(low);     
+    __delay_ms(10);
+    PORTAbits.RA5=0;
+   lcd_writeNumber(high);
+   PORTAbits.RA4=1;    
+   __delay_ms(10);
+    PORTAbits.RA4=0;
+}
+
+void update_tempreture ()
+{   
+    unsigned int temp=(adc_amostra(2)*10)/2;  
+    itoa(temp,str);
+    unsigned char y= str[2];
+    unsigned char x= str[3];
+    accumilated_tmeperature += (y*10)+x;
     return;
 }
 
-void temperature_decrease (unsigned int x, unsigned char y[6])
-{
-    int res = 80;
-    while (res != wantedTemp){
-        if (flag == 1){
-            RC2 = 1;
-            tmp=(adc_amostra(2)*10)/2;
-            itoa(tmp,str);
-            RA5 = 0;
-            RA4 = 1;
-            unsigned char y= str[2];
-            PORTD=display7s(y);
-            __delay_ms(30);
-            RA4 = 0;
-            RA5 = 1;
-            unsigned char x= str[3];
-            PORTD=display7s(x);
-            __delay_ms(30); 
-            res = (y*10)+x;
-        }else
-        {
-            RA5 = 0;
-            RA4 = 0;
-            RC2 = 0;
-        }
-    }
-    cooler_flag = 0;
-    RA5 = 0;
-    RA4 = 0;
-    RC2 = 0;
-    return;
-}
 
 
 void __interrupt() ISR(void)
 {
+    
   if (INTF)   // Check The Flag
   {
     INTF = 0;  //  Clear The Flag
-    if (flag)
+    switch(state)
     {
-        flag = 0;
-        // Switch ON Timer1 Module!
-        TMR1ON = 0;
-        TMR1IF = 0;
-    }else{
-        flag = 1;
-        // Switch ON Timer1 Module!
-        TMR1ON = 1;
+        case ON_STATE:
+            TMR1ON = 0;
+            TMR1IF = 0;
+            state=OFF_STATE;
+            break;
+        case OFF_STATE:
+            TMR1ON = 1;
+            state=ON_STATE;
+            break;        
+        default:
+            break;     
+    }
+   
+        
     } 
-  }
-  
   // Check The Flag Bit
+
    if (TMR1IF)
    {
-       if (flag && tempinit == 1)
-       {
+           TMR1IF = 0; // Clear The Flag Bit
            timer1counter++;
+           ReadTemp=false;
            if (timer1counter == 4){
-                C++;
-                tmp=(adc_amostra(2)*10)/2;
-                itoa(tmp,str);
-                unsigned char y= str[2];
-                unsigned char x= str[3];
-                accumilated_tmeperature +=(y*10)+x;
+                ReadTemp=true;               
+                Number_Tempreture++;               
                 timer1counter = 0;
+                update_tempreture();
            }
-            if(C==30)
+            if(Number_Tempreture==NUMBER_READINGS)
             {
-                if ((accumilated_tmeperature/30) < wantedTemp)
-                {
-                    heater_flag = 1;
-                }
-                else if ((accumilated_tmeperature/30) > wantedTemp)
-                {
-                    cooler_flag = 1;
-                }
+               TEMPRETURE=accumilated_tmeperature/NUMBER_READINGS;
                 // Event2 = Toggle LED
                 RB5 = ~RB5;
                 // Clear The Global Counter
-                C = 0;
+                Number_Tempreture = 0;
                 accumilated_tmeperature= 0;
             }
-            TMR1IF = 0; // Clear The Flag Bit
-       }else{
-            TMR1IF = 0; // Clear The Flag Bit
-       }
    }
+ 
 }
 
+   
+  
 void IRQ_RB0_init (){
     // enable the interrupt by clicking on RB0
     INTE = 1; 
@@ -247,6 +332,7 @@ void IRQ_RB0_init (){
     INTEDG = 0;
     // enable the global interrupt 
     GIE = 1;
+   
 }
 
 void TIMER1_init (){
@@ -265,3 +351,4 @@ void TIMER1_init (){
     PEIE = 1;   // Peripherals Interrupts Enable Bit
 //    GIE = 1;    // Global Interrupts Enable Bit
 }
+

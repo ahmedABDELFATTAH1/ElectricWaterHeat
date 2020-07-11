@@ -4,7 +4,7 @@
 # 288 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
+# 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
 
@@ -14,47 +14,47 @@
 
 
 
-# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
-# 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
+# 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 1 3
+# 18 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\xc8debug.h" 1 3
-# 13 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\xc8debug.h" 3
+# 1 "/opt/microchip/xc8/v2.20/pic/include/c90/xc8debug.h" 1 3
+# 13 "/opt/microchip/xc8/v2.20/pic/include/c90/xc8debug.h" 3
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
-# 24 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
+# 24 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 2 3
 
 
 
-# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 1 3
-
-
-
-
-# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\htc.h" 1 3
-
-
-
-# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
-# 5 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\htc.h" 2 3
-# 6 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 2 3
+# 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic.h" 1 3
 
 
 
 
+# 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/htc.h" 1 3
 
 
 
-# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic_chip_select.h" 1 3
-# 663 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic_chip_select.h" 3
-# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 1 3
-# 44 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
-# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__at.h" 1 3
-# 45 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 2 3
+# 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 1 3
+# 5 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/htc.h" 2 3
+# 6 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic.h" 2 3
+
+
+
+
+
+
+
+# 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic_chip_select.h" 1 3
+# 663 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic_chip_select.h" 3
+# 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 1 3
+# 44 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
+# 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/__at.h" 1 3
+# 45 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 2 3
 
 
 
@@ -110,7 +110,7 @@ typedef union {
     };
 } STATUSbits_t;
 extern volatile STATUSbits_t STATUSbits __attribute__((address(0x003)));
-# 159 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 159 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char FSR __attribute__((address(0x004)));
 
 __asm("FSR equ 04h");
@@ -134,7 +134,7 @@ typedef union {
     };
 } PORTAbits_t;
 extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
-# 216 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 216 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PORTB __attribute__((address(0x006)));
 
 __asm("PORTB equ 06h");
@@ -153,7 +153,7 @@ typedef union {
     };
 } PORTBbits_t;
 extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
-# 278 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 278 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PORTC __attribute__((address(0x007)));
 
 __asm("PORTC equ 07h");
@@ -172,7 +172,7 @@ typedef union {
     };
 } PORTCbits_t;
 extern volatile PORTCbits_t PORTCbits __attribute__((address(0x007)));
-# 340 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 340 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PORTD __attribute__((address(0x008)));
 
 __asm("PORTD equ 08h");
@@ -191,7 +191,7 @@ typedef union {
     };
 } PORTDbits_t;
 extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
-# 402 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 402 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PORTE __attribute__((address(0x009)));
 
 __asm("PORTE equ 09h");
@@ -205,7 +205,7 @@ typedef union {
     };
 } PORTEbits_t;
 extern volatile PORTEbits_t PORTEbits __attribute__((address(0x009)));
-# 434 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 434 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PCLATH __attribute__((address(0x00A)));
 
 __asm("PCLATH equ 0Ah");
@@ -217,7 +217,7 @@ typedef union {
     };
 } PCLATHbits_t;
 extern volatile PCLATHbits_t PCLATHbits __attribute__((address(0x00A)));
-# 454 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 454 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char INTCON __attribute__((address(0x00B)));
 
 __asm("INTCON equ 0Bh");
@@ -242,7 +242,7 @@ typedef union {
     };
 } INTCONbits_t;
 extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-# 532 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 532 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PIR1 __attribute__((address(0x00C)));
 
 __asm("PIR1 equ 0Ch");
@@ -261,7 +261,7 @@ typedef union {
     };
 } PIR1bits_t;
 extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
-# 594 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 594 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PIR2 __attribute__((address(0x00D)));
 
 __asm("PIR2 equ 0Dh");
@@ -278,7 +278,7 @@ typedef union {
     };
 } PIR2bits_t;
 extern volatile PIR2bits_t PIR2bits __attribute__((address(0x00D)));
-# 634 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 634 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned short TMR1 __attribute__((address(0x00E)));
 
 __asm("TMR1 equ 0Eh");
@@ -326,7 +326,7 @@ typedef union {
     };
 } T1CONbits_t;
 extern volatile T1CONbits_t T1CONbits __attribute__((address(0x010)));
-# 730 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 730 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char TMR2 __attribute__((address(0x011)));
 
 __asm("TMR2 equ 011h");
@@ -356,7 +356,7 @@ typedef union {
     };
 } T2CONbits_t;
 extern volatile T2CONbits_t T2CONbits __attribute__((address(0x012)));
-# 808 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 808 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
 
 __asm("SSPBUF equ 013h");
@@ -385,7 +385,7 @@ typedef union {
     };
 } SSPCONbits_t;
 extern volatile SSPCONbits_t SSPCONbits __attribute__((address(0x014)));
-# 885 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 885 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned short CCPR1 __attribute__((address(0x015)));
 
 __asm("CCPR1 equ 015h");
@@ -426,7 +426,7 @@ typedef union {
     };
 } CCP1CONbits_t;
 extern volatile CCP1CONbits_t CCP1CONbits __attribute__((address(0x017)));
-# 964 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 964 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char RCSTA __attribute__((address(0x018)));
 
 __asm("RCSTA equ 018h");
@@ -458,7 +458,7 @@ typedef union {
     };
 } RCSTAbits_t;
 extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0x018)));
-# 1059 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1059 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char TXREG __attribute__((address(0x019)));
 
 __asm("TXREG equ 019h");
@@ -513,7 +513,7 @@ typedef union {
     };
 } CCP2CONbits_t;
 extern volatile CCP2CONbits_t CCP2CONbits __attribute__((address(0x01D)));
-# 1152 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1152 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 
 __asm("ADRESH equ 01Eh");
@@ -553,7 +553,7 @@ typedef union {
     };
 } ADCON0bits_t;
 extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
-# 1255 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1255 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
 
 __asm("OPTION_REG equ 081h");
@@ -575,7 +575,7 @@ typedef union {
     };
 } OPTION_REGbits_t;
 extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
-# 1325 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1325 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char TRISA __attribute__((address(0x085)));
 
 __asm("TRISA equ 085h");
@@ -592,7 +592,7 @@ typedef union {
     };
 } TRISAbits_t;
 extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
-# 1375 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1375 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char TRISB __attribute__((address(0x086)));
 
 __asm("TRISB equ 086h");
@@ -611,7 +611,7 @@ typedef union {
     };
 } TRISBbits_t;
 extern volatile TRISBbits_t TRISBbits __attribute__((address(0x086)));
-# 1437 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1437 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char TRISC __attribute__((address(0x087)));
 
 __asm("TRISC equ 087h");
@@ -630,7 +630,7 @@ typedef union {
     };
 } TRISCbits_t;
 extern volatile TRISCbits_t TRISCbits __attribute__((address(0x087)));
-# 1499 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1499 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char TRISD __attribute__((address(0x088)));
 
 __asm("TRISD equ 088h");
@@ -649,7 +649,7 @@ typedef union {
     };
 } TRISDbits_t;
 extern volatile TRISDbits_t TRISDbits __attribute__((address(0x088)));
-# 1561 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1561 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char TRISE __attribute__((address(0x089)));
 
 __asm("TRISE equ 089h");
@@ -668,7 +668,7 @@ typedef union {
     };
 } TRISEbits_t;
 extern volatile TRISEbits_t TRISEbits __attribute__((address(0x089)));
-# 1618 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1618 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PIE1 __attribute__((address(0x08C)));
 
 __asm("PIE1 equ 08Ch");
@@ -687,7 +687,7 @@ typedef union {
     };
 } PIE1bits_t;
 extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
-# 1680 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1680 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PIE2 __attribute__((address(0x08D)));
 
 __asm("PIE2 equ 08Dh");
@@ -704,7 +704,7 @@ typedef union {
     };
 } PIE2bits_t;
 extern volatile PIE2bits_t PIE2bits __attribute__((address(0x08D)));
-# 1720 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1720 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PCON __attribute__((address(0x08E)));
 
 __asm("PCON equ 08Eh");
@@ -720,7 +720,7 @@ typedef union {
     };
 } PCONbits_t;
 extern volatile PCONbits_t PCONbits __attribute__((address(0x08E)));
-# 1754 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1754 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char SSPCON2 __attribute__((address(0x091)));
 
 __asm("SSPCON2 equ 091h");
@@ -739,7 +739,7 @@ typedef union {
     };
 } SSPCON2bits_t;
 extern volatile SSPCON2bits_t SSPCON2bits __attribute__((address(0x091)));
-# 1816 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1816 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char PR2 __attribute__((address(0x092)));
 
 __asm("PR2 equ 092h");
@@ -809,7 +809,7 @@ typedef union {
     };
 } SSPSTATbits_t;
 extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
-# 1999 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 1999 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char TXSTA __attribute__((address(0x098)));
 
 __asm("TXSTA equ 098h");
@@ -837,7 +837,7 @@ typedef union {
     };
 } TXSTAbits_t;
 extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0x098)));
-# 2080 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 2080 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char SPBRG __attribute__((address(0x099)));
 
 __asm("SPBRG equ 099h");
@@ -866,7 +866,7 @@ typedef union {
     };
 } CMCONbits_t;
 extern volatile CMCONbits_t CMCONbits __attribute__((address(0x09C)));
-# 2157 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 2157 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char CVRCON __attribute__((address(0x09D)));
 
 __asm("CVRCON equ 09Dh");
@@ -888,7 +888,7 @@ typedef union {
     };
 } CVRCONbits_t;
 extern volatile CVRCONbits_t CVRCONbits __attribute__((address(0x09D)));
-# 2222 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 2222 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
 
 __asm("ADRESL equ 09Eh");
@@ -916,7 +916,7 @@ typedef union {
     };
 } ADCON1bits_t;
 extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
-# 2288 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 2288 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char EEDATA __attribute__((address(0x10C)));
 
 __asm("EEDATA equ 010Ch");
@@ -961,11 +961,11 @@ typedef union {
     };
 } EECON1bits_t;
 extern volatile EECON1bits_t EECON1bits __attribute__((address(0x18C)));
-# 2361 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 2361 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile unsigned char EECON2 __attribute__((address(0x18D)));
 
 __asm("EECON2 equ 018Dh");
-# 2374 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f877a.h" 3
+# 2374 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h" 3
 extern volatile __bit ACKDT __attribute__((address(0x48D)));
 
 
@@ -1690,12 +1690,12 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 664 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic_chip_select.h" 2 3
-# 14 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 2 3
-# 30 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 3
+# 664 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic_chip_select.h" 2 3
+# 14 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic.h" 2 3
+# 30 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic.h" 3
 #pragma intrinsic(__nop)
 extern void __nop(void);
-# 78 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 3
+# 78 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic.h" 3
 __attribute__((__unsupported__("The " "FLASH_READ" " macro function is no longer supported. Please use the MPLAB X MCC."))) unsigned char __flash_read(unsigned short addr);
 
 __attribute__((__unsupported__("The " "FLASH_WRITE" " macro function is no longer supported. Please use the MPLAB X MCC."))) void __flash_write(unsigned short addr, unsigned short data);
@@ -1704,11 +1704,11 @@ __attribute__((__unsupported__("The " "FLASH_ERASE" " macro function is no longe
 
 
 
-# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\eeprom_routines.h" 1 3
-# 114 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\eeprom_routines.h" 3
+# 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/eeprom_routines.h" 1 3
+# 114 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/eeprom_routines.h" 3
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
-# 86 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 2 3
+# 86 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic.h" 2 3
 
 
 
@@ -1718,13 +1718,12 @@ extern unsigned char eeprom_read(unsigned char addr);
 extern __attribute__((nonreentrant)) void _delay(unsigned long);
 #pragma intrinsic(_delaywdt)
 extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
-# 137 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 3
+# 137 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic.h" 3
 extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
-# 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 8 "main.c" 2
-
+# 28 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 2 3
+# 9 "main.c" 2
 # 1 "./config.h" 1
 # 84 "./config.h"
 #pragma config FOSC = HS
@@ -1735,56 +1734,199 @@ extern __bank0 __bit __timeout;
 #pragma config CPD = OFF
 #pragma config WRT = OFF
 #pragma config CP = OFF
-# 9 "main.c" 2
-
+# 10 "main.c" 2
 # 1 "./adc.h" 1
 # 27 "./adc.h"
 void adc_init(void);
 
 unsigned int adc_amostra(unsigned char canal);
-# 10 "main.c" 2
-
+# 11 "main.c" 2
 # 1 "./itoa.h" 1
 # 26 "./itoa.h"
 void itoa(unsigned int val, unsigned char* str );
-# 11 "main.c" 2
-
+# 12 "main.c" 2
 # 1 "./lcd.h" 1
 # 42 "./lcd.h"
 void lcd_init(void);
 void lcd_cmd(unsigned char val);
 void lcd_dat(unsigned char val);
 void lcd_str(const char* str);
-# 12 "main.c" 2
-
-# 1 "./7-Segment.h" 1
-# 28 "./7-Segment.h"
-unsigned char display7s(unsigned char v);
 # 13 "main.c" 2
+# 1 "./seven_segment.h" 1
+# 12 "./seven_segment.h"
+void lcd_writeNumber(unsigned char number);
+# 14 "main.c" 2
+# 23 "main.c"
+typedef unsigned char bool;
 
 
-
-int tempinit = 0;
-int stayIn = 1;
-int flag = 0;
-int wantedTemp = 50;
-int heater_flag = 0;
-int cooler_flag = 0;
-unsigned int tmp;
+int TargetTempreture = 40;
+unsigned int TEMPRETURE;
+unsigned int accumilated_tmeperature;
 unsigned char str[6];
-unsigned int accumilated_tmeperature = 0;
-int C = 0;
-int timer1counter =0;
+enum States{ON_STATE,OFF_STATE,SETTING_STATE};
+enum Temp_Status{OK_state,UPOVE_state,DOWN_state};
+unsigned char state;
+unsigned char temp_state;
+unsigned char Number_Tempreture;
+unsigned char timer1counter;
+bool ReadTemp;
 void IRQ_RB0_init ();
 void TIMER1_init ();
-void init_temperature (unsigned int x, unsigned char y[6]);
-void temperature_increase (unsigned int x, unsigned char y[6]);
-void temperature_decrease (unsigned int x, unsigned char y[6]);
+void displayTempreture();
+void update_tempreture();
+void displayDeiredTempreture();
+void flashDisplay();
+void off_state()
+{
+    RC2=0;
+    RC5=0;
+}
+
+
+enum Prev_Button_Status{PREV_UN_STABLE,PREV_STABLE};
+void flashDisplay()
+{
+    static unsigned char count=0;
+    static unsigned char prev_status=PREV_STABLE;
+    if(PORTBbits.RB3&&PORTBbits.RB4)
+    {
+        if(count==10)
+        {
+            state=ON_STATE;
+            count=0;
+            return;
+        }
+        else{
+            prev_status=PREV_STABLE;
+            count++;
+        }
+
+    }
+   for(int i=0;i<25;i++)
+   {
+    displayDeiredTempreture();
+    if(PORTBbits.RB3==0&&prev_status==PREV_STABLE)
+       {
+           if(TargetTempreture<75)
+           {
+               TargetTempreture += 5;
+           _delay((unsigned long)((30)*(8000000/4000.0)));
+           prev_status=PREV_UN_STABLE;
+           }
+       }
+
+    if(PORTBbits.RB4==0&&prev_status==PREV_STABLE)
+    {
+        if(TargetTempreture>35)
+        {
+         TargetTempreture -= 5;
+        _delay((unsigned long)((30)*(8000000/4000.0)));
+         prev_status=PREV_UN_STABLE;
+        }
+
+    }
+
+
+   }
+    PORTAbits.RA4=0;
+    PORTAbits.RA5=0;
+
+
+      for(int i=0;i<25;i++)
+   {
+       _delay((unsigned long)((20)*(8000000/4000.0)));
+       if(PORTBbits.RB3==0&&prev_status==PREV_STABLE)
+       {
+           if(TargetTempreture<75)
+           {
+               TargetTempreture += 5;
+           _delay((unsigned long)((30)*(8000000/4000.0)));
+           prev_status=PREV_UN_STABLE;
+           }
+       }
+
+
+     if(PORTBbits.RB4==0&&prev_status==PREV_STABLE)
+     {
+        if(TargetTempreture>35)
+        {
+         TargetTempreture -= 5;
+        _delay((unsigned long)((30)*(8000000/4000.0)));
+         prev_status=PREV_UN_STABLE;
+        }
+     }
+
+   }
+
+}
+void changeStatus()
+{
+    if(TEMPRETURE>TargetTempreture+5)
+    {
+        temp_state=UPOVE_state;
+
+    }else if(TEMPRETURE<TargetTempreture-5)
+    {
+        temp_state=DOWN_state;
+    }
+    else{
+        temp_state=OK_state;
+    }
+}
+
+
+void heaterOn()
+{
+    RC2=1;
+    RC5=0;
+}
+
+void coolerOn()
+{
+    RC5 = 1;
+    RC2=0;
+
+}
+void on_state()
+{
+    TMR1ON = 1;
+    if(PORTBbits.RB3==0||PORTBbits.RB4==0)
+    {
+        state=SETTING_STATE;
+        return;
+    }
+    displayTempreture();
+    changeStatus();
+
+    switch (temp_state)
+    {
+    case OK_state:
+        break;
+    case UPOVE_state:
+        heaterOn();
+        break;
+    case DOWN_state:
+        coolerOn();
+        break;
+    default:
+        break;
+    }
+
+}
+
+void setting_state()
+{
+     TMR1ON = 0;
+     RC2=0;
+     RC5=0;
+     flashDisplay();
+
+}
 void main(void) {
 
     TIMER1_init ();
     IRQ_RB0_init ();
-
 
 
     TRISA = 0x07;
@@ -1796,200 +1938,129 @@ void main(void) {
     TRISC5 = 0;
     TRISC2 = 0;
     RC2 = 0;
+    RC5 = 0;
     TRISB7 = 0;
+    TRISB3 = 1;
+    TRISB4 = 1;
     RB7 =0;
     TRISB5 = 0;
     RB5 =0;
-    adc_init();
-    while(1){
-        if(flag)
-        {
-            if (tempinit == 0)
-            {
-                init_temperature (tmp, str);
-            }else{
-                if (heater_flag == 1)
-                {
-                    temperature_increase (tmp, str);
-                }
-                if (cooler_flag == 1)
-                {
-                    temperature_decrease (tmp, str);
-                }
-                tmp=(adc_amostra(2)*10)/2;
-                itoa(tmp,str);
-                RA5 = 0;
-                RA4 = 1;
-                unsigned char y= str[2];
-                PORTD=display7s(y);
-                _delay((unsigned long)((30)*(8000000/4000.0)));
-                RA4 = 0;
-                RA5 = 1;
-                unsigned char x= str[3];
-                PORTD=display7s(x);
-                _delay((unsigned long)((30)*(8000000/4000.0)));
-            }
-        }else
-        {
-            RA5 = 0;
-            RA4 = 0;
-        }
-    }
-    return;
-}
+    Number_Tempreture=0;
 
-void init_temperature (unsigned int x, unsigned char y[6])
+    state=OFF_STATE;
+    temp_state=OK_state;
+    ReadTemp=0;
+    timer1counter=0;
+    accumilated_tmeperature=0;
+while (1)
 {
-    int res = 0;
-    while (flag && res <= wantedTemp){
-        RC5 = 1;
-        tmp=(adc_amostra(2)*10)/2;
-        itoa(tmp,str);
-        RA5 = 0;
-        RA4 = 1;
-        unsigned char y= str[2];
-        PORTD=display7s(y);
-        _delay((unsigned long)((30)*(8000000/4000.0)));
-        RA4 = 0;
-        RA5 = 1;
-        unsigned char x= str[3];
-        PORTD=display7s(x);
-        _delay((unsigned long)((30)*(8000000/4000.0)));
-        res = (y*10)+x;
-    }
-    if (res >= wantedTemp)
+    switch(state)
     {
-        tempinit = 1;
+        case ON_STATE:
+            on_state();
+            break;
+        case OFF_STATE:
+            off_state();
+            break;
+        case SETTING_STATE:
+            setting_state();
+            break;
+        default:
+            break;
     }
-    RA5 = 0;
-    RA4 = 0;
-    RC5 = 0;
-    return;
+
 }
-
-
-void temperature_increase (unsigned int x, unsigned char y[6])
+}
+void displayTempreture()
 {
-    int res = 0;
-    while (res <= wantedTemp+10){
-        if (flag == 1){
-            RC5 = 1;
-            tmp=(adc_amostra(2)*10)/2;
-            itoa(tmp,str);
-            RA5 = 0;
-            RA4 = 1;
-            unsigned char y= str[2];
-            PORTD=display7s(y);
-            _delay((unsigned long)((30)*(8000000/4000.0)));
-            RA4 = 0;
-            RA5 = 1;
-            unsigned char x= str[3];
-            PORTD=display7s(x);
-            _delay((unsigned long)((30)*(8000000/4000.0)));
-            res = (y*10)+x;
-        }else
-        {
-            RA5 = 0;
-            RA4 = 0;
-            RC5 = 0;
-        }
-    }
-    heater_flag = 0;
-    RA5 = 0;
-    RA4 = 0;
-    RC5 = 0;
+    unsigned char low=TEMPRETURE%10;
+    unsigned char high=TEMPRETURE/10;
+     PORTAbits.RA5=1;
+    lcd_writeNumber(low);
+    _delay((unsigned long)((10)*(8000000/4000.0)));
+    PORTAbits.RA5=0;
+   lcd_writeNumber(high);
+   PORTAbits.RA4=1;
+   _delay((unsigned long)((10)*(8000000/4000.0)));
+    PORTAbits.RA4=0;
+}
+
+void displayDeiredTempreture()
+{
+    unsigned char low=TargetTempreture%10;
+    unsigned char high=TargetTempreture/10;
+     PORTAbits.RA5=1;
+    lcd_writeNumber(low);
+    _delay((unsigned long)((10)*(8000000/4000.0)));
+    PORTAbits.RA5=0;
+   lcd_writeNumber(high);
+   PORTAbits.RA4=1;
+   _delay((unsigned long)((10)*(8000000/4000.0)));
+    PORTAbits.RA4=0;
+}
+
+void update_tempreture ()
+{
+    unsigned int temp=(adc_amostra(2)*10)/2;
+    itoa(temp,str);
+    unsigned char y= str[2];
+    unsigned char x= str[3];
+    accumilated_tmeperature += (y*10)+x;
     return;
 }
 
-void temperature_decrease (unsigned int x, unsigned char y[6])
-{
-    int res = 80;
-    while (res != wantedTemp){
-        if (flag == 1){
-            RC2 = 1;
-            tmp=(adc_amostra(2)*10)/2;
-            itoa(tmp,str);
-            RA5 = 0;
-            RA4 = 1;
-            unsigned char y= str[2];
-            PORTD=display7s(y);
-            _delay((unsigned long)((30)*(8000000/4000.0)));
-            RA4 = 0;
-            RA5 = 1;
-            unsigned char x= str[3];
-            PORTD=display7s(x);
-            _delay((unsigned long)((30)*(8000000/4000.0)));
-            res = (y*10)+x;
-        }else
-        {
-            RA5 = 0;
-            RA4 = 0;
-            RC2 = 0;
-        }
-    }
-    cooler_flag = 0;
-    RA5 = 0;
-    RA4 = 0;
-    RC2 = 0;
-    return;
-}
 
 
 void __attribute__((picinterrupt(("")))) ISR(void)
 {
+
   if (INTF)
   {
     INTF = 0;
-    if (flag)
+    switch(state)
     {
-        flag = 0;
-
-        TMR1ON = 0;
-        TMR1IF = 0;
-    }else{
-        flag = 1;
-
-        TMR1ON = 1;
+        case ON_STATE:
+            TMR1ON = 0;
+            TMR1IF = 0;
+            state=OFF_STATE;
+            break;
+        case OFF_STATE:
+            TMR1ON = 1;
+            state=ON_STATE;
+            break;
+        default:
+            break;
     }
-  }
+
+
+    }
 
 
    if (TMR1IF)
    {
-       if (flag && tempinit == 1)
-       {
+           TMR1IF = 0;
            timer1counter++;
+           ReadTemp=0;
            if (timer1counter == 4){
-                C++;
-                tmp=(adc_amostra(2)*10)/2;
-                itoa(tmp,str);
-                unsigned char y= str[2];
-                unsigned char x= str[3];
-                accumilated_tmeperature +=(y*10)+x;
+                ReadTemp=1;
+                Number_Tempreture++;
                 timer1counter = 0;
+                update_tempreture();
            }
-            if(C==30)
+            if(Number_Tempreture==10)
             {
-                if ((accumilated_tmeperature/30) < wantedTemp)
-                {
-                    heater_flag = 1;
-                }
-                else if ((accumilated_tmeperature/30) > wantedTemp)
-                {
-                    cooler_flag = 1;
-                }
+               TEMPRETURE=accumilated_tmeperature/10;
 
                 RB5 = ~RB5;
 
-                C = 0;
+                Number_Tempreture = 0;
                 accumilated_tmeperature= 0;
             }
-            TMR1IF = 0;
-       }else{
-            TMR1IF = 0;
-       }
    }
+
 }
+
+
 
 void IRQ_RB0_init (){
 
@@ -1998,6 +2069,7 @@ void IRQ_RB0_init (){
     INTEDG = 0;
 
     GIE = 1;
+
 }
 
 void TIMER1_init (){

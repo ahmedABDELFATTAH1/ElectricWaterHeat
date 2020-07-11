@@ -1,0 +1,817 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$/tmp/xcXMiaBEJ.o
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 12 12 3 2
+config CONFIG 4 2007 2007 1 2
+$dist/default/production/waleedv2.production.o
+cinit CODE 0 15 15 21 2
+text1 CODE 0 658 658 B 2
+text2 CODE 0 36 36 117 2
+text3 CODE 0 381 381 55 2
+text4 CODE 0 276 276 5B 2
+text5 CODE 0 14D 14D 69 2
+text6 CODE 0 503 503 3D 2
+text7 CODE 0 669 669 5 2
+text8 CODE 0 3D6 3D6 55 2
+text9 CODE 0 611 611 16 2
+text10 CODE 0 540 540 3C 2
+text11 CODE 0 479 479 46 2
+text12 CODE 0 66E 66E 5 2
+text13 CODE 0 5B6 5B6 30 2
+text14 CODE 0 673 673 5 2
+text15 CODE 0 63A 63A 11 2
+text16 CODE 0 663 663 6 2
+text17 CODE 0 1B6 1B6 65 2
+text18 CODE 0 2D1 2D1 58 2
+text19 CODE 0 329 329 58 2
+text20 CODE 0 57C 57C 3A 2
+text21 CODE 0 4BF 4BF 44 2
+text22 CODE 0 42B 42B 4E 2
+text23 CODE 0 5E6 5E6 2B 2
+nvBANK0 BANK0 1 5D 5D 1 1
+maintext CODE 0 21B 21B 5B 2
+cstackCOMMON COMMON 1 70 70 E 1
+cstackBANK0 BANK0 1 20 20 21 1
+cstackBANK1 BANK1 1 A0 A0 4 1
+inittext CODE 0 627 627 13 2
+intentry CODE 0 4 4 E 2
+bssBANK0 BANK0 1 41 41 F 1
+idataBANK0 CODE 0 64B 64B D 2
+dataBANK0 BANK0 1 50 50 D 1
+config CONFIG 4 2007 2007 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 5E-6F 1
+RAM A4-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 5E-6F 1
+BANK1 A4-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 3-3 2
+CONST 678-1FFF 2
+ENTRY 3-3 2
+ENTRY 678-1FFF 2
+IDLOC 2000-2003 2
+STACK 110-16F 1
+CODE 3-3 2
+CODE 678-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+EEDATA 2100-21FF 2
+STRCODE 3-3 2
+STRCODE 678-1FFF 2
+STRING 3-3 2
+STRING 678-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/waleedv2.production.o
+15 cinit CODE >966:/tmp/xcXFPEKlN.s
+15 cinit CODE >969:/tmp/xcXFPEKlN.s
+15 cinit CODE >1049:/tmp/xcXFPEKlN.s
+16 cinit CODE >1050:/tmp/xcXFPEKlN.s
+17 cinit CODE >1051:/tmp/xcXFPEKlN.s
+18 cinit CODE >1052:/tmp/xcXFPEKlN.s
+19 cinit CODE >1053:/tmp/xcXFPEKlN.s
+1A cinit CODE >1054:/tmp/xcXFPEKlN.s
+1B cinit CODE >1055:/tmp/xcXFPEKlN.s
+1C cinit CODE >1056:/tmp/xcXFPEKlN.s
+1D cinit CODE >1057:/tmp/xcXFPEKlN.s
+1E cinit CODE >1058:/tmp/xcXFPEKlN.s
+23 cinit CODE >1062:/tmp/xcXFPEKlN.s
+24 cinit CODE >1063:/tmp/xcXFPEKlN.s
+25 cinit CODE >1064:/tmp/xcXFPEKlN.s
+26 cinit CODE >1065:/tmp/xcXFPEKlN.s
+27 cinit CODE >1066:/tmp/xcXFPEKlN.s
+28 cinit CODE >1067:/tmp/xcXFPEKlN.s
+29 cinit CODE >1068:/tmp/xcXFPEKlN.s
+2A cinit CODE >1069:/tmp/xcXFPEKlN.s
+2B cinit CODE >1070:/tmp/xcXFPEKlN.s
+2C cinit CODE >1071:/tmp/xcXFPEKlN.s
+2D cinit CODE >1072:/tmp/xcXFPEKlN.s
+2E cinit CODE >1073:/tmp/xcXFPEKlN.s
+2F cinit CODE >1074:/tmp/xcXFPEKlN.s
+30 cinit CODE >1075:/tmp/xcXFPEKlN.s
+31 cinit CODE >1076:/tmp/xcXFPEKlN.s
+32 cinit CODE >1082:/tmp/xcXFPEKlN.s
+32 cinit CODE >1084:/tmp/xcXFPEKlN.s
+33 cinit CODE >1085:/tmp/xcXFPEKlN.s
+4 intentry CODE >277:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+5E6 text23 CODE >15:/opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+5E6 text23 CODE >43:/opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+5EA text23 CODE >45:/opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+5EE text23 CODE >46:/opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+5F6 text23 CODE >47:/opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+5FD text23 CODE >48:/opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+604 text23 CODE >49:/opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+60A text23 CODE >52:/opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+610 text23 CODE >53:/opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+42B text22 CODE >44:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+42C text22 CODE >62:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+42D text22 CODE >65:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+431 text22 CODE >66:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+432 text22 CODE >68:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+436 text22 CODE >69:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+437 text22 CODE >71:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+43B text22 CODE >72:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+43C text22 CODE >73:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+44F text22 CODE >77:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+452 text22 CODE >78:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+456 text22 CODE >80:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+478 text22 CODE >81:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+4BF text21 CODE >5:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4BF text21 CODE >13:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4C1 text21 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4C7 text21 CODE >15:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4C9 text21 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4CA text21 CODE >17:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4D1 text21 CODE >18:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4D5 text21 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4D9 text21 CODE >21:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4E0 text21 CODE >22:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4EA text21 CODE >23:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4F0 text21 CODE >24:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4F1 text21 CODE >26:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4F8 text21 CODE >27:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4FE text21 CODE >29:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+502 text21 CODE >30:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+57C text20 CODE >5:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+57C text20 CODE >12:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+582 text20 CODE >13:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+584 text20 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+585 text20 CODE >15:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+58C text20 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+590 text20 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+594 text20 CODE >19:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+59E text20 CODE >20:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+5A4 text20 CODE >21:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+5AB text20 CODE >22:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+5B1 text20 CODE >24:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+5B5 text20 CODE >25:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+329 text19 CODE >27:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
+329 text19 CODE >32:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
+34F text19 CODE >33:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
+373 text19 CODE >34:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
+37B text19 CODE >35:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
+380 text19 CODE >39:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
+2D1 text18 CODE >265:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+2D1 text18 CODE >267:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+2F1 text18 CODE >268:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+2FE text18 CODE >269:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+304 text18 CODE >270:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+308 text18 CODE >271:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+328 text18 CODE >273:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1B6 text17 CODE >277:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1B6 text17 CODE >280:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1BA text17 CODE >282:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1BB text17 CODE >283:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1BC text17 CODE >285:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1BC text17 CODE >286:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1BD text17 CODE >287:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1BE text17 CODE >288:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1C0 text17 CODE >289:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1C1 text17 CODE >290:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1C1 text17 CODE >291:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1C2 text17 CODE >292:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1C3 text17 CODE >293:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1C4 text17 CODE >296:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1D4 text17 CODE >299:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1D4 text17 CODE >302:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1D8 text17 CODE >304:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1D9 text17 CODE >305:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1DD text17 CODE >306:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1DE text17 CODE >307:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1E4 text17 CODE >308:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1E6 text17 CODE >309:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1EA text17 CODE >310:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1EB text17 CODE >311:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1F0 text17 CODE >313:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+1F8 text17 CODE >315:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+20B text17 CODE >317:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+20D text17 CODE >319:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+20E text17 CODE >320:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+210 text17 CODE >324:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+663 text16 CODE >328:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+663 text16 CODE >330:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+664 text16 CODE >332:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+667 text16 CODE >334:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+668 text16 CODE >336:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+63A text15 CODE >338:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+63A text15 CODE >341:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+640 text15 CODE >343:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+641 text15 CODE >345:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+642 text15 CODE >346:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+643 text15 CODE >349:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+646 text15 CODE >350:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+649 text15 CODE >351:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+64A text15 CODE >353:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+673 text14 CODE >43:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+673 text14 CODE >45:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+676 text14 CODE >46:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+677 text14 CODE >47:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+5B6 text13 CODE >126:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+5B6 text13 CODE >128:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+5CA text13 CODE >130:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+5CC text13 CODE >132:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+5DF text13 CODE >134:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+5E3 text13 CODE >135:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+5E4 text13 CODE >137:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+5E5 text13 CODE >139:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+66E text12 CODE >148:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+66E text12 CODE >150:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+671 text12 CODE >151:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+672 text12 CODE >153:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+479 text11 CODE >5:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+479 text11 CODE >13:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+47D text11 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+483 text11 CODE >15:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+485 text11 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+486 text11 CODE >17:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+48D text11 CODE >18:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+491 text11 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+495 text11 CODE >21:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+49C text11 CODE >22:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4A6 text11 CODE >23:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4AC text11 CODE >24:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4AD text11 CODE >26:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4B4 text11 CODE >27:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4BA text11 CODE >29:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+4BE text11 CODE >30:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+540 text10 CODE >5:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+540 text10 CODE >12:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+548 text10 CODE >13:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+54A text10 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+54B text10 CODE >15:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+552 text10 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+556 text10 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+55A text10 CODE >19:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+564 text10 CODE >20:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+56A text10 CODE >21:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+571 text10 CODE >22:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+577 text10 CODE >24:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+57B text10 CODE >25:/opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+611 text9 CODE >7:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
+614 text9 CODE >9:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
+61A text9 CODE >11:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
+622 text9 CODE >12:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
+624 text9 CODE >13:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
+625 text9 CODE >15:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
+626 text9 CODE >17:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
+3D6 text8 CODE >237:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3D6 text8 CODE >239:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3EB text8 CODE >240:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3FE text8 CODE >241:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3FF text8 CODE >242:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+405 text8 CODE >243:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+410 text8 CODE >244:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+413 text8 CODE >245:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+419 text8 CODE >246:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+41C text8 CODE >247:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+427 text8 CODE >248:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+42A text8 CODE >249:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+669 text7 CODE >142:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+669 text7 CODE >144:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+66C text7 CODE >145:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+66D text7 CODE >146:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+503 text6 CODE >154:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+503 text6 CODE >156:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+506 text6 CODE >157:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+50E text6 CODE >159:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+513 text6 CODE >162:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+518 text6 CODE >163:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+51D text6 CODE >165:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+51E text6 CODE >170:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+523 text6 CODE >171:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+524 text6 CODE >173:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+529 text6 CODE >174:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+52A text6 CODE >177:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+53F text6 CODE >179:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+14D text5 CODE >5:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+14D text5 CODE >13:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+150 text5 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+154 text5 CODE >15:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+159 text5 CODE >16:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+15B text5 CODE >18:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+15F text5 CODE >19:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+164 text5 CODE >20:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+168 text5 CODE >22:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+16A text5 CODE >23:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+170 text5 CODE >24:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+172 text5 CODE >25:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+173 text5 CODE >26:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+17A text5 CODE >27:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+17E text5 CODE >25:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+182 text5 CODE >30:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+189 text5 CODE >31:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+193 text5 CODE >32:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+199 text5 CODE >33:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+19A text5 CODE >35:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+1A1 text5 CODE >36:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+1A7 text5 CODE >38:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+1AC text5 CODE >39:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+1B1 text5 CODE >40:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+1B5 text5 CODE >41:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+276 text4 CODE >5:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+276 text4 CODE >12:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+279 text4 CODE >13:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+27D text4 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+282 text4 CODE >15:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+284 text4 CODE >17:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+288 text4 CODE >18:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+28D text4 CODE >19:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+293 text4 CODE >20:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+295 text4 CODE >21:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+296 text4 CODE >22:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+29D text4 CODE >23:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+2A1 text4 CODE >21:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+2A5 text4 CODE >26:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+2AF text4 CODE >27:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+2B5 text4 CODE >28:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+2BC text4 CODE >29:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+2C2 text4 CODE >31:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+2C7 text4 CODE >32:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+2CC text4 CODE >33:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+2D0 text4 CODE >34:/opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+381 text3 CODE >251:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+381 text3 CODE >253:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+396 text3 CODE >254:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3A9 text3 CODE >255:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3AA text3 CODE >256:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3B0 text3 CODE >257:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3BB text3 CODE >258:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3BE text3 CODE >259:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3C4 text3 CODE >260:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3C7 text3 CODE >261:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3D2 text3 CODE >262:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+3D5 text3 CODE >263:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+36 text2 CODE >51:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+36 text2 CODE >55:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+40 text2 CODE >57:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+46 text2 CODE >59:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+47 text2 CODE >60:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+49 text2 CODE >63:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+49 text2 CODE >64:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+4B text2 CODE >65:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+4F text2 CODE >69:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+53 text2 CODE >71:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+58 text2 CODE >72:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+63 text2 CODE >74:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+70 text2 CODE >76:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+78 text2 CODE >77:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+83 text2 CODE >78:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+86 text2 CODE >82:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+91 text2 CODE >84:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+9E text2 CODE >86:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+A6 text2 CODE >87:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+B1 text2 CODE >88:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+B4 text2 CODE >94:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+C9 text2 CODE >95:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+CC text2 CODE >96:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+CD text2 CODE >99:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+D1 text2 CODE >101:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+DB text2 CODE >102:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+E6 text2 CODE >104:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+F3 text2 CODE >106:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+FB text2 CODE >107:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+106 text2 CODE >108:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+109 text2 CODE >113:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+114 text2 CODE >115:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+121 text2 CODE >117:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+129 text2 CODE >118:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+134 text2 CODE >119:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+137 text2 CODE >123:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+14C text2 CODE >125:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+658 text1 CODE >181:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+658 text1 CODE >183:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+65B text1 CODE >184:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+65C text1 CODE >185:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+65D text1 CODE >186:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+662 text1 CODE >188:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+21B maintext CODE >189:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+21B maintext CODE >191:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+220 maintext CODE >192:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+225 maintext CODE >195:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+229 maintext CODE >197:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+22A maintext CODE >199:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+22D maintext CODE >201:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+230 maintext CODE >202:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+231 maintext CODE >203:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+234 maintext CODE >204:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+235 maintext CODE >205:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+238 maintext CODE >206:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+239 maintext CODE >207:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+23A maintext CODE >208:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+23D maintext CODE >209:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+240 maintext CODE >210:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+243 maintext CODE >211:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+244 maintext CODE >213:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+246 maintext CODE >214:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+247 maintext CODE >215:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+248 maintext CODE >216:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+249 maintext CODE >217:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+24C maintext CODE >223:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+251 maintext CODE >224:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+252 maintext CODE >226:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+257 maintext CODE >227:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+258 maintext CODE >229:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+25D maintext CODE >230:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+25E maintext CODE >233:/home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+627 inittext CODE >1023:/tmp/xcXFPEKlN.s
+627 inittext CODE >1024:/tmp/xcXFPEKlN.s
+628 inittext CODE >1025:/tmp/xcXFPEKlN.s
+629 inittext CODE >1026:/tmp/xcXFPEKlN.s
+62A inittext CODE >1027:/tmp/xcXFPEKlN.s
+62B inittext CODE >1034:/tmp/xcXFPEKlN.s
+62B inittext CODE >1035:/tmp/xcXFPEKlN.s
+630 inittext CODE >1036:/tmp/xcXFPEKlN.s
+631 inittext CODE >1037:/tmp/xcXFPEKlN.s
+632 inittext CODE >1038:/tmp/xcXFPEKlN.s
+633 inittext CODE >1039:/tmp/xcXFPEKlN.s
+634 inittext CODE >1040:/tmp/xcXFPEKlN.s
+635 inittext CODE >1041:/tmp/xcXFPEKlN.s
+636 inittext CODE >1042:/tmp/xcXFPEKlN.s
+637 inittext CODE >1043:/tmp/xcXFPEKlN.s
+638 inittext CODE >1044:/tmp/xcXFPEKlN.s
+639 inittext CODE >1045:/tmp/xcXFPEKlN.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 2 0 ABS 0 - dist/default/production/waleedv2.production.o
+___awdiv@counter 35 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+___lwmod@counter 35 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__Hspace_0 678 0 ABS 0 - -
+__Hspace_1 A4 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 400F 0 ABS 0 - -
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+_TEMPRETURE 43 0 BANK0 1 bssBANK0 dist/default/production/waleedv2.production.o
+__size_of_flashDisplay 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+i1___lwdiv@divisor 75 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+_IRQ_RB0_init CC6 0 CODE 0 text16 dist/default/production/waleedv2.production.o
+_displayTempreture 7AC 0 CODE 0 text8 dist/default/production/waleedv2.production.o
+__Hstrings 0 0 ABS 0 strings -
+_INTE 5C 0 ABS 0 - dist/default/production/waleedv2.production.o
+_INTF 59 0 ABS 0 - dist/default/production/waleedv2.production.o
+_PEIE 5E 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TMR1 E 0 ABS 0 - dist/default/production/waleedv2.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXMiaBEJ.o
+_itoa 652 0 CODE 0 text19 dist/default/production/waleedv2.production.o
+_main 436 0 CODE 0 maintext dist/default/production/waleedv2.production.o
+btemp 7E 0 ABS 0 - dist/default/production/waleedv2.production.o
+start 24 0 CODE 0 init /tmp/xcXMiaBEJ.o
+__size_of___awdiv 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__size_of___awmod 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__size_of_itoa 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__size_of_main 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__size_of___lwdiv 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__size_of___lwmod 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__end_of_flashDisplay 29A 0 CODE 0 text2 dist/default/production/waleedv2.production.o
+?___wmul 7A 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+__Hpowerup 0 0 CODE 0 powerup -
+___awmod@sign 36 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__end_of_update_tempreture 652 0 CODE 0 text18 dist/default/production/waleedv2.production.o
+_ReadTemp 46 0 BANK0 1 bssBANK0 dist/default/production/waleedv2.production.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXMiaBEJ.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXMiaBEJ.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXMiaBEJ.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXMiaBEJ.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXMiaBEJ.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXMiaBEJ.o
+displayTempreture@low 3A 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+i1___lwdiv@quotient 79 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+__size_of_IRQ_RB0_init 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+update_tempreture@x 2A 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+update_tempreture@y 29 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+?_adc_amostra 70 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+wtemp0 7E 0 ABS 0 - dist/default/production/waleedv2.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+i1___lwmod@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+__size_of_lcd_writeNumber 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+___awdiv@sign 36 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__Hclrtext 0 0 ABS 0 clrtext -
+__size_of_displayDeiredTempreture 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+lcd_writeNumber@number 32 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+___wmul@multiplicand 7C 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+_ADCON0 1F 0 ABS 0 - dist/default/production/waleedv2.production.o
+_ADCON1 9F 0 ABS 0 - dist/default/production/waleedv2.production.o
+_ADRESH 1E 0 ABS 0 - dist/default/production/waleedv2.production.o
+_ADRESL 9E 0 ABS 0 - dist/default/production/waleedv2.production.o
+___awdiv@dividend 33 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__size_of_adc_amostra 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__end_of_IRQ_RB0_init CD2 0 CODE 0 text16 dist/default/production/waleedv2.production.o
+__end_of___wmul C22 0 CODE 0 text23 dist/default/production/waleedv2.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+__end_ofi1___lwdiv A06 0 CODE 0 text21 dist/default/production/waleedv2.production.o
+__end_ofi1___lwmod B6C 0 CODE 0 text20 dist/default/production/waleedv2.production.o
+__LnvBANK0 0 0 ABS 0 nvBANK0 -
+___awdiv@divisor 31 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+___lwmod@divisor 31 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__size_ofi1___lwdiv 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__size_ofi1___lwmod 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__end_of___awdiv 36C 0 CODE 0 text5 dist/default/production/waleedv2.production.o
+__end_of___awmod 5A2 0 CODE 0 text4 dist/default/production/waleedv2.production.o
+__end_of___lwdiv 97E 0 CODE 0 text11 dist/default/production/waleedv2.production.o
+__end_of___lwmod AF8 0 CODE 0 text10 dist/default/production/waleedv2.production.o
+_INTEDG 40E 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TIMER1_init C74 0 CODE 0 text15 dist/default/production/waleedv2.production.o
+___stackhi 0 0 ABS 0 - /tmp/xcXMiaBEJ.o
+___stacklo 0 0 ABS 0 - /tmp/xcXMiaBEJ.o
+___lwdiv@quotient 35 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+i1___lwdiv 97E 0 CODE 0 text21 dist/default/production/waleedv2.production.o
+i1___lwmod AF8 0 CODE 0 text20 dist/default/production/waleedv2.production.o
+itoa@str 22 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+itoa@val 20 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+_update_tempreture 5A2 0 CODE 0 text18 dist/default/production/waleedv2.production.o
+___lwmod@dividend 33 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+start_initialization 2A 0 CODE 0 cinit dist/default/production/waleedv2.production.o
+__size_of_heaterOn 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+adc_amostra@canal 79 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production/waleedv2.production.o
+_timer1counter 47 0 BANK0 1 bssBANK0 dist/default/production/waleedv2.production.o
+_TMR1CS 81 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TMR1IE 460 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TMR1IF 60 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TMR1ON 80 0 ABS 0 - dist/default/production/waleedv2.production.o
+_temp_state 49 0 BANK0 1 bssBANK0 dist/default/production/waleedv2.production.o
+_TRISB3 433 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TRISB4 434 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TRISB5 435 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TRISB7 437 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TRISC2 43A 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TRISC5 43D 0 ABS 0 - dist/default/production/waleedv2.production.o
+i1___lwmod@counter 74 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXMiaBEJ.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 6C 0 CODE 0 cinit -
+displayTempreture@high 3B 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__Hstack 0 0 STACK 2 stack -
+___lwdiv@counter 37 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__Hmaintext 0 0 ABS 0 maintext -
+_setting_state CB0 0 CODE 0 text1 dist/default/production/waleedv2.production.o
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 4 config -
+_heaterOn CD2 0 CODE 0 text7 dist/default/production/waleedv2.production.o
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit 2A 0 CODE 0 cinit -
+__Lstack 0 0 STACK 2 stack -
+__Linittext 0 0 ABS 0 inittext -
+_PORTAbits 5 0 ABS 0 - dist/default/production/waleedv2.production.o
+_PORTBbits 6 0 ABS 0 - dist/default/production/waleedv2.production.o
+_PORTEbits 9 0 ABS 0 - dist/default/production/waleedv2.production.o
+__size_of_on_state 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 24 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__end_of_heaterOn CDC 0 CODE 0 text7 dist/default/production/waleedv2.production.o
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 24 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__pnvBANK0 5D 0 BANK0 1 nvBANK0 dist/default/production/waleedv2.production.o
+___wmul BCC 0 CODE 0 text23 dist/default/production/waleedv2.production.o
+_Number_Tempreture 48 0 BANK0 1 bssBANK0 dist/default/production/waleedv2.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_GIE 5F 0 ABS 0 - dist/default/production/waleedv2.production.o
+_ISR 36C 0 CODE 0 text17 dist/default/production/waleedv2.production.o
+_RB5 35 0 ABS 0 - dist/default/production/waleedv2.production.o
+_RB7 37 0 ABS 0 - dist/default/production/waleedv2.production.o
+_RC2 3A 0 ABS 0 - dist/default/production/waleedv2.production.o
+_RC5 3D 0 ABS 0 - dist/default/production/waleedv2.production.o
+__S0 678 0 ABS 0 - -
+__S1 A4 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_str 4A 0 BANK0 1 bssBANK0 dist/default/production/waleedv2.production.o
+saved_w 7E 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TargetTempreture 5A 0 BANK0 1 dataBANK0 dist/default/production/waleedv2.production.o
+_adc_amostra 856 0 CODE 0 text22 dist/default/production/waleedv2.production.o
+__end_of_ISR 436 0 CODE 0 text17 dist/default/production/waleedv2.production.o
+__HnvBANK0 0 0 ABS 0 nvBANK0 -
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXMiaBEJ.o
+__pdataBANK0 50 0 BANK0 1 dataBANK0 dist/default/production/waleedv2.production.o
+lcd_writeNumber@code 31 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__size_of___wmul 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+_on_state A06 0 CODE 0 text6 dist/default/production/waleedv2.production.o
+i1___lwdiv@dividend 77 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+___awmod@counter 35 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__ptext10 A80 0 CODE 0 text10 dist/default/production/waleedv2.production.o
+__ptext11 8F2 0 CODE 0 text11 dist/default/production/waleedv2.production.o
+__ptext12 CDC 0 CODE 0 text12 dist/default/production/waleedv2.production.o
+__ptext13 B6C 0 CODE 0 text13 dist/default/production/waleedv2.production.o
+__ptext14 CE6 0 CODE 0 text14 dist/default/production/waleedv2.production.o
+__ptext15 C74 0 CODE 0 text15 dist/default/production/waleedv2.production.o
+__ptext16 CC6 0 CODE 0 text16 dist/default/production/waleedv2.production.o
+__ptext17 36C 0 CODE 0 text17 dist/default/production/waleedv2.production.o
+__ptext18 5A2 0 CODE 0 text18 dist/default/production/waleedv2.production.o
+__ptext19 652 0 CODE 0 text19 dist/default/production/waleedv2.production.o
+__ptext20 AF8 0 CODE 0 text20 dist/default/production/waleedv2.production.o
+__ptext21 97E 0 CODE 0 text21 dist/default/production/waleedv2.production.o
+__ptext22 856 0 CODE 0 text22 dist/default/production/waleedv2.production.o
+__ptext23 BCC 0 CODE 0 text23 dist/default/production/waleedv2.production.o
+__end_of_on_state A80 0 CODE 0 text6 dist/default/production/waleedv2.production.o
+___awdiv 29A 0 CODE 0 text5 dist/default/production/waleedv2.production.o
+___awmod 4EC 0 CODE 0 text4 dist/default/production/waleedv2.production.o
+___lwdiv 8F2 0 CODE 0 text11 dist/default/production/waleedv2.production.o
+___lwmod A80 0 CODE 0 text10 dist/default/production/waleedv2.production.o
+__pmaintext 436 0 CODE 0 maintext dist/default/production/waleedv2.production.o
+__size_of_setting_state 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 4 config -
+__Hinittext 0 0 ABS 0 inittext -
+__size_of_displayTempreture 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+___wmul@multiplier 7A 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+i1___lwmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+___lwdiv@divisor 31 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__end_of_TIMER1_init C96 0 CODE 0 text15 dist/default/production/waleedv2.production.o
+_displayDeiredTempreture 702 0 CODE 0 text3 dist/default/production/waleedv2.production.o
+_ADCON0bits 1F 0 ABS 0 - dist/default/production/waleedv2.production.o
+__end_of_displayDeiredTempreture 7AC 0 CODE 0 text3 dist/default/production/waleedv2.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__end_of_setting_state CC6 0 CODE 0 text1 dist/default/production/waleedv2.production.o
+init_fetch0 C4E 0 CODE 0 inittext dist/default/production/waleedv2.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
+flashDisplay@i A0 0 BANK1 1 cstackBANK1 dist/default/production/waleedv2.production.o
+__Lend_init 24 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+flashDisplay@count 45 0 BANK0 1 bssBANK0 dist/default/production/waleedv2.production.o
+flashDisplay@i_162 A2 0 BANK1 1 cstackBANK1 dist/default/production/waleedv2.production.o
+end_of_initialization 64 0 CODE 0 cinit dist/default/production/waleedv2.production.o
+flashDisplay@prev_status 5C 0 BANK0 1 dataBANK0 dist/default/production/waleedv2.production.o
+__Hintentry 24 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+___awdiv@quotient 37 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+?___awdiv 31 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+?___awmod 31 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+___lwdiv@dividend 33 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+?___lwdiv 31 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+?___lwmod 31 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__Hreset_vec 6 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+displayDeiredTempreture@high 3C 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+___awmod@dividend 33 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__ptext1 CB0 0 CODE 0 text1 dist/default/production/waleedv2.production.o
+__ptext2 6C 0 CODE 0 text2 dist/default/production/waleedv2.production.o
+__ptext3 702 0 CODE 0 text3 dist/default/production/waleedv2.production.o
+__ptext4 4EC 0 CODE 0 text4 dist/default/production/waleedv2.production.o
+__ptext5 29A 0 CODE 0 text5 dist/default/production/waleedv2.production.o
+__ptext6 A06 0 CODE 0 text6 dist/default/production/waleedv2.production.o
+__ptext7 CD2 0 CODE 0 text7 dist/default/production/waleedv2.production.o
+__ptext8 7AC 0 CODE 0 text8 dist/default/production/waleedv2.production.o
+__ptext9 C22 0 CODE 0 text9 dist/default/production/waleedv2.production.o
+_changeStatus B6C 0 CODE 0 text13 dist/default/production/waleedv2.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+i1___lwdiv@counter 7B 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+_segments_code 50 0 BANK0 1 dataBANK0 dist/default/production/waleedv2.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec -
+update_tempreture@temp 27 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+?i1___lwdiv 75 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+?i1___lwmod 70 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+__size_of_coolerOn 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__end_of__initialization 64 0 CODE 0 cinit dist/default/production/waleedv2.production.o
+___awmod@divisor 31 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__pidataBANK0 C96 0 CODE 0 idataBANK0 dist/default/production/waleedv2.production.o
+__end_of_lcd_writeNumber C4E 0 CODE 0 text9 dist/default/production/waleedv2.production.o
+__Lclrtext 0 0 ABS 0 clrtext -
+__end_of_off_state CF0 0 CODE 0 text14 dist/default/production/waleedv2.production.o
+__end_of_displayTempreture 856 0 CODE 0 text8 dist/default/production/waleedv2.production.o
+__size_of_off_state 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+_T1CKPS0 84 0 ABS 0 - dist/default/production/waleedv2.production.o
+_T1CKPS1 85 0 ABS 0 - dist/default/production/waleedv2.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/waleedv2.production.o
+__size_of_changeStatus 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__size_of_update_tempreture 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__Hend_init 2A 0 CODE 0 end_init -
+init_ram0 C56 0 CODE 0 inittext dist/default/production/waleedv2.production.o
+__end_of_itoa 702 0 CODE 0 text19 dist/default/production/waleedv2.production.o
+__end_of_main 4EC 0 CODE 0 maintext dist/default/production/waleedv2.production.o
+_PORTD 8 0 ABS 0 - dist/default/production/waleedv2.production.o
+_off_state CE6 0 CODE 0 text14 dist/default/production/waleedv2.production.o
+_TRISA 85 0 ABS 0 - dist/default/production/waleedv2.production.o
+_TRISD 88 0 ABS 0 - dist/default/production/waleedv2.production.o
+_flashDisplay 6C 0 CODE 0 text2 dist/default/production/waleedv2.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production/waleedv2.production.o
+_state 5D 0 BANK0 1 nvBANK0 dist/default/production/waleedv2.production.o
+__end_of_adc_amostra 8F2 0 CODE 0 text22 dist/default/production/waleedv2.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production/waleedv2.production.o
+__size_of_TIMER1_init 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__size_of_ISR 0 0 ABS 0 - dist/default/production/waleedv2.production.o
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+__end_of_changeStatus BCC 0 CODE 0 text13 dist/default/production/waleedv2.production.o
+__initialization 2A 0 CODE 0 cinit dist/default/production/waleedv2.production.o
+_coolerOn CDC 0 CODE 0 text12 dist/default/production/waleedv2.production.o
+__pbssBANK0 41 0 BANK0 1 bssBANK0 dist/default/production/waleedv2.production.o
+_accumilated_tmeperature 41 0 BANK0 1 bssBANK0 dist/default/production/waleedv2.production.o
+___wmul@product 20 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+_lcd_writeNumber C22 0 CODE 0 text9 dist/default/production/waleedv2.production.o
+__end_of_coolerOn CE6 0 CODE 0 text12 dist/default/production/waleedv2.production.o
+displayDeiredTempreture@low 3B 0 BANK0 1 cstackBANK0 dist/default/production/waleedv2.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cstackCOMMON 1 70 70 E 1
+cstackBANK0 1 20 20 3E 1
+cstackBANK1 1 A0 A0 4 1
+intentry 0 4 8 674 2
+reset_vec 0 0 0 3 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

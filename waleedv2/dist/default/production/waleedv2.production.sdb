@@ -1,0 +1,409 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"54 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+[e E890 Prev_Button_Status `uc
+PREV_UN_STABLE 0
+PREV_STABLE 1
+]
+"59
+[e E870 States `uc
+ON_STATE 0
+OFF_STATE 1
+SETTING_STATE 2
+]
+"130
+[e E874 Temp_Status `uc
+OK_state 0
+UPOVE_state 1
+DOWN_state 2
+]
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+[v i1___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+[v i1___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 /opt/microchip/xc8/v2.20/pic/sources/c90/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 /opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 /opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 /opt/microchip/xc8/v2.20/pic/sources/c90/pic/__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"44 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+[v _adc_amostra adc_amostra `(ui  1 e 2 0 ]
+"27 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
+[v _itoa itoa `(v  1 e 1 0 ]
+"29 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/lcd.c
+[v _lcd_wr lcd_wr `(v  1 e 1 0 ]
+"34
+[v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
+"45
+[v _lcd_dat lcd_dat `(v  1 e 1 0 ]
+"43 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+[v _off_state off_state `(v  1 e 1 0 ]
+"51
+[v _flashDisplay flashDisplay `(v  1 e 1 0 ]
+"126
+[v _changeStatus changeStatus `(v  1 e 1 0 ]
+"142
+[v _heaterOn heaterOn `(v  1 e 1 0 ]
+"148
+[v _coolerOn coolerOn `(v  1 e 1 0 ]
+"154
+[v _on_state on_state `(v  1 e 1 0 ]
+"181
+[v _setting_state setting_state `(v  1 e 1 0 ]
+"189
+[v _main main `(v  1 e 1 0 ]
+"237
+[v _displayTempreture displayTempreture `(v  1 e 1 0 ]
+"251
+[v _displayDeiredTempreture displayDeiredTempreture `(v  1 e 1 0 ]
+"265
+[v _update_tempreture update_tempreture `(v  1 e 1 0 ]
+"277
+[v _ISR ISR `II(v  1 e 1 0 ]
+"328
+[v _IRQ_RB0_init IRQ_RB0_init `(v  1 e 1 0 ]
+"338
+[v _TIMER1_init TIMER1_init `(v  1 e 1 0 ]
+"7 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
+[v _lcd_writeNumber lcd_writeNumber `(v  1 e 1 0 ]
+[s S62 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+]
+"181 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h
+[u S69 . 1 `S62 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES69  1 e 1 @5 ]
+[s S27 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"233
+[u S36 . 1 `S27 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES36  1 e 1 @6 ]
+"340
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S262 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+]
+"414
+[u S266 . 1 `S262 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES266  1 e 1 @9 ]
+"634
+[v _TMR1 TMR1 `VEus  1 e 2 @14 ]
+"1152
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1159
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S200 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1190
+[s S206 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S214 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S217 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S220 . 1 `S200 1 . 1 0 `S206 1 . 1 0 `S214 1 . 1 0 `S217 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES220  1 e 1 @31 ]
+"1325
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1499
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"2222
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2229
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2569
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2599
+[v _INTE INTE `VEb  1 e 0 @92 ]
+"2602
+[v _INTEDG INTEDG `VEb  1 e 0 @1038 ]
+"2605
+[v _INTF INTF `VEb  1 e 0 @89 ]
+"2629
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"2689
+[v _RB5 RB5 `VEb  1 e 0 @53 ]
+"2695
+[v _RB7 RB7 `VEb  1 e 0 @55 ]
+"2710
+[v _RC2 RC2 `VEb  1 e 0 @58 ]
+"2719
+[v _RC5 RC5 `VEb  1 e 0 @61 ]
+"2857
+[v _T1CKPS0 T1CKPS0 `VEb  1 e 0 @132 ]
+"2860
+[v _T1CKPS1 T1CKPS1 `VEb  1 e 0 @133 ]
+"2884
+[v _TMR1CS TMR1CS `VEb  1 e 0 @129 ]
+"2887
+[v _TMR1IE TMR1IE `VEb  1 e 0 @1120 ]
+"2890
+[v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
+"2893
+[v _TMR1ON TMR1ON `VEb  1 e 0 @128 ]
+"2944
+[v _TRISB3 TRISB3 `VEb  1 e 0 @1075 ]
+"2947
+[v _TRISB4 TRISB4 `VEb  1 e 0 @1076 ]
+"2950
+[v _TRISB5 TRISB5 `VEb  1 e 0 @1077 ]
+"2956
+[v _TRISB7 TRISB7 `VEb  1 e 0 @1079 ]
+"2965
+[v _TRISC2 TRISC2 `VEb  1 e 0 @1082 ]
+"2974
+[v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
+"26 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+[v _TargetTempreture TargetTempreture `i  1 e 2 0 ]
+"27
+[v _TEMPRETURE TEMPRETURE `ui  1 e 2 0 ]
+"28
+[v _accumilated_tmeperature accumilated_tmeperature `ui  1 e 2 0 ]
+"29
+[v _str str `[6]uc  1 e 6 0 ]
+"32
+[v _state state `uc  1 e 1 0 ]
+"33
+[v _temp_state temp_state `uc  1 e 1 0 ]
+"34
+[v _Number_Tempreture Number_Tempreture `uc  1 e 1 0 ]
+"35
+[v _timer1counter timer1counter `uc  1 e 1 0 ]
+"36
+[v _ReadTemp ReadTemp `uc  1 e 1 0 ]
+"5 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
+[v _segments_code segments_code `[10]uc  1 e 10 0 ]
+"189 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"236
+} 0
+"181
+[v _setting_state setting_state `(v  1 e 1 0 ]
+{
+"188
+} 0
+"51
+[v _flashDisplay flashDisplay `(v  1 e 1 0 ]
+{
+"99
+[v flashDisplay@i_162 i `i  1 a 2 2 ]
+"69
+[v flashDisplay@i i `i  1 a 2 0 ]
+"53
+[v flashDisplay@count count `uc  1 s 1 count ]
+"54
+[v flashDisplay@prev_status prev_status `uc  1 s 1 prev_status ]
+"125
+} 0
+"251
+[v _displayDeiredTempreture displayDeiredTempreture `(v  1 e 1 0 ]
+{
+"254
+[v displayDeiredTempreture@high high `uc  1 a 1 28 ]
+"253
+[v displayDeiredTempreture@low low `uc  1 a 1 27 ]
+"263
+} 0
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 22 ]
+[v ___awmod@counter counter `uc  1 a 1 21 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 17 ]
+[v ___awmod@dividend dividend `i  1 p 2 19 ]
+"34
+} 0
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 23 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 22 ]
+[v ___awdiv@counter counter `uc  1 a 1 21 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 17 ]
+[v ___awdiv@dividend dividend `i  1 p 2 19 ]
+"41
+} 0
+"154 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+[v _on_state on_state `(v  1 e 1 0 ]
+{
+"179
+} 0
+"142
+[v _heaterOn heaterOn `(v  1 e 1 0 ]
+{
+"146
+} 0
+"237
+[v _displayTempreture displayTempreture `(v  1 e 1 0 ]
+{
+"240
+[v displayTempreture@high high `uc  1 a 1 27 ]
+"239
+[v displayTempreture@low low `uc  1 a 1 26 ]
+"249
+} 0
+"7 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
+[v _lcd_writeNumber lcd_writeNumber `(v  1 e 1 0 ]
+{
+[v lcd_writeNumber@number number `uc  1 a 1 wreg ]
+"11
+[v lcd_writeNumber@code code `uc  1 a 1 17 ]
+"7
+[v lcd_writeNumber@number number `uc  1 a 1 wreg ]
+"9
+[v lcd_writeNumber@number number `uc  1 a 1 18 ]
+"17
+} 0
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 21 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 17 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 19 ]
+"25
+} 0
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 21 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 23 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 17 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 19 ]
+"30
+} 0
+"148 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+[v _coolerOn coolerOn `(v  1 e 1 0 ]
+{
+"153
+} 0
+"126
+[v _changeStatus changeStatus `(v  1 e 1 0 ]
+{
+"139
+} 0
+"43
+[v _off_state off_state `(v  1 e 1 0 ]
+{
+"47
+} 0
+"338
+[v _TIMER1_init TIMER1_init `(v  1 e 1 0 ]
+{
+"353
+} 0
+"328
+[v _IRQ_RB0_init IRQ_RB0_init `(v  1 e 1 0 ]
+{
+"336
+} 0
+"277
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"324
+} 0
+"265
+[v _update_tempreture update_tempreture `(v  1 e 1 0 ]
+{
+"267
+[v update_tempreture@temp temp `ui  1 a 2 7 ]
+"270
+[v update_tempreture@x x `uc  1 a 1 10 ]
+"269
+[v update_tempreture@y y `uc  1 a 1 9 ]
+"273
+} 0
+"27 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
+[v _itoa itoa `(v  1 e 1 0 ]
+{
+[v itoa@val val `ui  1 p 2 0 ]
+[v itoa@str str `*.4uc  1 p 1 2 ]
+"39
+} 0
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/lwmod.c
+[v i1___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v i1___lwmod@counter counter `uc  1 a 1 4 ]
+"5
+[v i1___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v i1___lwmod@dividend dividend `ui  1 p 2 2 ]
+"25
+} 0
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/lwdiv.c
+[v i1___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v i1___lwdiv@quotient quotient `ui  1 a 2 9 ]
+"11
+[v i1___lwdiv@counter counter `uc  1 a 1 11 ]
+"5
+[v i1___lwdiv@divisor divisor `ui  1 p 2 5 ]
+[v i1___lwdiv@dividend dividend `ui  1 p 2 7 ]
+"30
+} 0
+"44 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+[v _adc_amostra adc_amostra `(ui  1 e 2 0 ]
+{
+[v adc_amostra@canal canal `uc  1 a 1 wreg ]
+[v adc_amostra@canal canal `uc  1 a 1 wreg ]
+[v adc_amostra@canal canal `uc  1 a 1 9 ]
+"81
+} 0
+"15 /opt/microchip/xc8/v2.20/pic/sources/c90/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 0 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 10 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 12 ]
+"53
+} 0

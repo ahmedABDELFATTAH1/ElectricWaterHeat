@@ -4,4 +4,4 @@ config.h  \
 adc.h  \
 itoa.h  \
 lcd.h  \
-7-Segment.h 
+seven_segment.h 
