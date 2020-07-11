@@ -1111,136 +1111,152 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 293:             break;
 [e $U 145  ]
 "294
-[; ;main.c: 294:         default:
+[; ;main.c: 294:         case SETTING_STATE:
 [e :U 149 ]
 "295
-[; ;main.c: 295:             break;
-[e $U 145  ]
+[; ;main.c: 295:             TMR1ON = 0;
+[e = _TMR1ON -> -> 0 `i `b ]
 "296
-[; ;main.c: 296:     }
+[; ;main.c: 296:             TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"297
+[; ;main.c: 297:             state=OFF_STATE;
+[e = _state -> . `E870 1 `uc ]
+"298
+[; ;main.c: 298:             break;
+[e $U 145  ]
+"299
+[; ;main.c: 299:         default:
+[e :U 150 ]
+"300
+[; ;main.c: 300:             break;
+[e $U 145  ]
+"301
+[; ;main.c: 301:     }
 }
 [e $U 145  ]
 [e :U 146 ]
 [e [\ -> _state `i , $ . `E870 0 147
  , $ . `E870 1 148
- 149 ]
+ , $ . `E870 2 149
+ 150 ]
 [e :U 145 ]
-"299
-[; ;main.c: 299:     }
+"304
+[; ;main.c: 304:     }
 }
 [e :U 144 ]
-"302
-[; ;main.c: 302:    if (TMR1IF)
-[e $ ! _TMR1IF 150  ]
-"303
-[; ;main.c: 303:    {
-{
-"304
-[; ;main.c: 304:            TMR1IF = 0;
-[e = _TMR1IF -> -> 0 `i `b ]
-"305
-[; ;main.c: 305:            timer1counter++;
-[e ++ _timer1counter -> -> 1 `i `uc ]
-"306
-[; ;main.c: 306:            ReadTemp=0;
-[e = _ReadTemp -> -> 0 `i `uc ]
 "307
-[; ;main.c: 307:            if (timer1counter == 4){
-[e $ ! == -> _timer1counter `i -> 4 `i 151  ]
-{
+[; ;main.c: 307:    if (TMR1IF)
+[e $ ! _TMR1IF 151  ]
 "308
-[; ;main.c: 308:                 ReadTemp=1;
-[e = _ReadTemp -> -> 1 `i `uc ]
-"309
-[; ;main.c: 309:                 Number_Tempreture++;
-[e ++ _Number_Tempreture -> -> 1 `i `uc ]
-"310
-[; ;main.c: 310:                 timer1counter = 0;
-[e = _timer1counter -> -> 0 `i `uc ]
-"311
-[; ;main.c: 311:                 update_tempreture();
-[e ( _update_tempreture ..  ]
-"312
-[; ;main.c: 312:            }
-}
-[e :U 151 ]
-"313
-[; ;main.c: 313:             if(Number_Tempreture==10)
-[e $ ! == -> _Number_Tempreture `i -> 10 `i 152  ]
-"314
-[; ;main.c: 314:             {
+[; ;main.c: 308:    {
 {
+"309
+[; ;main.c: 309:            TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"310
+[; ;main.c: 310:            timer1counter++;
+[e ++ _timer1counter -> -> 1 `i `uc ]
+"311
+[; ;main.c: 311:            ReadTemp=0;
+[e = _ReadTemp -> -> 0 `i `uc ]
+"312
+[; ;main.c: 312:            if (timer1counter == 4){
+[e $ ! == -> _timer1counter `i -> 4 `i 152  ]
+{
+"313
+[; ;main.c: 313:                 ReadTemp=1;
+[e = _ReadTemp -> -> 1 `i `uc ]
+"314
+[; ;main.c: 314:                 Number_Tempreture++;
+[e ++ _Number_Tempreture -> -> 1 `i `uc ]
 "315
-[; ;main.c: 315:                TEMPRETURE=accumilated_tmeperature/10;
-[e = _TEMPRETURE / _accumilated_tmeperature -> -> 10 `i `ui ]
+[; ;main.c: 315:                 timer1counter = 0;
+[e = _timer1counter -> -> 0 `i `uc ]
+"316
+[; ;main.c: 316:                 update_tempreture();
+[e ( _update_tempreture ..  ]
 "317
-[; ;main.c: 317:                 RB5 = ~RB5;
-[e = _RB5 -> ~ -> _RB5 `ui `b ]
-"319
-[; ;main.c: 319:                 Number_Tempreture = 0;
-[e = _Number_Tempreture -> -> 0 `i `uc ]
-"320
-[; ;main.c: 320:                 accumilated_tmeperature= 0;
-[e = _accumilated_tmeperature -> -> 0 `i `ui ]
-"321
-[; ;main.c: 321:             }
+[; ;main.c: 317:            }
 }
 [e :U 152 ]
+"318
+[; ;main.c: 318:             if(Number_Tempreture==10)
+[e $ ! == -> _Number_Tempreture `i -> 10 `i 153  ]
+"319
+[; ;main.c: 319:             {
+{
+"320
+[; ;main.c: 320:                TEMPRETURE=accumilated_tmeperature/10;
+[e = _TEMPRETURE / _accumilated_tmeperature -> -> 10 `i `ui ]
 "322
-[; ;main.c: 322:    }
-}
-[e :U 150 ]
+[; ;main.c: 322:                 RB5 = ~RB5;
+[e = _RB5 -> ~ -> _RB5 `ui `b ]
 "324
-[; ;main.c: 324: }
+[; ;main.c: 324:                 Number_Tempreture = 0;
+[e = _Number_Tempreture -> -> 0 `i `uc ]
+"325
+[; ;main.c: 325:                 accumilated_tmeperature= 0;
+[e = _accumilated_tmeperature -> -> 0 `i `ui ]
+"326
+[; ;main.c: 326:             }
+}
+[e :U 153 ]
+"327
+[; ;main.c: 327:    }
+}
+[e :U 151 ]
+"329
+[; ;main.c: 329: }
 [e :UE 143 ]
 }
-"328
-[; ;main.c: 328: void IRQ_RB0_init (){
+"333
+[; ;main.c: 333: void IRQ_RB0_init (){
 [v _IRQ_RB0_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _IRQ_RB0_init ]
 [f ]
-"330
-[; ;main.c: 330:     INTE = 1;
+"335
+[; ;main.c: 335:     INTE = 1;
 [e = _INTE -> -> 1 `i `b ]
-"332
-[; ;main.c: 332:     INTEDG = 0;
+"337
+[; ;main.c: 337:     INTEDG = 0;
 [e = _INTEDG -> -> 0 `i `b ]
-"334
-[; ;main.c: 334:     GIE = 1;
+"339
+[; ;main.c: 339:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
-"336
-[; ;main.c: 336: }
-[e :UE 153 ]
+"341
+[; ;main.c: 341: }
+[e :UE 154 ]
 }
-"338
-[; ;main.c: 338: void TIMER1_init (){
+"343
+[; ;main.c: 343: void TIMER1_init (){
 [v _TIMER1_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _TIMER1_init ]
 [f ]
-"341
-[; ;main.c: 341:     TMR1 = 15535;
-[e = _TMR1 -> -> 15535 `i `us ]
-"343
-[; ;main.c: 343:     TMR1CS = 0;
-[e = _TMR1CS -> -> 0 `i `b ]
-"345
-[; ;main.c: 345:     T1CKPS0 = 0;
-[e = _T1CKPS0 -> -> 0 `i `b ]
 "346
-[; ;main.c: 346:     T1CKPS1 = 0;
-[e = _T1CKPS1 -> -> 0 `i `b ]
-"349
-[; ;main.c: 349:     TMR1IE = 1;
-[e = _TMR1IE -> -> 1 `i `b ]
+[; ;main.c: 346:     TMR1 = 15535;
+[e = _TMR1 -> -> 15535 `i `us ]
+"348
+[; ;main.c: 348:     TMR1CS = 0;
+[e = _TMR1CS -> -> 0 `i `b ]
 "350
-[; ;main.c: 350:     TMR1IF = 0;
-[e = _TMR1IF -> -> 0 `i `b ]
+[; ;main.c: 350:     T1CKPS0 = 0;
+[e = _T1CKPS0 -> -> 0 `i `b ]
 "351
-[; ;main.c: 351:     PEIE = 1;
+[; ;main.c: 351:     T1CKPS1 = 0;
+[e = _T1CKPS1 -> -> 0 `i `b ]
+"354
+[; ;main.c: 354:     TMR1IE = 1;
+[e = _TMR1IE -> -> 1 `i `b ]
+"355
+[; ;main.c: 355:     TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"356
+[; ;main.c: 356:     PEIE = 1;
 [e = _PEIE -> -> 1 `i `b ]
-"353
-[; ;main.c: 353: }
-[e :UE 154 ]
+"358
+[; ;main.c: 358: }
+[e :UE 155 ]
 }

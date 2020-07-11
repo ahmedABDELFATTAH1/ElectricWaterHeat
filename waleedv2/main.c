@@ -290,7 +290,12 @@ void __interrupt() ISR(void)
         case OFF_STATE:
             TMR1ON = 1;
             state=ON_STATE;
-            break;        
+            break;     
+        case SETTING_STATE:
+            TMR1ON = 0;
+            TMR1IF = 0;
+            state=OFF_STATE;
+            break;
         default:
             break;     
     }

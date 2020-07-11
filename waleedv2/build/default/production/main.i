@@ -2028,6 +2028,11 @@ void __attribute__((picinterrupt(("")))) ISR(void)
             TMR1ON = 1;
             state=ON_STATE;
             break;
+        case SETTING_STATE:
+            TMR1ON = 0;
+            TMR1IF = 0;
+            state=OFF_STATE;
+            break;
         default:
             break;
     }
