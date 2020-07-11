@@ -172,7 +172,6 @@ void on_state()
     switch (temp_state)
     {
     case OK_state:
-        off_state();
         break;
     case UPOVE_state:       
         heaterOn();
