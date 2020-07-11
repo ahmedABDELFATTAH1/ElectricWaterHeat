@@ -61,7 +61,7 @@ void flashDisplay()
         {
             state=ON_STATE;           
             count=0;
-//            EEPROM_Write(TEMP_ADDRESS,TargetTempreture);
+            EEPROM_Write(TEMP_ADDRESS,TargetTempreture);
             return;
         }
         else{
@@ -230,17 +230,17 @@ void main(void) {
     timer1counter=0;
     accumilated_tmeperature=0;
     TargetTempreture = 60;
-//  unsigned char flag=EEPROM_Read(FLAG_ADDRESS);
-//  __delay_ms(500);
-//  if(flag==1)
-//  {
-//      TargetTempreture=EEPROM_Read(TEMP_ADDRESS);  
-//  }
-//  else
-//  {
-//    EEPROM_Write(FLAG_ADDRESS,0x01); 
-//    TargetTempreture=60;
-//  }    
+    unsigned char flag=EEPROM_Read(FLAG_ADDRESS);
+    __delay_ms(500);
+    if(flag==1)
+    {
+        TargetTempreture=EEPROM_Read(TEMP_ADDRESS);  
+    }
+    else
+    {
+      EEPROM_Write(FLAG_ADDRESS,0x01); 
+      TargetTempreture=60;
+    }    
  
 while (1)
 {  

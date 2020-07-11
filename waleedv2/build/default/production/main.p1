@@ -24,7 +24,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 62:             state=ON_STATE;
 [c E896 0 1 2 .. ]
 [n E896 States ON_STATE OFF_STATE SETTING_STATE  ]
-"45
+"27 ./ext_eeprom.h
+[; ;./ext_eeprom.h: 27: void EEPROM_Write(unsigned char add, unsigned char data);
+[v _EEPROM_Write `(v ~T0 @X0 0 ef2`uc`uc ]
+"45 main.c
 [; ;main.c: 45: void displayDeiredTempreture();
 [v _displayDeiredTempreture `(v ~T0 @X0 0 e? ]
 [v F842 `(v ~T0 @X0 1 tf1`ul ]
@@ -98,6 +101,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27 ./adc.h
 [; ;./adc.h: 27: void adc_init(void);
 [v _adc_init `(v ~T0 @X0 0 ef ]
+"29 ./ext_eeprom.h
+[; ;./ext_eeprom.h: 29: unsigned char EEPROM_Read(unsigned int add);
+[v _EEPROM_Read `(uc ~T0 @X0 0 ef1`ui ]
 "12 ./seven_segment.h
 [; ;./seven_segment.h: 12: void lcd_writeNumber(unsigned char number);
 [v _lcd_writeNumber `(v ~T0 @X0 0 ef1`uc ]
@@ -430,6 +436,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "63
 [; ;main.c: 63:             count=0;
 [e = F921 -> -> 0 `i `uc ]
+"64
+[; ;main.c: 64:             EEPROM_Write(0x00,TargetTempreture);
+[e ( _EEPROM_Write (2 , -> -> 0 `i `uc -> _TargetTempreture `uc ]
 "65
 [; ;main.c: 65:             return;
 [e $UE 96  ]
@@ -912,67 +921,103 @@ Version 4.0 HI-TECH Software Intermediate Code
 "232
 [; ;main.c: 232:     TargetTempreture = 60;
 [e = _TargetTempreture -> 60 `i ]
+"233
+[; ;main.c: 233:     unsigned char flag=EEPROM_Read(0x01);
+[v _flag `uc ~T0 @X0 1 a ]
+[e = _flag ( _EEPROM_Read (1 -> -> 1 `i `ui ]
+"234
+[; ;main.c: 234:     _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"235
+[; ;main.c: 235:     if(flag==1)
+[e $ ! == -> _flag `i -> 1 `i 131  ]
+"236
+[; ;main.c: 236:     {
+{
+"237
+[; ;main.c: 237:         TargetTempreture=EEPROM_Read(0x00);
+[e = _TargetTempreture -> ( _EEPROM_Read (1 -> -> 0 `i `ui `i ]
+"238
+[; ;main.c: 238:     }
+}
+[e $U 132  ]
+"239
+[; ;main.c: 239:     else
+[e :U 131 ]
+"240
+[; ;main.c: 240:     {
+{
+"241
+[; ;main.c: 241:       EEPROM_Write(0x01,0x01);
+[e ( _EEPROM_Write (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"242
+[; ;main.c: 242:       TargetTempreture=60;
+[e = _TargetTempreture -> 60 `i ]
+"243
+[; ;main.c: 243:     }
+}
+[e :U 132 ]
 "245
 [; ;main.c: 245: while (1)
-[e :U 132 ]
+[e :U 134 ]
 "246
 [; ;main.c: 246: {
 {
 "247
 [; ;main.c: 247:     switch(state)
-[e $U 135  ]
+[e $U 137  ]
 "248
 [; ;main.c: 248:     {
 {
 "249
 [; ;main.c: 249:         case ON_STATE:
-[e :U 136 ]
+[e :U 138 ]
 "250
 [; ;main.c: 250:             on_state();
 [e ( _on_state ..  ]
 "251
 [; ;main.c: 251:             break;
-[e $U 134  ]
+[e $U 136  ]
 "252
 [; ;main.c: 252:         case OFF_STATE:
-[e :U 137 ]
+[e :U 139 ]
 "253
 [; ;main.c: 253:             off_state();
 [e ( _off_state ..  ]
 "254
 [; ;main.c: 254:             break;
-[e $U 134  ]
+[e $U 136  ]
 "255
 [; ;main.c: 255:         case SETTING_STATE:
-[e :U 138 ]
+[e :U 140 ]
 "256
 [; ;main.c: 256:             setting_state();
 [e ( _setting_state ..  ]
 "257
 [; ;main.c: 257:             break;
-[e $U 134  ]
+[e $U 136  ]
 "258
 [; ;main.c: 258:         default:
-[e :U 139 ]
+[e :U 141 ]
 "259
 [; ;main.c: 259:             break;
-[e $U 134  ]
+[e $U 136  ]
 "260
 [; ;main.c: 260:     }
 }
-[e $U 134  ]
-[e :U 135 ]
-[e [\ -> _state `i , $ . `E896 0 136
- , $ . `E896 1 137
- , $ . `E896 2 138
- 139 ]
-[e :U 134 ]
+[e $U 136  ]
+[e :U 137 ]
+[e [\ -> _state `i , $ . `E896 0 138
+ , $ . `E896 1 139
+ , $ . `E896 2 140
+ 141 ]
+[e :U 136 ]
 "262
 [; ;main.c: 262: }
 }
-[e :U 131 ]
-[e $U 132  ]
 [e :U 133 ]
+[e $U 134  ]
+[e :U 135 ]
 "263
 [; ;main.c: 263: }
 [e :UE 130 ]
@@ -1019,7 +1064,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
 "276
 [; ;main.c: 276: }
-[e :UE 140 ]
+[e :UE 142 ]
 }
 "278
 [; ;main.c: 278: void displayDeiredTempreture()
@@ -1063,7 +1108,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
 "290
 [; ;main.c: 290: }
-[e :UE 141 ]
+[e :UE 143 ]
 }
 "292
 [; ;main.c: 292: void update_tempreture ()
@@ -1093,10 +1138,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e =+ _accumilated_tmeperature -> + * -> _y `i -> 10 `i -> _x `i `ui ]
 "299
 [; ;main.c: 299:     return;
-[e $UE 142  ]
+[e $UE 144  ]
 "300
 [; ;main.c: 300: }
-[e :UE 142 ]
+[e :UE 144 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
 "304
@@ -1109,7 +1154,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "307
 [; ;main.c: 307:   if (INTF)
-[e $ ! _INTF 144  ]
+[e $ ! _INTF 146  ]
 "308
 [; ;main.c: 308:   {
 {
@@ -1118,13 +1163,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _INTF -> -> 0 `i `b ]
 "310
 [; ;main.c: 310:     switch(state)
-[e $U 146  ]
+[e $U 148  ]
 "311
 [; ;main.c: 311:     {
 {
 "312
 [; ;main.c: 312:         case ON_STATE:
-[e :U 147 ]
+[e :U 149 ]
 "313
 [; ;main.c: 313:             TMR1ON = 0;
 [e = _TMR1ON -> -> 0 `i `b ]
@@ -1136,10 +1181,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _state -> . `E896 1 `uc ]
 "316
 [; ;main.c: 316:             break;
-[e $U 145  ]
+[e $U 147  ]
 "317
 [; ;main.c: 317:         case OFF_STATE:
-[e :U 148 ]
+[e :U 150 ]
 "318
 [; ;main.c: 318:             TMR1ON = 1;
 [e = _TMR1ON -> -> 1 `i `b ]
@@ -1148,10 +1193,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _state -> . `E896 0 `uc ]
 "320
 [; ;main.c: 320:             break;
-[e $U 145  ]
+[e $U 147  ]
 "321
 [; ;main.c: 321:         case SETTING_STATE:
-[e :U 149 ]
+[e :U 151 ]
 "322
 [; ;main.c: 322:             TMR1ON = 0;
 [e = _TMR1ON -> -> 0 `i `b ]
@@ -1163,30 +1208,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _state -> . `E896 1 `uc ]
 "325
 [; ;main.c: 325:             break;
-[e $U 145  ]
+[e $U 147  ]
 "326
 [; ;main.c: 326:         default:
-[e :U 150 ]
+[e :U 152 ]
 "327
 [; ;main.c: 327:             break;
-[e $U 145  ]
+[e $U 147  ]
 "328
 [; ;main.c: 328:     }
 }
-[e $U 145  ]
-[e :U 146 ]
-[e [\ -> _state `i , $ . `E896 0 147
- , $ . `E896 1 148
- , $ . `E896 2 149
- 150 ]
-[e :U 145 ]
+[e $U 147  ]
+[e :U 148 ]
+[e [\ -> _state `i , $ . `E896 0 149
+ , $ . `E896 1 150
+ , $ . `E896 2 151
+ 152 ]
+[e :U 147 ]
 "331
 [; ;main.c: 331:     }
 }
-[e :U 144 ]
+[e :U 146 ]
 "334
 [; ;main.c: 334:    if (TMR1IF)
-[e $ ! _TMR1IF 151  ]
+[e $ ! _TMR1IF 153  ]
 "335
 [; ;main.c: 335:    {
 {
@@ -1201,7 +1246,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ReadTemp -> -> 0 `i `uc ]
 "339
 [; ;main.c: 339:            if (timer1counter == 4){
-[e $ ! == -> _timer1counter `i -> 4 `i 152  ]
+[e $ ! == -> _timer1counter `i -> 4 `i 154  ]
 {
 "340
 [; ;main.c: 340:                 ReadTemp=1;
@@ -1218,10 +1263,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "344
 [; ;main.c: 344:            }
 }
-[e :U 152 ]
+[e :U 154 ]
 "345
 [; ;main.c: 345:             if(Number_Tempreture==10)
-[e $ ! == -> _Number_Tempreture `i -> 10 `i 153  ]
+[e $ ! == -> _Number_Tempreture `i -> 10 `i 155  ]
 "346
 [; ;main.c: 346:             {
 {
@@ -1240,14 +1285,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "353
 [; ;main.c: 353:             }
 }
-[e :U 153 ]
+[e :U 155 ]
 "354
 [; ;main.c: 354:    }
 }
-[e :U 151 ]
+[e :U 153 ]
 "356
 [; ;main.c: 356: }
-[e :UE 143 ]
+[e :UE 145 ]
 }
 "360
 [; ;main.c: 360: void IRQ_RB0_init (){
@@ -1266,7 +1311,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _GIE -> -> 1 `i `b ]
 "368
 [; ;main.c: 368: }
-[e :UE 154 ]
+[e :UE 156 ]
 }
 "370
 [; ;main.c: 370: void TIMER1_init (){
@@ -1297,5 +1342,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _PEIE -> -> 1 `i `b ]
 "385
 [; ;main.c: 385: }
-[e :UE 155 ]
+[e :UE 157 ]
 }
