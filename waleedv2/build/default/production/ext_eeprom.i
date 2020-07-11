@@ -1720,7 +1720,7 @@ extern __bank0 __bit __timeout;
 # 2 "ext_eeprom.c" 2
 
 # 1 "./ext_eeprom.h" 1
-# 17 "./ext_eeprom.h"
+# 10 "./ext_eeprom.h"
 void I2C_Master_Init(const unsigned long baud);
 void I2C_Master_Wait();
 void I2C_Master_Start();

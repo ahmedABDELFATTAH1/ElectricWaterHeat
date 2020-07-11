@@ -8,12 +8,6 @@
 # 2 "<built-in>" 2
 # 1 "main.c" 2
 
-
-
-
-
-
-
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -1723,7 +1717,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 8 "main.c" 2
+# 2 "main.c" 2
 
 # 1 "./config.h" 1
 # 84 "./config.h"
@@ -1735,35 +1729,30 @@ extern __bank0 __bit __timeout;
 #pragma config CPD = OFF
 #pragma config WRT = OFF
 #pragma config CP = OFF
-# 9 "main.c" 2
+# 3 "main.c" 2
 
 # 1 "./adc.h" 1
 # 27 "./adc.h"
 void adc_init(void);
 
 unsigned int adc_amostra(unsigned char canal);
-# 10 "main.c" 2
+# 4 "main.c" 2
 
 # 1 "./itoa.h" 1
-# 26 "./itoa.h"
 void itoa(unsigned int val, unsigned char* str );
-# 11 "main.c" 2
-
-# 1 "./lcd.h" 1
-# 42 "./lcd.h"
-void lcd_init(void);
-void lcd_cmd(unsigned char val);
-void lcd_dat(unsigned char val);
-void lcd_str(const char* str);
-# 12 "main.c" 2
+# 5 "main.c" 2
 
 # 1 "./seven_segment.h" 1
-# 12 "./seven_segment.h"
+# 14 "./seven_segment.h"
 void lcd_writeNumber(unsigned char number);
-# 13 "main.c" 2
+
+void displayTempreture(unsigned int TEMPRETURE);
+
+void displayDeiredTempreture(int TargetTempreture);
+# 6 "main.c" 2
 
 # 1 "./ext_eeprom.h" 1
-# 17 "./ext_eeprom.h"
+# 10 "./ext_eeprom.h"
 void I2C_Master_Init(const unsigned long baud);
 void I2C_Master_Wait();
 void I2C_Master_Start();
@@ -1778,41 +1767,260 @@ void EEPROM_Write(unsigned char add, unsigned char data);
 void EEPROM_Write_Page(unsigned int add, unsigned char* data, unsigned char len);
 unsigned char EEPROM_Read(unsigned int add);
 void EEPROM_Read_Page(unsigned int add, unsigned char* data, unsigned int len);
-# 14 "main.c" 2
+# 7 "main.c" 2
 
-# 1 "./7-Segment.h" 1
-# 28 "./7-Segment.h"
-unsigned char display7s(unsigned char v);
-# 15 "main.c" 2
-# 26 "main.c"
+# 1 "./timer.h" 1
+
+
+
+
+void TIMER1_init ();
+# 8 "main.c" 2
+
+# 1 "./heater.h" 1
+
+
+void heaterOn();
+# 9 "main.c" 2
+
+# 1 "./cooler.h" 1
+
+
+void coolerOn();
+# 10 "main.c" 2
+# 30 "main.c"
 typedef unsigned char bool;
 
 
+
 int TargetTempreture = 60;
+
 unsigned int TEMPRETURE;
+
 unsigned int accumilated_tmeperature;
-unsigned char str[6];
+
+unsigned char str[2];
+
+
+
+
 enum States{ON_STATE,OFF_STATE,SETTING_STATE};
+
+
+
+
 enum Temp_Status{OK_state,UPOVE_state,DOWN_state};
+
 unsigned char state;
+
 unsigned char temp_state;
+
+
 unsigned char Number_Tempreture;
+
 unsigned char timer1counter;
-unsigned char canuse= 1;
-bool ReadTemp;
+
+
+unsigned char canuse;
+
+
+enum Prev_Button_Status{PREV_UN_STABLE,PREV_STABLE};
+
+
+
 void IRQ_RB0_init ();
-void TIMER1_init ();
-void displayTempreture();
 void update_tempreture();
-void displayDeiredTempreture();
 void flashDisplay();
+void setting_state();
+void off_state();
+void changeStatus();
+void on_state();
+
+void main(void) {
+    TIMER1_init ();
+    IRQ_RB0_init ();
+    I2C_Master_Init(100000);
+
+
+    TRISA = 0x07;
+
+    TRISD = 0x00;
+
+    PORTD = 0x00;
+
+    TRISC5 = 0;
+    TRISC2 = 0;
+    RC2 = 0;
+    RC5 = 0;
+    TRISB7 = 0;
+    TRISB3 = 1;
+    TRISB4 = 1;
+    RB7 =0;
+    TRISB5 = 0;
+    RB5 =0;
+    Number_Tempreture=0;
+    canuse= 1;
+    adc_init();
+    state=OFF_STATE;
+    temp_state=OK_state;
+
+    timer1counter=0;
+    accumilated_tmeperature=0;
+    TargetTempreture = 60;
+    unsigned char flag=EEPROM_Read(0x01);
+    _delay((unsigned long)((500)*(8000000/4000.0)));
+    if(flag==1)
+    {
+        TargetTempreture=EEPROM_Read(0x00);
+    }
+    else
+    {
+      EEPROM_Write(0x01,0x01);
+      TargetTempreture=60;
+    }
+
+    while (1)
+    {
+        switch(state)
+        {
+            case ON_STATE:
+                on_state();
+                break;
+            case OFF_STATE:
+                off_state();
+                break;
+            case SETTING_STATE:
+                setting_state();
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+void setting_state()
+{
+     TMR1ON = 0;
+     RC2=0;
+     RC5=0;
+     flashDisplay();
+}
+
 void off_state()
 {
     RC2=0;
     RC5=0;
 }
+void on_state()
+{
+    TMR1ON = 1;
+    if(PORTBbits.RB3==0||PORTBbits.RB4==0)
+    {
+        state=SETTING_STATE;
+        return;
+    }
+    displayTempreture(TEMPRETURE);
+    changeStatus();
+    switch (temp_state)
+    {
+        case OK_state:
+            break;
+        case UPOVE_state:
+            heaterOn();
+            break;
+        case DOWN_state:
+            coolerOn();
+            break;
+        default:
+            break;
+    }
+}
+void changeStatus()
+{
+    if(TEMPRETURE<TargetTempreture+5 && canuse == 1)
+    {
+        temp_state=UPOVE_state;
 
-enum Prev_Button_Status{PREV_UN_STABLE,PREV_STABLE};
+    }else{
+        canuse= 0;
+        if(TEMPRETURE>TargetTempreture && canuse == 0)
+        {
+            temp_state=DOWN_state;
+        }
+        else{
+            canuse= 1;
+            temp_state=OK_state;
+            RC2=0;
+            RC5=0;
+        }
+    }
+}
+void update_tempreture ()
+{
+    unsigned int temp=(adc_amostra(2)*10)/2;
+    itoa(temp,str);
+    unsigned char y= str[0];
+    unsigned char x= str[1];
+    accumilated_tmeperature += (y*10)+x;
+    return;
+}
+void __attribute__((picinterrupt(("")))) ISR(void)
+{
+  if (INTF)
+  {
+        INTF = 0;
+        switch(state)
+        {
+            case ON_STATE:
+                TMR1ON = 0;
+                TMR1IF = 0;
+                state=OFF_STATE;
+                break;
+            case OFF_STATE:
+                TMR1ON = 1;
+                state=ON_STATE;
+                break;
+            case SETTING_STATE:
+                TMR1ON = 0;
+                TMR1IF = 0;
+                state=OFF_STATE;
+                break;
+            default:
+                break;
+        }
+    }
+
+   if (TMR1IF)
+   {
+        TMR1IF = 0;
+        timer1counter++;
+
+        if (timer1counter == 4){
+
+             Number_Tempreture++;
+             timer1counter = 0;
+             update_tempreture();
+        }
+         if(Number_Tempreture==10)
+         {
+            TEMPRETURE=accumilated_tmeperature/10;
+
+             RB5 = ~RB5;
+
+             Number_Tempreture = 0;
+             accumilated_tmeperature= 0;
+         }
+   }
+}
+void IRQ_RB0_init (){
+
+    INTE = 1;
+
+    INTEDG = 0;
+
+    GIE = 1;
+
+}
 void flashDisplay()
 {
     static unsigned char count=0;
@@ -1834,7 +2042,7 @@ void flashDisplay()
     }
    for(int i=0;i<25;i++)
    {
-    displayDeiredTempreture();
+    displayDeiredTempreture(TargetTempreture);
     if(PORTBbits.RB3==0&&prev_status==PREV_STABLE)
        {
            if(TargetTempreture<75)
@@ -1887,261 +2095,5 @@ void flashDisplay()
      }
 
    }
-
-}
-void changeStatus()
-{
-    if(TEMPRETURE<TargetTempreture+5 && canuse == 1)
-    {
-        temp_state=UPOVE_state;
-
-    }else{
-        canuse= 0;
-        if(TEMPRETURE>TargetTempreture && canuse == 0)
-        {
-            temp_state=DOWN_state;
-        }
-        else{
-            canuse= 1;
-            temp_state=OK_state;
-            RC2=0;
-            RC5=0;
-        }
-    }
-}
-
-
-void heaterOn()
-{
-    RC2=0;
-    RC5=1;
-}
-
-void coolerOn()
-{
-    RC5 = 0;
-    RC2=1;
-
-}
-
-
-void on_state()
-{
-    TMR1ON = 1;
-    if(PORTBbits.RB3==0||PORTBbits.RB4==0)
-    {
-        state=SETTING_STATE;
-        return;
-    }
-    displayTempreture();
-    changeStatus();
-
-    switch (temp_state)
-    {
-    case OK_state:
-        break;
-    case UPOVE_state:
-        heaterOn();
-        break;
-    case DOWN_state:
-        coolerOn();
-        break;
-    default:
-        break;
-    }
-
-}
-
-void setting_state()
-{
-     TMR1ON = 0;
-     RC2=0;
-     RC5=0;
-     flashDisplay();
-
-}
-
-void main(void) {
-
-    TIMER1_init ();
-    IRQ_RB0_init ();
-    I2C_Master_Init(100000);
-
-
-    TRISA = 0x07;
-
-    TRISD = 0x00;
-
-    PORTD = 0x00;
-
-    TRISC5 = 0;
-    TRISC2 = 0;
-    RC2 = 0;
-    RC5 = 0;
-    TRISB7 = 0;
-    TRISB3 = 1;
-    TRISB4 = 1;
-    RB7 =0;
-    TRISB5 = 0;
-    RB5 =0;
-    Number_Tempreture=0;
-    adc_init();
-    state=OFF_STATE;
-    temp_state=OK_state;
-    ReadTemp=0;
-    timer1counter=0;
-    accumilated_tmeperature=0;
-    TargetTempreture = 60;
-    unsigned char flag=EEPROM_Read(0x01);
-    _delay((unsigned long)((500)*(8000000/4000.0)));
-    if(flag==1)
-    {
-        TargetTempreture=EEPROM_Read(0x00);
-    }
-    else
-    {
-      EEPROM_Write(0x01,0x01);
-      TargetTempreture=60;
-    }
-
-while (1)
-{
-    switch(state)
-    {
-        case ON_STATE:
-            on_state();
-            break;
-        case OFF_STATE:
-            off_state();
-            break;
-        case SETTING_STATE:
-            setting_state();
-            break;
-        default:
-            break;
-    }
-
-}
-}
-void displayTempreture()
-{
-    unsigned char low=TEMPRETURE%10;
-    unsigned char high=TEMPRETURE/10;
-     PORTAbits.RA5=1;
-    lcd_writeNumber(low);
-    _delay((unsigned long)((10)*(8000000/4000.0)));
-    PORTAbits.RA5=0;
-   lcd_writeNumber(high);
-   PORTAbits.RA4=1;
-   _delay((unsigned long)((10)*(8000000/4000.0)));
-    PORTAbits.RA4=0;
-}
-
-void displayDeiredTempreture()
-{
-    unsigned char low=TargetTempreture%10;
-    unsigned char high=TargetTempreture/10;
-     PORTAbits.RA5=1;
-    lcd_writeNumber(low);
-    _delay((unsigned long)((10)*(8000000/4000.0)));
-    PORTAbits.RA5=0;
-   lcd_writeNumber(high);
-   PORTAbits.RA4=1;
-   _delay((unsigned long)((10)*(8000000/4000.0)));
-    PORTAbits.RA4=0;
-}
-
-void update_tempreture ()
-{
-    unsigned int temp=(adc_amostra(2)*10)/2;
-    itoa(temp,str);
-    unsigned char y= str[2];
-    unsigned char x= str[3];
-    accumilated_tmeperature += (y*10)+x;
-    return;
-}
-
-
-
-void __attribute__((picinterrupt(("")))) ISR(void)
-{
-
-  if (INTF)
-  {
-    INTF = 0;
-    switch(state)
-    {
-        case ON_STATE:
-            TMR1ON = 0;
-            TMR1IF = 0;
-            state=OFF_STATE;
-            break;
-        case OFF_STATE:
-            TMR1ON = 1;
-            state=ON_STATE;
-            break;
-        case SETTING_STATE:
-            TMR1ON = 0;
-            TMR1IF = 0;
-            state=OFF_STATE;
-            break;
-        default:
-            break;
-    }
-
-
-    }
-
-
-   if (TMR1IF)
-   {
-           TMR1IF = 0;
-           timer1counter++;
-           ReadTemp=0;
-           if (timer1counter == 4){
-                ReadTemp=1;
-                Number_Tempreture++;
-                timer1counter = 0;
-                update_tempreture();
-           }
-            if(Number_Tempreture==10)
-            {
-               TEMPRETURE=accumilated_tmeperature/10;
-
-                RB5 = ~RB5;
-
-                Number_Tempreture = 0;
-                accumilated_tmeperature= 0;
-            }
-   }
-
-}
-
-
-
-void IRQ_RB0_init (){
-
-    INTE = 1;
-
-    INTEDG = 0;
-
-    GIE = 1;
-
-}
-
-void TIMER1_init (){
-
-
-    TMR1 = 15535;
-
-    TMR1CS = 0;
-
-    T1CKPS0 = 0;
-    T1CKPS1 = 0;
-
-
-    TMR1IE = 1;
-    TMR1IF = 0;
-    PEIE = 1;
 
 }

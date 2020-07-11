@@ -1,4 +1,4 @@
-# 1 "lcd.c"
+# 1 "timer.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "lcd.c" 2
-# 26 "lcd.c"
+# 1 "timer.c" 2
+# 1 "./timer.h" 1
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -1717,70 +1717,26 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 26 "lcd.c" 2
-
-# 1 "./lcd.h" 1
-# 42 "./lcd.h"
-void lcd_init(void);
-void lcd_cmd(unsigned char val);
-void lcd_dat(unsigned char val);
-void lcd_str(const char* str);
-# 27 "lcd.c" 2
+# 1 "./timer.h" 2
 
 
-void lcd_wr(unsigned char val)
-{
-  PORTD=val;
-}
 
-void lcd_cmd(unsigned char val)
-{
- PORTEbits.RE1=1;
-        lcd_wr(val);
-        PORTEbits.RE2=0;
-        _delay((unsigned long)((3)*(8000000/4000.0)));
-        PORTEbits.RE1=0;
-        _delay((unsigned long)((3)*(8000000/4000.0)));
- PORTEbits.RE1=1;
-}
 
-void lcd_dat(unsigned char val)
-{
- PORTEbits.RE1=1;
-        lcd_wr(val);
-        PORTEbits.RE2=1;
-        _delay((unsigned long)((3)*(8000000/4000.0)));
-        PORTEbits.RE1=0;
-        _delay((unsigned long)((3)*(8000000/4000.0)));
- PORTEbits.RE1=1;
-}
+void TIMER1_init ();
+# 1 "timer.c" 2
 
-void lcd_init(void)
-{
- PORTEbits.RE1=0;
- PORTEbits.RE2=0;
- _delay((unsigned long)((20)*(8000000/4000.0)));
- PORTEbits.RE1=1;
 
- lcd_cmd(0x38);
- _delay((unsigned long)((5)*(8000000/4000.0)));
- lcd_cmd(0x38);
-    _delay((unsigned long)((1)*(8000000/4000.0)));
- lcd_cmd(0x38);
- lcd_cmd(0x08);
- lcd_cmd(0x0F);
- lcd_cmd(0x01);
- lcd_cmd(0x38);
-    lcd_cmd(0x80);
-}
+void TIMER1_init (){
 
-void lcd_str(const char* str)
-{
- unsigned char i=0;
 
- while(str[i] != 0 )
- {
-   lcd_dat(str[i]);
-   i++;
- }
+    TMR1 = 15535;
+
+    TMR1CS = 0;
+
+    T1CKPS0 = 0;
+    T1CKPS1 = 0;
+
+    TMR1IE = 1;
+    TMR1IF = 0;
+    PEIE = 1;
 }

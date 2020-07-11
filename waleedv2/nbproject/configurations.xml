@@ -7,10 +7,11 @@
       <itemPath>config.h</itemPath>
       <itemPath>adc.h</itemPath>
       <itemPath>itoa.h</itemPath>
-      <itemPath>lcd.h</itemPath>
-      <itemPath>7-Segment.h</itemPath>
       <itemPath>seven_segment.h</itemPath>
       <itemPath>ext_eeprom.h</itemPath>
+      <itemPath>timer.h</itemPath>
+      <itemPath>heater.h</itemPath>
+      <itemPath>cooler.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -22,10 +23,11 @@
       <itemPath>main.c</itemPath>
       <itemPath>adc.c</itemPath>
       <itemPath>itoa.c</itemPath>
-      <itemPath>lcd.c</itemPath>
-      <itemPath>7-Segment.c</itemPath>
       <itemPath>seven_segment.c</itemPath>
       <itemPath>ext_eeprom.c</itemPath>
+      <itemPath>timer.c</itemPath>
+      <itemPath>heater.c</itemPath>
+      <itemPath>cooler.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -48,7 +50,7 @@
         <platformTool>pk4hybrid</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>2.20</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="PIC16Fxxx_DFP" vendor="Microchip" version="1.2.33"/>

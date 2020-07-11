@@ -1,10 +1,3 @@
-/* 
- * File:   ext_eeprom.h
- * Author: ahmed
- *
- * Created on July 11, 2020, 1:50 PM
- */
-
 #ifndef EXT_EEPROM_H
 #define	EXT_EEPROM_H
 
