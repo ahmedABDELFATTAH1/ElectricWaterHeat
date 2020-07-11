@@ -3,18 +3,18 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
-"57 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"56 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [e E916 Prev_Button_Status `uc
 PREV_UN_STABLE 0
 PREV_STABLE 1
 ]
-"62
+"61
 [e E896 States `uc
 ON_STATE 0
 OFF_STATE 1
 SETTING_STATE 2
 ]
-"134
+"133
 [e E900 Temp_Status `uc
 OK_state 0
 UPOVE_state 1
@@ -78,31 +78,31 @@ DOWN_state 2
 [v _lcd_dat lcd_dat `(v  1 e 1 0 ]
 "46 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _off_state off_state `(v  1 e 1 0 ]
-"54
+"53
 [v _flashDisplay flashDisplay `(v  1 e 1 0 ]
-"130
+"129
 [v _changeStatus changeStatus `(v  1 e 1 0 ]
-"146
+"147
 [v _heaterOn heaterOn `(v  1 e 1 0 ]
-"152
+"153
 [v _coolerOn coolerOn `(v  1 e 1 0 ]
-"158
+"161
 [v _on_state on_state `(v  1 e 1 0 ]
-"185
+"189
 [v _setting_state setting_state `(v  1 e 1 0 ]
-"194
+"198
 [v _main main `(v  1 e 1 0 ]
-"255
+"259
 [v _displayTempreture displayTempreture `(v  1 e 1 0 ]
-"269
+"273
 [v _displayDeiredTempreture displayDeiredTempreture `(v  1 e 1 0 ]
-"283
+"287
 [v _update_tempreture update_tempreture `(v  1 e 1 0 ]
-"295
+"299
 [v _ISR ISR `II(v  1 e 1 0 ]
-"351
+"355
 [v _IRQ_RB0_init IRQ_RB0_init `(v  1 e 1 0 ]
-"361
+"365
 [v _TIMER1_init TIMER1_init `(v  1 e 1 0 ]
 "7 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
 [v _lcd_writeNumber lcd_writeNumber `(v  1 e 1 0 ]
@@ -266,39 +266,39 @@ DOWN_state 2
 [v _ReadTemp ReadTemp `uc  1 e 1 0 ]
 "5 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
 [v _segments_code segments_code `[10]uc  1 e 10 0 ]
-"194 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"198 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"224
+"228
 [v main@flag flag `uc  1 a 1 8 ]
-"254
+"258
 } 0
-"185
+"189
 [v _setting_state setting_state `(v  1 e 1 0 ]
 {
-"192
+"196
 } 0
-"54
+"53
 [v _flashDisplay flashDisplay `(v  1 e 1 0 ]
 {
-"103
+"102
 [v flashDisplay@i_182 i `i  1 a 2 2 ]
-"73
+"72
 [v flashDisplay@i i `i  1 a 2 0 ]
-"56
+"55
 [v flashDisplay@count count `uc  1 s 1 count ]
-"57
+"56
 [v flashDisplay@prev_status prev_status `uc  1 s 1 prev_status ]
-"129
+"128
 } 0
-"269
+"273
 [v _displayDeiredTempreture displayDeiredTempreture `(v  1 e 1 0 ]
 {
-"272
+"276
 [v displayDeiredTempreture@high high `uc  1 a 1 28 ]
-"271
+"275
 [v displayDeiredTempreture@low low `uc  1 a 1 27 ]
-"281
+"285
 } 0
 "5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -339,24 +339,29 @@ DOWN_state 2
 {
 "31
 } 0
-"158 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"161 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _on_state on_state `(v  1 e 1 0 ]
 {
-"183
+"187
 } 0
-"146
+"46
+[v _off_state off_state `(v  1 e 1 0 ]
+{
+"50
+} 0
+"147
 [v _heaterOn heaterOn `(v  1 e 1 0 ]
 {
-"150
+"151
 } 0
-"255
+"259
 [v _displayTempreture displayTempreture `(v  1 e 1 0 ]
 {
-"258
+"262
 [v displayTempreture@high high `uc  1 a 1 27 ]
-"257
+"261
 [v displayTempreture@low low `uc  1 a 1 26 ]
-"267
+"271
 } 0
 "7 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
 [v _lcd_writeNumber lcd_writeNumber `(v  1 e 1 0 ]
@@ -392,35 +397,30 @@ DOWN_state 2
 [v ___lwdiv@dividend dividend `ui  1 p 2 19 ]
 "30
 } 0
-"152 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"153 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _coolerOn coolerOn `(v  1 e 1 0 ]
 {
-"157
+"158
 } 0
-"130
+"129
 [v _changeStatus changeStatus `(v  1 e 1 0 ]
 {
-"143
-} 0
-"46
-[v _off_state off_state `(v  1 e 1 0 ]
-{
-"50
+"144
 } 0
 "30 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
 [v _adc_init adc_init `(v  1 e 1 0 ]
 {
 "42
 } 0
-"361 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"365 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _TIMER1_init TIMER1_init `(v  1 e 1 0 ]
 {
-"376
+"380
 } 0
-"351
+"355
 [v _IRQ_RB0_init IRQ_RB0_init `(v  1 e 1 0 ]
 {
-"359
+"363
 } 0
 "9 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/ext_eeprom.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
@@ -483,21 +483,21 @@ DOWN_state 2
 {
 "21
 } 0
-"295 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"299 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"347
+"351
 } 0
-"283
+"287
 [v _update_tempreture update_tempreture `(v  1 e 1 0 ]
 {
-"285
+"289
 [v update_tempreture@temp temp `ui  1 a 2 7 ]
-"288
+"292
 [v update_tempreture@x x `uc  1 a 1 10 ]
-"287
-[v update_tempreture@y y `uc  1 a 1 9 ]
 "291
+[v update_tempreture@y y `uc  1 a 1 9 ]
+"295
 } 0
 "27 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
 [v _itoa itoa `(v  1 e 1 0 ]

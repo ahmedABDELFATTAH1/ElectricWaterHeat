@@ -1804,7 +1804,6 @@ void off_state()
     RC5=0;
 }
 
-
 enum Prev_Button_Status{PREV_UN_STABLE,PREV_STABLE};
 void flashDisplay()
 {
@@ -1894,6 +1893,8 @@ void changeStatus()
     }
     else{
         temp_state=OK_state;
+        RC2=0;
+        RC5=0;
     }
 }
 
@@ -1910,6 +1911,8 @@ void coolerOn()
     RC2=0;
 
 }
+
+
 void on_state()
 {
     TMR1ON = 1;
@@ -1924,6 +1927,7 @@ void on_state()
     switch (temp_state)
     {
     case OK_state:
+        off_state();
         break;
     case UPOVE_state:
         heaterOn();
