@@ -7,7 +7,7 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "adc.c" 2
-# 26 "adc.c"
+
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -1717,14 +1717,14 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 26 "adc.c" 2
+# 2 "adc.c" 2
 
 # 1 "./adc.h" 1
-# 27 "./adc.h"
+
 void adc_init(void);
 
 unsigned int adc_amostra(unsigned char canal);
-# 27 "adc.c" 2
+# 3 "adc.c" 2
 
 
 
@@ -1744,7 +1744,7 @@ void adc_init(void)
 
 unsigned int adc_amostra(unsigned char canal)
 {
-# 62 "adc.c"
+# 36 "adc.c"
      switch(canal)
     {
       case 0:

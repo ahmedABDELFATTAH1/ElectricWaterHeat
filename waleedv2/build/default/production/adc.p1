@@ -214,72 +214,72 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2363
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"30 adc.c
-[; ;adc.c: 30: void adc_init(void)
+"6 adc.c
+[; ;adc.c: 6: void adc_init(void)
 [v _adc_init `(v ~T0 @X0 1 ef ]
-"31
-[; ;adc.c: 31: {
+"7
+[; ;adc.c: 7: {
 {
 [e :U _adc_init ]
 [f ]
-"33
-[; ;adc.c: 33:   ADCON1=0x02;
+"9
+[; ;adc.c: 9:   ADCON1=0x02;
 [e = _ADCON1 -> -> 2 `i `uc ]
-"34
-[; ;adc.c: 34:   ADCON0=0x41;
+"10
+[; ;adc.c: 10:   ADCON0=0x41;
 [e = _ADCON0 -> -> 65 `i `uc ]
-"42
-[; ;adc.c: 42: }
+"18
+[; ;adc.c: 18: }
 [e :UE 95 ]
 }
-"44
-[; ;adc.c: 44: unsigned int adc_amostra(unsigned char canal)
+"20
+[; ;adc.c: 20: unsigned int adc_amostra(unsigned char canal)
 [v _adc_amostra `(ui ~T0 @X0 1 ef1`uc ]
-"45
-[; ;adc.c: 45: {
+"21
+[; ;adc.c: 21: {
 {
 [e :U _adc_amostra ]
-"44
-[; ;adc.c: 44: unsigned int adc_amostra(unsigned char canal)
+"20
+[; ;adc.c: 20: unsigned int adc_amostra(unsigned char canal)
 [v _canal `uc ~T0 @X0 1 r1 ]
-"45
-[; ;adc.c: 45: {
+"21
+[; ;adc.c: 21: {
 [f ]
-"62
-[; ;adc.c: 62:      switch(canal)
+"36
+[; ;adc.c: 36:      switch(canal)
 [e $U 98  ]
-"63
-[; ;adc.c: 63:     {
+"37
+[; ;adc.c: 37:     {
 {
-"64
-[; ;adc.c: 64:       case 0:
+"38
+[; ;adc.c: 38:       case 0:
 [e :U 99 ]
-"65
-[; ;adc.c: 65:         ADCON0=0x01;
+"39
+[; ;adc.c: 39:         ADCON0=0x01;
 [e = _ADCON0 -> -> 1 `i `uc ]
-"66
-[; ;adc.c: 66:         break;
+"40
+[; ;adc.c: 40:         break;
 [e $U 97  ]
-"67
-[; ;adc.c: 67:       case 1:
+"41
+[; ;adc.c: 41:       case 1:
 [e :U 100 ]
-"68
-[; ;adc.c: 68:         ADCON0=0x09;
+"42
+[; ;adc.c: 42:         ADCON0=0x09;
 [e = _ADCON0 -> -> 9 `i `uc ]
-"69
-[; ;adc.c: 69:         break;
+"43
+[; ;adc.c: 43:         break;
 [e $U 97  ]
-"70
-[; ;adc.c: 70:       case 2:
+"44
+[; ;adc.c: 44:       case 2:
 [e :U 101 ]
-"71
-[; ;adc.c: 71:         ADCON0=0x11;
+"45
+[; ;adc.c: 45:         ADCON0=0x11;
 [e = _ADCON0 -> -> 17 `i `uc ]
-"72
-[; ;adc.c: 72:         break;
+"46
+[; ;adc.c: 46:         break;
 [e $U 97  ]
-"73
-[; ;adc.c: 73:     }
+"47
+[; ;adc.c: 47:     }
 }
 [e $U 97  ]
 [e :U 98 ]
@@ -288,21 +288,21 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 2 `i 101
  97 ]
 [e :U 97 ]
-"77
-[; ;adc.c: 77:     ADCON0bits.GO=1;
+"51
+[; ;adc.c: 51:     ADCON0bits.GO=1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"78
-[; ;adc.c: 78:     while(ADCON0bits.GO == 1);
+"52
+[; ;adc.c: 52:     while(ADCON0bits.GO == 1);
 [e $U 102  ]
 [e :U 103 ]
 [e :U 102 ]
 [e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 103  ]
 [e :U 104 ]
-"80
-[; ;adc.c: 80:    return ((((unsigned int)ADRESH)<<2)|(ADRESL>>6));
+"54
+[; ;adc.c: 54:    return ((((unsigned int)ADRESH)<<2)|(ADRESL>>6));
 [e ) | << -> _ADRESH `ui -> 2 `i -> >> -> _ADRESL `i -> 6 `i `ui ]
 [e $UE 96  ]
-"81
-[; ;adc.c: 81: }
+"55
+[; ;adc.c: 55: }
 [e :UE 96 ]
 }

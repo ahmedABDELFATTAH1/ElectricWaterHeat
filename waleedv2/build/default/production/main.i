@@ -1732,14 +1732,14 @@ extern __bank0 __bit __timeout;
 # 3 "main.c" 2
 
 # 1 "./adc.h" 1
-# 27 "./adc.h"
+
 void adc_init(void);
 
 unsigned int adc_amostra(unsigned char canal);
 # 4 "main.c" 2
 
-# 1 "./itoa.h" 1
-void itoa(unsigned int val, unsigned char* str );
+# 1 "./read_converter.h" 1
+void convertADCReadings(unsigned int val, unsigned char* str );
 # 5 "main.c" 2
 
 # 1 "./seven_segment.h" 1
@@ -1852,12 +1852,8 @@ void main(void) {
     TRISC2 = 0;
     RC2 = 0;
     RC5 = 0;
-    TRISB7 = 0;
-    TRISB3 = 1;
-    TRISB4 = 1;
-    RB7 =0;
-    TRISB5 = 0;
-    RB5 =0;
+    TRISB = 0x19;
+    PORTB = 0x00;
     Number_Tempreture=0;
     canuse= 1;
     adc_init();
@@ -1958,7 +1954,7 @@ void changeStatus()
 void update_tempreture ()
 {
     unsigned int temp=(adc_amostra(2)*10)/2;
-    itoa(temp,str);
+    convertADCReadings(temp,str);
     unsigned char y= str[0];
     unsigned char x= str[1];
     accumilated_tmeperature += (y*10)+x;
@@ -2004,8 +2000,13 @@ void __attribute__((picinterrupt(("")))) ISR(void)
          if(Number_Tempreture==10)
          {
             TEMPRETURE=accumilated_tmeperature/10;
+            if (temp_state == UPOVE_state){
 
-             RB5 = ~RB5;
+                RB5 = ~RB5;
+            }else if (temp_state == DOWN_state){
+
+                RB5 = 1;
+            }else{RB5 = 0;}
 
              Number_Tempreture = 0;
              accumilated_tmeperature= 0;

@@ -179,34 +179,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2363
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"3 itoa.c
-[; ;itoa.c: 3: void itoa(unsigned int val, unsigned char* str )
-[v _itoa `(v ~T0 @X0 1 ef2`ui`*uc ]
+"3 read_converter.c
+[; ;read_converter.c: 3: void convertADCReadings(unsigned int val, unsigned char* str )
+[v _convertADCReadings `(v ~T0 @X0 1 ef2`ui`*uc ]
 "4
-[; ;itoa.c: 4: {
+[; ;read_converter.c: 4: {
 {
-[e :U _itoa ]
+[e :U _convertADCReadings ]
 "3
-[; ;itoa.c: 3: void itoa(unsigned int val, unsigned char* str )
+[; ;read_converter.c: 3: void convertADCReadings(unsigned int val, unsigned char* str )
 [v _val `ui ~T0 @X0 1 r1 ]
 [v _str `*uc ~T0 @X0 1 r2 ]
 "4
-[; ;itoa.c: 4: {
+[; ;read_converter.c: 4: {
 [f ]
 "5
-[; ;itoa.c: 5:   str[0]=((val%1000)/100);
+[; ;read_converter.c: 5:   str[0]=((val%1000)/100);
 [e = *U + _str * -> -> 0 `i `x -> -> # *U _str `i `x -> / % _val -> -> 1000 `i `ui -> -> 100 `i `ui `uc ]
 "6
-[; ;itoa.c: 6:   str[1]=((val%100)/10);
+[; ;read_converter.c: 6:   str[1]=((val%100)/10);
 [e = *U + _str * -> -> 1 `i `x -> -> # *U _str `i `x -> / % _val -> -> 100 `i `ui -> -> 10 `i `ui `uc ]
 "7
-[; ;itoa.c: 7:   if (str[1] != 0)
+[; ;read_converter.c: 7:   if (str[1] != 0)
 [e $ ! != -> *U + _str * -> -> 1 `i `x -> -> # *U _str `i `x `i -> 0 `i 96  ]
 "8
-[; ;itoa.c: 8:       str[1]-=1;
+[; ;read_converter.c: 8:       str[1]-=1;
 [e =- *U + _str * -> -> 1 `i `x -> -> # *U _str `i `x -> -> 1 `i `uc ]
 [e :U 96 ]
 "9
-[; ;itoa.c: 9: }
+[; ;read_converter.c: 9: }
 [e :UE 95 ]
 }

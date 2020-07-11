@@ -6,12 +6,12 @@
                    projectFiles="true">
       <itemPath>config.h</itemPath>
       <itemPath>adc.h</itemPath>
-      <itemPath>itoa.h</itemPath>
       <itemPath>seven_segment.h</itemPath>
       <itemPath>ext_eeprom.h</itemPath>
       <itemPath>timer.h</itemPath>
       <itemPath>heater.h</itemPath>
       <itemPath>cooler.h</itemPath>
+      <itemPath>read_converter.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -22,12 +22,12 @@
                    projectFiles="true">
       <itemPath>main.c</itemPath>
       <itemPath>adc.c</itemPath>
-      <itemPath>itoa.c</itemPath>
       <itemPath>seven_segment.c</itemPath>
       <itemPath>ext_eeprom.c</itemPath>
       <itemPath>timer.c</itemPath>
       <itemPath>heater.c</itemPath>
       <itemPath>cooler.c</itemPath>
+      <itemPath>read_converter.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -2,7 +2,7 @@
 #include <xc.h>
 #include "config.h"
 #include "adc.h"
-#include "itoa.h"
+#include "read_converter.h"
 #include "seven_segment.h"
 #include "ext_eeprom.h"
 #include"timer.h"
@@ -90,12 +90,8 @@ void main(void) {
     TRISC2 = 0;
     RC2 = 0;
     RC5 = 0;
-    TRISB7 = 0;
-    TRISB3 = 1;
-    TRISB4 = 1;
-    RB7 =0;
-    TRISB5 = 0;
-    RB5 =0;
+    TRISB = 0x19;
+    PORTB = 0x00;
     Number_Tempreture=0;
     canuse= 1;
     adc_init();
@@ -196,7 +192,7 @@ void changeStatus()
 void update_tempreture ()
 {   
     unsigned int temp=(adc_amostra(2)*10)/2;  
-    itoa(temp,str);
+    convertADCReadings(temp,str);
     unsigned char y= str[0];
     unsigned char x= str[1];
     accumilated_tmeperature += (y*10)+x;
@@ -242,8 +238,13 @@ void __interrupt() ISR(void)
          if(Number_Tempreture==NUMBER_READINGS)
          {
             TEMPRETURE=accumilated_tmeperature/NUMBER_READINGS;
-             // Event2 = Toggle LED
-             RB5 = ~RB5;
+            if (temp_state == UPOVE_state){
+                // Event2 = Toggle LED
+                RB5 = ~RB5;
+            }else if (temp_state == DOWN_state){
+                // Event2 = Toggle LED
+                RB5 = 1;
+            }else{RB5 = 0;}
              // Clear The Global Counter
              Number_Tempreture = 0;
              accumilated_tmeperature= 0;
