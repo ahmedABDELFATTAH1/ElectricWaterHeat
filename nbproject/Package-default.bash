@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/ElectricWaterHeater.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=ElectricWaterHeater.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=electricwaterheater.x/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/ElectricWaterHeat.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=ElectricWaterHeat.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=electricwaterheat/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/electricwaterheater.x/bin
+makeDirectory ${TMPDIR}/electricwaterheat/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/electricwaterheater.x.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/electricwaterheat.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/electricwaterheater.x.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/electricwaterheat.tar *
 checkReturnCode
 
 # Cleanup

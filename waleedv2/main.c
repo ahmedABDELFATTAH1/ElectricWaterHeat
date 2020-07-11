@@ -26,7 +26,7 @@
 typedef  unsigned char bool;
 
 // global flag to control the program flow
-int TargetTempreture;
+int TargetTempreture = 60;
 unsigned int TEMPRETURE;
 unsigned int accumilated_tmeperature;
 unsigned char str[6];
@@ -36,6 +36,7 @@ unsigned char state;
 unsigned char temp_state;
 unsigned char Number_Tempreture;
 unsigned char timer1counter;
+unsigned char canuse= 1;
 bool ReadTemp;
 void IRQ_RB0_init ();
 void TIMER1_init ();
@@ -60,7 +61,7 @@ void flashDisplay()
         {
             state=ON_STATE;           
             count=0;
-            EEPROM_Write(TEMP_ADDRESS,TargetTempreture);
+//            EEPROM_Write(TEMP_ADDRESS,TargetTempreture);
             return;
         }
         else{
@@ -128,32 +129,36 @@ void flashDisplay()
 }
 void changeStatus()
 {
-    if(TEMPRETURE>TargetTempreture+5)
+    if(TEMPRETURE<TargetTempreture+5 && canuse == 1)
     {
         temp_state=UPOVE_state;
 
-    }else if(TEMPRETURE<TargetTempreture-5)
-    {
-        temp_state=DOWN_state; 
-    }
-    else{
-        temp_state=OK_state;
-        RC2=0;
-        RC5=0;
+    }else{
+        canuse= 0;
+        if(TEMPRETURE>TargetTempreture && canuse == 0)
+        {
+            temp_state=DOWN_state; 
+        }
+        else{
+            canuse= 1;
+            temp_state=OK_state;
+            RC2=0;
+            RC5=0;
+        }
     }
 }
 
 
 void heaterOn()
 {
-    RC2=1;
-    RC5=0;
+    RC2=0;
+    RC5=1;
 }
 
 void coolerOn()
 {
-    RC5 = 1;
-    RC2=0;
+    RC5 = 0;
+    RC2=1;
 
 }
 
@@ -224,17 +229,18 @@ void main(void) {
     ReadTemp=false;
     timer1counter=0;
     accumilated_tmeperature=0;
-  unsigned char flag=EEPROM_Read(FLAG_ADDRESS);
-  __delay_ms(500);
-  if(flag==1)
-  {
-      TargetTempreture=EEPROM_Read(TEMP_ADDRESS);  
-  }
-  else
-  {
-    EEPROM_Write(FLAG_ADDRESS,0x01); 
-    TargetTempreture=60;
-  }    
+    TargetTempreture = 60;
+//  unsigned char flag=EEPROM_Read(FLAG_ADDRESS);
+//  __delay_ms(500);
+//  if(flag==1)
+//  {
+//      TargetTempreture=EEPROM_Read(TEMP_ADDRESS);  
+//  }
+//  else
+//  {
+//    EEPROM_Write(FLAG_ADDRESS,0x01); 
+//    TargetTempreture=60;
+//  }    
  
 while (1)
 {  
