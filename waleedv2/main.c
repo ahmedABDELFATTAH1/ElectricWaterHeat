@@ -11,7 +11,8 @@
 #include "itoa.h"
 #include "lcd.h"
 #include "seven_segment.h"
-
+#include "ext_eeprom.h"
+#include "7-Segment.h"
 #define _XTAL_FREQ 8000000
 #define NUMBER_READINGS 10
 #define true 1
@@ -20,10 +21,12 @@
 #define MIN_TEMP 35
 #define UP PORTBbits.RB3
 #define DOWN PORTBbits.RB4
+#define FLAG_ADDRESS 0x01
+#define TEMP_ADDRESS 0x00
 typedef  unsigned char bool;
 
 // global flag to control the program flow
-int TargetTempreture = 40;
+int TargetTempreture;
 unsigned int TEMPRETURE;
 unsigned int accumilated_tmeperature;
 unsigned char str[6];
@@ -54,10 +57,11 @@ void flashDisplay()
     static unsigned char prev_status=PREV_STABLE;
     if(UP&&DOWN)
     {
-        if(count==10)
+        if(count==5)
         {
-            state=ON_STATE;
+            state=ON_STATE;           
             count=0;
+            EEPROM_Write(TEMP_ADDRESS,TargetTempreture);
             return;
         }
         else{
@@ -74,7 +78,7 @@ void flashDisplay()
            if(TargetTempreture<MAX_TEMP)
            {
                TargetTempreture += 5;
-           __delay_ms(30);
+           __delay_ms(10);
            prev_status=PREV_UN_STABLE;
            }
        } 
@@ -84,7 +88,7 @@ void flashDisplay()
         if(TargetTempreture>MIN_TEMP)
         {
          TargetTempreture -= 5;
-        __delay_ms(30);
+        __delay_ms(10);
          prev_status=PREV_UN_STABLE;
         }
        
@@ -104,7 +108,7 @@ void flashDisplay()
            if(TargetTempreture<MAX_TEMP)
            {
                TargetTempreture += 5;
-           __delay_ms(30);
+           __delay_ms(10);
            prev_status=PREV_UN_STABLE;
            }
        }
@@ -115,7 +119,7 @@ void flashDisplay()
         if(TargetTempreture>MIN_TEMP)
         {
          TargetTempreture -= 5;
-        __delay_ms(30);
+        __delay_ms(10);
          prev_status=PREV_UN_STABLE;
         }
      }
@@ -186,10 +190,12 @@ void setting_state()
      flashDisplay();
 
 }
+
 void main(void) {
     
     TIMER1_init ();
     IRQ_RB0_init ();
+    I2C_Master_Init(100000);
     // here we set the register a to be able to use him with the ADC 
     // to read the temperature and also control the seven segments 
     TRISA = 0x07;
@@ -209,12 +215,24 @@ void main(void) {
     TRISB5 = 0;
     RB5 =0;
     Number_Tempreture=0;
-    //adc_init();
+    adc_init();
     state=OFF_STATE;
     temp_state=OK_state;
     ReadTemp=false;
     timer1counter=0;
     accumilated_tmeperature=0;
+  unsigned char flag=EEPROM_Read(FLAG_ADDRESS);
+  __delay_ms(500);
+  if(flag==1)
+  {
+      TargetTempreture=EEPROM_Read(TEMP_ADDRESS);  
+  }
+  else
+  {
+    EEPROM_Write(FLAG_ADDRESS,0x01); 
+    TargetTempreture=60;
+  }    
+ 
 while (1)
 {  
     switch(state)

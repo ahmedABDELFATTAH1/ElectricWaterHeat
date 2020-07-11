@@ -14,6 +14,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>../../../embedded/picsimlab/docs/examples/board_4/PIC16F877A/test_b4/src/test_b4.X</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

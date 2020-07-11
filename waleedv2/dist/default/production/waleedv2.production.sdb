@@ -3,23 +3,25 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
-"54 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
-[e E890 Prev_Button_Status `uc
+"57 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+[e E916 Prev_Button_Status `uc
 PREV_UN_STABLE 0
 PREV_STABLE 1
 ]
-"59
-[e E870 States `uc
+"62
+[e E896 States `uc
 ON_STATE 0
 OFF_STATE 1
 SETTING_STATE 2
 ]
-"130
-[e E874 Temp_Status `uc
+"134
+[e E900 Temp_Status `uc
 OK_state 0
 UPOVE_state 1
 DOWN_state 2
 ]
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
@@ -40,8 +42,32 @@ DOWN_state 2
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"44 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+"30 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+[v _adc_init adc_init `(v  1 e 1 0 ]
+"44
 [v _adc_amostra adc_amostra `(ui  1 e 2 0 ]
+"9 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/ext_eeprom.c
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+"18
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+"22
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"27
+[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
+"32
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+"37
+[v _I2C_Master_Write I2C_Master_Write `(uc  1 e 1 0 ]
+"45
+[v _I2C_Read_Byte I2C_Read_Byte `(uc  1 e 1 0 ]
+"55
+[v _I2C_ACK I2C_ACK `(v  1 e 1 0 ]
+"61
+[v _I2C_NACK I2C_NACK `(v  1 e 1 0 ]
+"72
+[v _EEPROM_Write EEPROM_Write `(v  1 e 1 0 ]
+"98
+[v _EEPROM_Read EEPROM_Read `(uc  1 e 1 0 ]
 "27 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
 [v _itoa itoa `(v  1 e 1 0 ]
 "29 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/lcd.c
@@ -50,37 +76,37 @@ DOWN_state 2
 [v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
 "45
 [v _lcd_dat lcd_dat `(v  1 e 1 0 ]
-"43 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"46 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _off_state off_state `(v  1 e 1 0 ]
-"51
+"54
 [v _flashDisplay flashDisplay `(v  1 e 1 0 ]
-"126
+"130
 [v _changeStatus changeStatus `(v  1 e 1 0 ]
-"142
+"146
 [v _heaterOn heaterOn `(v  1 e 1 0 ]
-"148
+"152
 [v _coolerOn coolerOn `(v  1 e 1 0 ]
-"154
+"158
 [v _on_state on_state `(v  1 e 1 0 ]
-"181
+"185
 [v _setting_state setting_state `(v  1 e 1 0 ]
-"189
+"194
 [v _main main `(v  1 e 1 0 ]
-"237
+"255
 [v _displayTempreture displayTempreture `(v  1 e 1 0 ]
-"251
+"269
 [v _displayDeiredTempreture displayDeiredTempreture `(v  1 e 1 0 ]
-"265
+"283
 [v _update_tempreture update_tempreture `(v  1 e 1 0 ]
-"277
+"295
 [v _ISR ISR `II(v  1 e 1 0 ]
-"333
+"351
 [v _IRQ_RB0_init IRQ_RB0_init `(v  1 e 1 0 ]
-"343
+"361
 [v _TIMER1_init TIMER1_init `(v  1 e 1 0 ]
 "7 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
 [v _lcd_writeNumber lcd_writeNumber `(v  1 e 1 0 ]
-[s S62 . 1 `uc 1 RA0 1 0 :1:0 
+[s S68 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -88,8 +114,8 @@ DOWN_state 2
 `uc 1 RA5 1 0 :1:5 
 ]
 "181 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h
-[u S69 . 1 `S62 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES69  1 e 1 @5 ]
+[u S75 . 1 `S68 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES75  1 e 1 @5 ]
 [s S27 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
@@ -104,27 +130,31 @@ DOWN_state 2
 [v _PORTBbits PORTBbits `VES36  1 e 1 @6 ]
 "340
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S262 . 1 `uc 1 RE0 1 0 :1:0 
+[s S283 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 ]
 "414
-[u S266 . 1 `S262 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES266  1 e 1 @9 ]
+[u S287 . 1 `S283 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES287  1 e 1 @9 ]
 "634
 [v _TMR1 TMR1 `VEus  1 e 2 @14 ]
+"808
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"815
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1152
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 "1159
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
-[s S200 . 1 `uc 1 ADON 1 0 :1:0 
+[s S221 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 GO_nDONE 1 0 :1:2 
 `uc 1 CHS 1 0 :3:3 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1190
-[s S206 . 1 `uc 1 . 1 0 :2:0 
+[s S227 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO 1 0 :1:2 
 `uc 1 CHS0 1 0 :1:3 
 `uc 1 CHS1 1 0 :1:4 
@@ -132,22 +162,34 @@ DOWN_state 2
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S214 . 1 `uc 1 . 1 0 :2:0 
+[s S235 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nDONE 1 0 :1:2 
 ]
-[s S217 . 1 `uc 1 . 1 0 :2:0 
+[s S238 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO_DONE 1 0 :1:2 
 ]
-[u S220 . 1 `S200 1 . 1 0 `S206 1 . 1 0 `S214 1 . 1 0 `S217 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES220  1 e 1 @31 ]
+[u S241 . 1 `S221 1 . 1 0 `S227 1 . 1 0 `S235 1 . 1 0 `S238 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES241  1 e 1 @31 ]
 "1325
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1499
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1754
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+"1823
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"1830
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
 "2222
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
 "2229
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2374
+[v _ACKDT ACKDT `VEb  1 e 0 @1165 ]
+"2377
+[v _ACKEN ACKEN `VEb  1 e 0 @1164 ]
+"2380
+[v _ACKSTAT ACKSTAT `VEb  1 e 0 @1166 ]
 "2569
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "2599
@@ -158,6 +200,8 @@ DOWN_state 2
 [v _INTF INTF `VEb  1 e 0 @89 ]
 "2629
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
+"2632
+[v _PEN PEN `VEb  1 e 0 @1162 ]
 "2689
 [v _RB5 RB5 `VEb  1 e 0 @53 ]
 "2695
@@ -166,6 +210,14 @@ DOWN_state 2
 [v _RC2 RC2 `VEb  1 e 0 @58 ]
 "2719
 [v _RC5 RC5 `VEb  1 e 0 @61 ]
+"2737
+[v _RCEN RCEN `VEb  1 e 0 @1163 ]
+"2791
+[v _RSEN RSEN `VEb  1 e 0 @1161 ]
+"2806
+[v _SEN SEN `VEb  1 e 0 @1160 ]
+"2824
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
 "2857
 [v _T1CKPS0 T1CKPS0 `VEb  1 e 0 @132 ]
 "2860
@@ -188,59 +240,65 @@ DOWN_state 2
 [v _TRISB7 TRISB7 `VEb  1 e 0 @1079 ]
 "2965
 [v _TRISC2 TRISC2 `VEb  1 e 0 @1082 ]
+"2968
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"2971
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
 "2974
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"26 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"29 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _TargetTempreture TargetTempreture `i  1 e 2 0 ]
-"27
+"30
 [v _TEMPRETURE TEMPRETURE `ui  1 e 2 0 ]
-"28
+"31
 [v _accumilated_tmeperature accumilated_tmeperature `ui  1 e 2 0 ]
-"29
-[v _str str `[6]uc  1 e 6 0 ]
 "32
-[v _state state `uc  1 e 1 0 ]
-"33
-[v _temp_state temp_state `uc  1 e 1 0 ]
-"34
-[v _Number_Tempreture Number_Tempreture `uc  1 e 1 0 ]
+[v _str str `[6]uc  1 e 6 0 ]
 "35
-[v _timer1counter timer1counter `uc  1 e 1 0 ]
+[v _state state `uc  1 e 1 0 ]
 "36
+[v _temp_state temp_state `uc  1 e 1 0 ]
+"37
+[v _Number_Tempreture Number_Tempreture `uc  1 e 1 0 ]
+"38
+[v _timer1counter timer1counter `uc  1 e 1 0 ]
+"39
 [v _ReadTemp ReadTemp `uc  1 e 1 0 ]
 "5 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
 [v _segments_code segments_code `[10]uc  1 e 10 0 ]
-"189 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"194 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"236
+"224
+[v main@flag flag `uc  1 a 1 8 ]
+"254
 } 0
-"181
+"185
 [v _setting_state setting_state `(v  1 e 1 0 ]
 {
-"188
+"192
 } 0
-"51
+"54
 [v _flashDisplay flashDisplay `(v  1 e 1 0 ]
 {
-"99
-[v flashDisplay@i_162 i `i  1 a 2 2 ]
-"69
+"103
+[v flashDisplay@i_182 i `i  1 a 2 2 ]
+"73
 [v flashDisplay@i i `i  1 a 2 0 ]
-"53
+"56
 [v flashDisplay@count count `uc  1 s 1 count ]
-"54
+"57
 [v flashDisplay@prev_status prev_status `uc  1 s 1 prev_status ]
-"125
+"129
 } 0
-"251
+"269
 [v _displayDeiredTempreture displayDeiredTempreture `(v  1 e 1 0 ]
 {
-"254
+"272
 [v displayDeiredTempreture@high high `uc  1 a 1 28 ]
-"253
+"271
 [v displayDeiredTempreture@low low `uc  1 a 1 27 ]
-"263
+"281
 } 0
 "5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -266,24 +324,39 @@ DOWN_state 2
 [v ___awdiv@dividend dividend `i  1 p 2 19 ]
 "41
 } 0
-"154 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"72 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/ext_eeprom.c
+[v _EEPROM_Write EEPROM_Write `(v  1 e 1 0 ]
+{
+[v EEPROM_Write@add add `uc  1 a 1 wreg ]
+[v EEPROM_Write@add add `uc  1 a 1 wreg ]
+[v EEPROM_Write@data data `uc  1 p 1 18 ]
+"74
+[v EEPROM_Write@add add `uc  1 a 1 19 ]
+"81
+} 0
+"27
+[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
+{
+"31
+} 0
+"158 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _on_state on_state `(v  1 e 1 0 ]
 {
-"179
+"183
 } 0
-"142
+"146
 [v _heaterOn heaterOn `(v  1 e 1 0 ]
 {
-"146
+"150
 } 0
-"237
+"255
 [v _displayTempreture displayTempreture `(v  1 e 1 0 ]
 {
-"240
+"258
 [v displayTempreture@high high `uc  1 a 1 27 ]
-"239
+"257
 [v displayTempreture@low low `uc  1 a 1 26 ]
-"249
+"267
 } 0
 "7 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/seven_segment.c
 [v _lcd_writeNumber lcd_writeNumber `(v  1 e 1 0 ]
@@ -311,54 +384,120 @@ DOWN_state 2
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
-[v ___lwdiv@quotient quotient `ui  1 a 2 21 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 22 ]
 "11
-[v ___lwdiv@counter counter `uc  1 a 1 23 ]
+[v ___lwdiv@counter counter `uc  1 a 1 21 ]
 "5
 [v ___lwdiv@divisor divisor `ui  1 p 2 17 ]
 [v ___lwdiv@dividend dividend `ui  1 p 2 19 ]
 "30
 } 0
-"148 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
+"152 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _coolerOn coolerOn `(v  1 e 1 0 ]
 {
-"153
+"157
 } 0
-"126
+"130
 [v _changeStatus changeStatus `(v  1 e 1 0 ]
 {
-"139
+"143
 } 0
-"43
+"46
 [v _off_state off_state `(v  1 e 1 0 ]
 {
-"47
+"50
 } 0
-"343
+"30 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/adc.c
+[v _adc_init adc_init `(v  1 e 1 0 ]
+{
+"42
+} 0
+"361 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _TIMER1_init TIMER1_init `(v  1 e 1 0 ]
 {
-"358
+"376
 } 0
-"333
+"351
 [v _IRQ_RB0_init IRQ_RB0_init `(v  1 e 1 0 ]
 {
-"341
+"359
 } 0
-"277
+"9 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/ext_eeprom.c
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+{
+[v I2C_Master_Init@baud baud `DCul  1 p 4 0 ]
+"17
+} 0
+"5 /opt/microchip/xc8/v2.20/pic/sources/c90/common/__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 26 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 30 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 17 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 21 ]
+"30
+} 0
+"98 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/ext_eeprom.c
+[v _EEPROM_Read EEPROM_Read `(uc  1 e 1 0 ]
+{
+"100
+[v EEPROM_Read@Data Data `uc  1 a 1 20 ]
+"98
+[v EEPROM_Read@add add `ui  1 p 2 18 ]
+"111
+} 0
+"45
+[v _I2C_Read_Byte I2C_Read_Byte `(uc  1 e 1 0 ]
+{
+"54
+} 0
+"61
+[v _I2C_NACK I2C_NACK `(v  1 e 1 0 ]
+{
+"66
+} 0
+"37
+[v _I2C_Master_Write I2C_Master_Write `(uc  1 e 1 0 ]
+{
+[v I2C_Master_Write@data data `uc  1 a 1 wreg ]
+[v I2C_Master_Write@data data `uc  1 a 1 wreg ]
+"39
+[v I2C_Master_Write@data data `uc  1 a 1 17 ]
+"44
+} 0
+"32
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+{
+"36
+} 0
+"22
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+{
+"26
+} 0
+"18
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+{
+"21
+} 0
+"295 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"329
+"347
 } 0
-"265
+"283
 [v _update_tempreture update_tempreture `(v  1 e 1 0 ]
 {
-"267
+"285
 [v update_tempreture@temp temp `ui  1 a 2 7 ]
-"270
+"288
 [v update_tempreture@x x `uc  1 a 1 10 ]
-"269
+"287
 [v update_tempreture@y y `uc  1 a 1 9 ]
-"273
+"291
 } 0
 "27 /home/ahmed/Desktop/heater/ElectricWaterHeat/waleedv2/itoa.c
 [v _itoa itoa `(v  1 e 1 0 ]

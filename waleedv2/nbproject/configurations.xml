@@ -10,6 +10,7 @@
       <itemPath>lcd.h</itemPath>
       <itemPath>7-Segment.h</itemPath>
       <itemPath>seven_segment.h</itemPath>
+      <itemPath>ext_eeprom.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,6 +25,7 @@
       <itemPath>lcd.c</itemPath>
       <itemPath>7-Segment.c</itemPath>
       <itemPath>seven_segment.c</itemPath>
+      <itemPath>ext_eeprom.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -33,6 +35,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>
+    <Elem>../../../embedded/picsimlab/docs/examples/board_4/PIC16F877A/test_b4/src/test_b4.X</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

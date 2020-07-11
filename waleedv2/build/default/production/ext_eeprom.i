@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "ext_eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
+# 1 "ext_eeprom.c" 2
 
 # 1 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 1 3
 # 18 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 3
@@ -1723,39 +1717,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 2 3
-# 9 "main.c" 2
-# 1 "./config.h" 1
-# 84 "./config.h"
-#pragma config FOSC = HS
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config BOREN = OFF
-#pragma config LVP = OFF
-#pragma config CPD = OFF
-#pragma config WRT = OFF
-#pragma config CP = OFF
-# 10 "main.c" 2
-# 1 "./adc.h" 1
-# 27 "./adc.h"
-void adc_init(void);
-
-unsigned int adc_amostra(unsigned char canal);
-# 11 "main.c" 2
-# 1 "./itoa.h" 1
-# 26 "./itoa.h"
-void itoa(unsigned int val, unsigned char* str );
-# 12 "main.c" 2
-# 1 "./lcd.h" 1
-# 42 "./lcd.h"
-void lcd_init(void);
-void lcd_cmd(unsigned char val);
-void lcd_dat(unsigned char val);
-void lcd_str(const char* str);
-# 13 "main.c" 2
-# 1 "./seven_segment.h" 1
-# 12 "./seven_segment.h"
-void lcd_writeNumber(unsigned char number);
-# 14 "main.c" 2
+# 3 "ext_eeprom.c" 2
 # 1 "./ext_eeprom.h" 1
 # 17 "./ext_eeprom.h"
 void I2C_Master_Init(const unsigned long baud);
@@ -1772,360 +1734,130 @@ void EEPROM_Write(unsigned char add, unsigned char data);
 void EEPROM_Write_Page(unsigned int add, unsigned char* data, unsigned char len);
 unsigned char EEPROM_Read(unsigned int add);
 void EEPROM_Read_Page(unsigned int add, unsigned char* data, unsigned int len);
-# 15 "main.c" 2
-# 1 "./7-Segment.h" 1
-# 28 "./7-Segment.h"
-unsigned char display7s(unsigned char v);
-# 16 "main.c" 2
-# 26 "main.c"
-typedef unsigned char bool;
+# 4 "ext_eeprom.c" 2
 
 
-int TargetTempreture;
-unsigned int TEMPRETURE;
-unsigned int accumilated_tmeperature;
-unsigned char str[6];
-enum States{ON_STATE,OFF_STATE,SETTING_STATE};
-enum Temp_Status{OK_state,UPOVE_state,DOWN_state};
-unsigned char state;
-unsigned char temp_state;
-unsigned char Number_Tempreture;
-unsigned char timer1counter;
-bool ReadTemp;
-void IRQ_RB0_init ();
-void TIMER1_init ();
-void displayTempreture();
-void update_tempreture();
-void displayDeiredTempreture();
-void flashDisplay();
-void off_state()
+
+
+
+void I2C_Master_Init(const unsigned long baud)
 {
-    RC2=0;
-    RC5=0;
+  SSPCON = 0b00101000;
+  SSPCON2 = 0;
+  SSPADD = (8000000/(4*baud))-1;
+  SSPSTAT = 0;
+  TRISC3 = 1;
+  TRISC4 = 1;
+}
+void I2C_Master_Wait()
+{
+  while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+}
+void I2C_Master_Start()
+{
+  I2C_Master_Wait();
+  SEN = 1;
+}
+void I2C_Master_RepeatedStart()
+{
+  I2C_Master_Wait();
+  RSEN = 1;
+}
+void I2C_Master_Stop()
+{
+  I2C_Master_Wait();
+  PEN = 1;
+}
+unsigned char I2C_Master_Write(unsigned char data)
+{
+  I2C_Master_Wait();
+  SSPBUF = data;
+  while(!SSPIF);
+  SSPIF = 0;
+  return ACKSTAT;
+}
+unsigned char I2C_Read_Byte(void)
+{
+
+  I2C_Master_Wait();
+  RCEN = 1;
+  while(!SSPIF);
+  SSPIF = 0;
+  I2C_Master_Wait();
+  return SSPBUF;
+}
+void I2C_ACK(void)
+{
+  ACKDT = 0;
+  I2C_Master_Wait();
+  ACKEN = 1;
+}
+void I2C_NACK(void)
+{
+  ACKDT = 1;
+  I2C_Master_Wait();
+  ACKEN = 1;
 }
 
 
-enum Prev_Button_Status{PREV_UN_STABLE,PREV_STABLE};
-void flashDisplay()
+
+
+
+void EEPROM_Write(unsigned char add, unsigned char data)
 {
-    static unsigned char count=0;
-    static unsigned char prev_status=PREV_STABLE;
-    if(PORTBbits.RB3&&PORTBbits.RB4)
-    {
-        if(count==5)
-        {
-            state=ON_STATE;
-            count=0;
-            EEPROM_Write(0x00,TargetTempreture);
-            return;
-        }
-        else{
-            prev_status=PREV_STABLE;
-            count++;
-        }
+  I2C_Master_Start();
 
-    }
-   for(int i=0;i<25;i++)
-   {
-    displayDeiredTempreture();
-    if(PORTBbits.RB3==0&&prev_status==PREV_STABLE)
-       {
-           if(TargetTempreture<75)
-           {
-               TargetTempreture += 5;
-           _delay((unsigned long)((10)*(8000000/4000.0)));
-           prev_status=PREV_UN_STABLE;
-           }
-       }
-
-    if(PORTBbits.RB4==0&&prev_status==PREV_STABLE)
-    {
-        if(TargetTempreture>35)
-        {
-         TargetTempreture -= 5;
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-         prev_status=PREV_UN_STABLE;
-        }
-
-    }
-
-
-   }
-    PORTAbits.RA4=0;
-    PORTAbits.RA5=0;
-
-
-      for(int i=0;i<25;i++)
-   {
-       _delay((unsigned long)((20)*(8000000/4000.0)));
-       if(PORTBbits.RB3==0&&prev_status==PREV_STABLE)
-       {
-           if(TargetTempreture<75)
-           {
-               TargetTempreture += 5;
-           _delay((unsigned long)((10)*(8000000/4000.0)));
-           prev_status=PREV_UN_STABLE;
-           }
-       }
-
-
-     if(PORTBbits.RB4==0&&prev_status==PREV_STABLE)
-     {
-        if(TargetTempreture>35)
-        {
-         TargetTempreture -= 5;
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-         prev_status=PREV_UN_STABLE;
-        }
-     }
-
-   }
-
+  while(I2C_Master_Write(0xA0))
+    I2C_Master_RepeatedStart();
+  I2C_Master_Write(add);
+  I2C_Master_Write(data);
+  I2C_Master_Stop();
 }
-void changeStatus()
-{
-    if(TEMPRETURE>TargetTempreture+5)
-    {
-        temp_state=UPOVE_state;
 
-    }else if(TEMPRETURE<TargetTempreture-5)
-    {
-        temp_state=DOWN_state;
-    }
-    else{
-        temp_state=OK_state;
-    }
+void EEPROM_Write_Page(unsigned int add, unsigned char* data, unsigned char len)
+{
+  I2C_Master_Start();
+
+  while(I2C_Master_Write(0xA0))
+    I2C_Master_RepeatedStart();
+  I2C_Master_Write(add>>8);
+  I2C_Master_Write((unsigned char)add);
+  for(unsigned int i=0; i<len; i++)
+    I2C_Master_Write(data[i]);
+  I2C_Master_Stop();
 }
 
 
-void heaterOn()
+
+unsigned char EEPROM_Read(unsigned int add)
 {
-    RC2=1;
-    RC5=0;
+  unsigned char Data;
+  I2C_Master_Start();
+
+  I2C_Master_Write(0xA0);
+  I2C_Master_Write(add);
+  I2C_Master_Start();
+  I2C_Master_Write(0xA1);
+  Data = I2C_Read_Byte();
+  I2C_NACK();
+  I2C_Master_Stop();
+  return Data;
 }
 
-void coolerOn()
+void EEPROM_Read_Page(unsigned int add, unsigned char* data, unsigned int len)
 {
-    RC5 = 1;
-    RC2=0;
+  I2C_Master_Start();
 
-}
-void on_state()
-{
-    TMR1ON = 1;
-    if(PORTBbits.RB3==0||PORTBbits.RB4==0)
-    {
-        state=SETTING_STATE;
-        return;
-    }
-    displayTempreture();
-    changeStatus();
-
-    switch (temp_state)
-    {
-    case OK_state:
-        break;
-    case UPOVE_state:
-        heaterOn();
-        break;
-    case DOWN_state:
-        coolerOn();
-        break;
-    default:
-        break;
-    }
-
-}
-
-void setting_state()
-{
-     TMR1ON = 0;
-     RC2=0;
-     RC5=0;
-     flashDisplay();
-
-}
-
-void main(void) {
-
-    TIMER1_init ();
-    IRQ_RB0_init ();
-    I2C_Master_Init(100000);
-
-
-    TRISA = 0x07;
-
-    TRISD = 0x00;
-
-    PORTD = 0x00;
-
-    TRISC5 = 0;
-    TRISC2 = 0;
-    RC2 = 0;
-    RC5 = 0;
-    TRISB7 = 0;
-    TRISB3 = 1;
-    TRISB4 = 1;
-    RB7 =0;
-    TRISB5 = 0;
-    RB5 =0;
-    Number_Tempreture=0;
-    adc_init();
-    state=OFF_STATE;
-    temp_state=OK_state;
-    ReadTemp=0;
-    timer1counter=0;
-    accumilated_tmeperature=0;
-  unsigned char flag=EEPROM_Read(0x01);
-  _delay((unsigned long)((500)*(8000000/4000.0)));
-  if(flag==1)
+  while(I2C_Master_Write(0xA0))
+    I2C_Master_RepeatedStart();
+  I2C_Master_Write(add>>8);
+  I2C_Master_Write((unsigned char)add);
+  I2C_Master_RepeatedStart();
+  I2C_Master_Write(0xA1);
+  for(unsigned int i=0; i<len; i++)
   {
-      TargetTempreture=EEPROM_Read(0x00);
+    data[i] = I2C_Read_Byte();
+    I2C_ACK();
   }
-  else
-  {
-    EEPROM_Write(0x01,0x01);
-    TargetTempreture=60;
-  }
-
-while (1)
-{
-    switch(state)
-    {
-        case ON_STATE:
-            on_state();
-            break;
-        case OFF_STATE:
-            off_state();
-            break;
-        case SETTING_STATE:
-            setting_state();
-            break;
-        default:
-            break;
-    }
-
-}
-}
-void displayTempreture()
-{
-    unsigned char low=TEMPRETURE%10;
-    unsigned char high=TEMPRETURE/10;
-     PORTAbits.RA5=1;
-    lcd_writeNumber(low);
-    _delay((unsigned long)((10)*(8000000/4000.0)));
-    PORTAbits.RA5=0;
-   lcd_writeNumber(high);
-   PORTAbits.RA4=1;
-   _delay((unsigned long)((10)*(8000000/4000.0)));
-    PORTAbits.RA4=0;
-}
-
-void displayDeiredTempreture()
-{
-    unsigned char low=TargetTempreture%10;
-    unsigned char high=TargetTempreture/10;
-     PORTAbits.RA5=1;
-    lcd_writeNumber(low);
-    _delay((unsigned long)((10)*(8000000/4000.0)));
-    PORTAbits.RA5=0;
-   lcd_writeNumber(high);
-   PORTAbits.RA4=1;
-   _delay((unsigned long)((10)*(8000000/4000.0)));
-    PORTAbits.RA4=0;
-}
-
-void update_tempreture ()
-{
-    unsigned int temp=(adc_amostra(2)*10)/2;
-    itoa(temp,str);
-    unsigned char y= str[2];
-    unsigned char x= str[3];
-    accumilated_tmeperature += (y*10)+x;
-    return;
-}
-
-
-
-void __attribute__((picinterrupt(("")))) ISR(void)
-{
-
-  if (INTF)
-  {
-    INTF = 0;
-    switch(state)
-    {
-        case ON_STATE:
-            TMR1ON = 0;
-            TMR1IF = 0;
-            state=OFF_STATE;
-            break;
-        case OFF_STATE:
-            TMR1ON = 1;
-            state=ON_STATE;
-            break;
-        case SETTING_STATE:
-            TMR1ON = 0;
-            TMR1IF = 0;
-            state=OFF_STATE;
-            break;
-        default:
-            break;
-    }
-
-
-    }
-
-
-   if (TMR1IF)
-   {
-           TMR1IF = 0;
-           timer1counter++;
-           ReadTemp=0;
-           if (timer1counter == 4){
-                ReadTemp=1;
-                Number_Tempreture++;
-                timer1counter = 0;
-                update_tempreture();
-           }
-            if(Number_Tempreture==10)
-            {
-               TEMPRETURE=accumilated_tmeperature/10;
-
-                RB5 = ~RB5;
-
-                Number_Tempreture = 0;
-                accumilated_tmeperature= 0;
-            }
-   }
-
-}
-
-
-
-void IRQ_RB0_init (){
-
-    INTE = 1;
-
-    INTEDG = 0;
-
-    GIE = 1;
-
-}
-
-void TIMER1_init (){
-
-
-    TMR1 = 15535;
-
-    TMR1CS = 0;
-
-    T1CKPS0 = 0;
-    T1CKPS1 = 0;
-
-
-    TMR1IE = 1;
-    TMR1IF = 0;
-    PEIE = 1;
-
+  I2C_Master_Stop();
 }
