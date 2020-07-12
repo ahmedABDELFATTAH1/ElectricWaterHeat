@@ -1824,7 +1824,7 @@ void flashDisplay()
         }
 
     }
-   for(int i=0;i<25;i++)
+   for(int i=0;i<20;i++)
    {
     displayDeiredTempreture();
     if(PORTBbits.RB3==0&&prev_status==PREV_STABLE)
@@ -1832,7 +1832,6 @@ void flashDisplay()
            if(TargetTempreture<75)
            {
                TargetTempreture += 5;
-           _delay((unsigned long)((10)*(8000000/4000.0)));
            prev_status=PREV_UN_STABLE;
            }
        }
@@ -1842,7 +1841,6 @@ void flashDisplay()
         if(TargetTempreture>35)
         {
          TargetTempreture -= 5;
-        _delay((unsigned long)((10)*(8000000/4000.0)));
          prev_status=PREV_UN_STABLE;
         }
 
@@ -1854,26 +1852,24 @@ void flashDisplay()
     PORTAbits.RA5=0;
 
 
-      for(int i=0;i<25;i++)
+      for(int i=0;i<40;i++)
    {
-       _delay((unsigned long)((20)*(8000000/4000.0)));
+       _delay((unsigned long)((5)*(8000000/4000.0)));
        if(PORTBbits.RB3==0&&prev_status==PREV_STABLE)
        {
            if(TargetTempreture<75)
            {
                TargetTempreture += 5;
-           _delay((unsigned long)((10)*(8000000/4000.0)));
            prev_status=PREV_UN_STABLE;
            }
        }
 
-
+       _delay((unsigned long)((5)*(8000000/4000.0)));
      if(PORTBbits.RB4==0&&prev_status==PREV_STABLE)
      {
         if(TargetTempreture>35)
         {
          TargetTempreture -= 5;
-        _delay((unsigned long)((10)*(8000000/4000.0)));
          prev_status=PREV_UN_STABLE;
         }
      }
@@ -1891,7 +1887,8 @@ void changeStatus()
     {
         temp_state=DOWN_state;
     }
-    else{
+    if(TEMPRETURE<TargetTempreture+1 && TEMPRETURE>TargetTempreture-1)
+    {
         temp_state=OK_state;
         RC2=0;
         RC5=0;
@@ -1923,11 +1920,9 @@ void on_state()
     }
     displayTempreture();
     changeStatus();
-
     switch (temp_state)
     {
     case OK_state:
-        off_state();
         break;
     case UPOVE_state:
         heaterOn();

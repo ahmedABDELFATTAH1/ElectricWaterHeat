@@ -69,15 +69,14 @@ void flashDisplay()
         }
 
     }
-   for(int i=0;i<25;i++)
+   for(int i=0;i<20;i++)
    {
     displayDeiredTempreture();
     if(UP==0&&prev_status==PREV_STABLE)
        {
            if(TargetTempreture<MAX_TEMP)
            {
-               TargetTempreture += 5;
-           __delay_ms(10);
+               TargetTempreture += 5;         
            prev_status=PREV_UN_STABLE;
            }
        } 
@@ -86,8 +85,7 @@ void flashDisplay()
     {
         if(TargetTempreture>MIN_TEMP)
         {
-         TargetTempreture -= 5;
-        __delay_ms(10);
+         TargetTempreture -= 5;       
          prev_status=PREV_UN_STABLE;
         }
        
@@ -99,26 +97,24 @@ void flashDisplay()
     PORTAbits.RA5=0;   
 
     
-      for(int i=0;i<25;i++)
+      for(int i=0;i<40;i++)
    {
-       __delay_ms(20);       
+       __delay_ms(5);       
        if(UP==0&&prev_status==PREV_STABLE)
        {
            if(TargetTempreture<MAX_TEMP)
            {
-               TargetTempreture += 5;
-           __delay_ms(10);
+               TargetTempreture += 5;           
            prev_status=PREV_UN_STABLE;
            }
        }
          
-         
+       __delay_ms(5);  
      if(DOWN==0&&prev_status==PREV_STABLE)
      {
         if(TargetTempreture>MIN_TEMP)
         {
-         TargetTempreture -= 5;
-        __delay_ms(10);
+         TargetTempreture -= 5;       
          prev_status=PREV_UN_STABLE;
         }
      }
@@ -136,7 +132,8 @@ void changeStatus()
     {
         temp_state=DOWN_state; 
     }
-    else{
+    if(TEMPRETURE<TargetTempreture+1 && TEMPRETURE>TargetTempreture-1)
+    {
         temp_state=OK_state;
         RC2=0;
         RC5=0;
@@ -167,8 +164,7 @@ void on_state()
         return;
     }
     displayTempreture();
-    changeStatus();
-   
+    changeStatus();   
     switch (temp_state)
     {
     case OK_state:

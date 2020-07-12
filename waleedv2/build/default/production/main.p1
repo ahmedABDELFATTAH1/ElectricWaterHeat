@@ -30,10 +30,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "44 main.c
 [; ;main.c: 44: void displayDeiredTempreture();
 [v _displayDeiredTempreture `(v ~T0 @X0 0 e? ]
-[v F842 `(v ~T0 @X0 1 tf1`ul ]
-"92 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic.h
-[v __delay `JF842 ~T0 @X0 0 e ]
-[p i __delay ]
 "172 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 172:     struct {
 [s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -45,8 +41,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "181
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 181: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
 [v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
-"133 main.c
-[; ;main.c: 133:         temp_state=UPOVE_state;
+[v F842 `(v ~T0 @X0 1 tf1`ul ]
+"92 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic.h
+[v __delay `JF842 ~T0 @X0 0 e ]
+[p i __delay ]
+"129 main.c
+[; ;main.c: 129:         temp_state=UPOVE_state;
 [c E900 0 1 2 .. ]
 [n E900 Temp_Status OK_state UPOVE_state DOWN_state  ]
 "2893 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h
@@ -456,11 +456,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 97 ]
 "72
-[; ;main.c: 72:    for(int i=0;i<25;i++)
+[; ;main.c: 72:    for(int i=0;i<20;i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 25 `i 100  ]
+[e $ < _i -> 20 `i 100  ]
 [e $U 101  ]
 [e :U 100 ]
 "73
@@ -485,309 +485,299 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 79:                TargetTempreture += 5;
 [e =+ _TargetTempreture -> 5 `i ]
 "80
-[; ;main.c: 80:            _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"81
-[; ;main.c: 81:            prev_status=PREV_UN_STABLE;
+[; ;main.c: 80:            prev_status=PREV_UN_STABLE;
 [e = F921 -> . `E916 0 `uc ]
-"82
-[; ;main.c: 82:            }
+"81
+[; ;main.c: 81:            }
 }
 [e :U 104 ]
-"83
-[; ;main.c: 83:        }
+"82
+[; ;main.c: 82:        }
 }
 [e :U 103 ]
-"85
-[; ;main.c: 85:     if(PORTBbits.RB4==0&&prev_status==PREV_STABLE)
+"84
+[; ;main.c: 84:     if(PORTBbits.RB4==0&&prev_status==PREV_STABLE)
 [e $ ! && == -> . . _PORTBbits 0 4 `i -> 0 `i == -> F921 `i -> . `E916 1 `i 105  ]
+"85
+[; ;main.c: 85:     {
+{
 "86
-[; ;main.c: 86:     {
-{
-"87
-[; ;main.c: 87:         if(TargetTempreture>35)
+[; ;main.c: 86:         if(TargetTempreture>35)
 [e $ ! > _TargetTempreture -> 35 `i 106  ]
-"88
-[; ;main.c: 88:         {
+"87
+[; ;main.c: 87:         {
 {
-"89
-[; ;main.c: 89:          TargetTempreture -= 5;
+"88
+[; ;main.c: 88:          TargetTempreture -= 5;
 [e =- _TargetTempreture -> 5 `i ]
-"90
-[; ;main.c: 90:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"91
-[; ;main.c: 91:          prev_status=PREV_UN_STABLE;
+"89
+[; ;main.c: 89:          prev_status=PREV_UN_STABLE;
 [e = F921 -> . `E916 0 `uc ]
-"92
-[; ;main.c: 92:         }
+"90
+[; ;main.c: 90:         }
 }
 [e :U 106 ]
-"94
-[; ;main.c: 94:     }
+"92
+[; ;main.c: 92:     }
 }
 [e :U 105 ]
-"97
-[; ;main.c: 97:    }
+"95
+[; ;main.c: 95:    }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 25 `i 100  ]
+[e $ < _i -> 20 `i 100  ]
 [e :U 101 ]
 }
-"98
-[; ;main.c: 98:     PORTAbits.RA4=0;
+"96
+[; ;main.c: 96:     PORTAbits.RA4=0;
 [e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-"99
-[; ;main.c: 99:     PORTAbits.RA5=0;
+"97
+[; ;main.c: 97:     PORTAbits.RA5=0;
 [e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
-"102
-[; ;main.c: 102:       for(int i=0;i<25;i++)
+"100
+[; ;main.c: 100:       for(int i=0;i<40;i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 25 `i 107  ]
+[e $ < _i -> 40 `i 107  ]
 [e $U 108  ]
 [e :U 107 ]
-"103
-[; ;main.c: 103:    {
+"101
+[; ;main.c: 101:    {
 {
-"104
-[; ;main.c: 104:        _delay((unsigned long)((20)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"105
-[; ;main.c: 105:        if(PORTBbits.RB3==0&&prev_status==PREV_STABLE)
+"102
+[; ;main.c: 102:        _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"103
+[; ;main.c: 103:        if(PORTBbits.RB3==0&&prev_status==PREV_STABLE)
 [e $ ! && == -> . . _PORTBbits 0 3 `i -> 0 `i == -> F921 `i -> . `E916 1 `i 110  ]
+"104
+[; ;main.c: 104:        {
+{
+"105
+[; ;main.c: 105:            if(TargetTempreture<75)
+[e $ ! < _TargetTempreture -> 75 `i 111  ]
 "106
-[; ;main.c: 106:        {
+[; ;main.c: 106:            {
 {
 "107
-[; ;main.c: 107:            if(TargetTempreture<75)
-[e $ ! < _TargetTempreture -> 75 `i 111  ]
-"108
-[; ;main.c: 108:            {
-{
-"109
-[; ;main.c: 109:                TargetTempreture += 5;
+[; ;main.c: 107:                TargetTempreture += 5;
 [e =+ _TargetTempreture -> 5 `i ]
-"110
-[; ;main.c: 110:            _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"111
-[; ;main.c: 111:            prev_status=PREV_UN_STABLE;
+"108
+[; ;main.c: 108:            prev_status=PREV_UN_STABLE;
 [e = F921 -> . `E916 0 `uc ]
-"112
-[; ;main.c: 112:            }
+"109
+[; ;main.c: 109:            }
 }
 [e :U 111 ]
-"113
-[; ;main.c: 113:        }
+"110
+[; ;main.c: 110:        }
 }
 [e :U 110 ]
-"116
-[; ;main.c: 116:      if(PORTBbits.RB4==0&&prev_status==PREV_STABLE)
+"112
+[; ;main.c: 112:        _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"113
+[; ;main.c: 113:      if(PORTBbits.RB4==0&&prev_status==PREV_STABLE)
 [e $ ! && == -> . . _PORTBbits 0 4 `i -> 0 `i == -> F921 `i -> . `E916 1 `i 112  ]
-"117
-[; ;main.c: 117:      {
+"114
+[; ;main.c: 114:      {
 {
-"118
-[; ;main.c: 118:         if(TargetTempreture>35)
+"115
+[; ;main.c: 115:         if(TargetTempreture>35)
 [e $ ! > _TargetTempreture -> 35 `i 113  ]
-"119
-[; ;main.c: 119:         {
+"116
+[; ;main.c: 116:         {
 {
-"120
-[; ;main.c: 120:          TargetTempreture -= 5;
+"117
+[; ;main.c: 117:          TargetTempreture -= 5;
 [e =- _TargetTempreture -> 5 `i ]
-"121
-[; ;main.c: 121:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"122
-[; ;main.c: 122:          prev_status=PREV_UN_STABLE;
+"118
+[; ;main.c: 118:          prev_status=PREV_UN_STABLE;
 [e = F921 -> . `E916 0 `uc ]
-"123
-[; ;main.c: 123:         }
+"119
+[; ;main.c: 119:         }
 }
 [e :U 113 ]
-"124
-[; ;main.c: 124:      }
+"120
+[; ;main.c: 120:      }
 }
 [e :U 112 ]
-"126
-[; ;main.c: 126:    }
+"122
+[; ;main.c: 122:    }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 25 `i 107  ]
+[e $ < _i -> 40 `i 107  ]
 [e :U 108 ]
 }
-"128
-[; ;main.c: 128: }
+"124
+[; ;main.c: 124: }
 [e :UE 96 ]
 }
-"129
-[; ;main.c: 129: void changeStatus()
+"125
+[; ;main.c: 125: void changeStatus()
 [v _changeStatus `(v ~T0 @X0 1 ef ]
-"130
-[; ;main.c: 130: {
+"126
+[; ;main.c: 126: {
 {
 [e :U _changeStatus ]
 [f ]
-"131
-[; ;main.c: 131:     if(TEMPRETURE>TargetTempreture+5)
+"127
+[; ;main.c: 127:     if(TEMPRETURE>TargetTempreture+5)
 [e $ ! > _TEMPRETURE -> + _TargetTempreture -> 5 `i `ui 115  ]
-"132
-[; ;main.c: 132:     {
+"128
+[; ;main.c: 128:     {
 {
-"133
-[; ;main.c: 133:         temp_state=UPOVE_state;
+"129
+[; ;main.c: 129:         temp_state=UPOVE_state;
 [e = _temp_state -> . `E900 1 `uc ]
-"135
-[; ;main.c: 135:     }else if(TEMPRETURE<TargetTempreture-5)
+"131
+[; ;main.c: 131:     }else if(TEMPRETURE<TargetTempreture-5)
 }
 [e $U 116  ]
 [e :U 115 ]
 [e $ ! < _TEMPRETURE -> - _TargetTempreture -> 5 `i `ui 117  ]
+"132
+[; ;main.c: 132:     {
+{
+"133
+[; ;main.c: 133:         temp_state=DOWN_state;
+[e = _temp_state -> . `E900 2 `uc ]
+"134
+[; ;main.c: 134:     }
+}
+[e :U 117 ]
+[e :U 116 ]
+"135
+[; ;main.c: 135:     if(TEMPRETURE<TargetTempreture+1 && TEMPRETURE>TargetTempreture-1)
+[e $ ! && < _TEMPRETURE -> + _TargetTempreture -> 1 `i `ui > _TEMPRETURE -> - _TargetTempreture -> 1 `i `ui 118  ]
 "136
 [; ;main.c: 136:     {
 {
 "137
-[; ;main.c: 137:         temp_state=DOWN_state;
-[e = _temp_state -> . `E900 2 `uc ]
-"138
-[; ;main.c: 138:     }
-}
-[e $U 118  ]
-"139
-[; ;main.c: 139:     else{
-[e :U 117 ]
-{
-"140
-[; ;main.c: 140:         temp_state=OK_state;
+[; ;main.c: 137:         temp_state=OK_state;
 [e = _temp_state -> . `E900 0 `uc ]
-"141
-[; ;main.c: 141:         RC2=0;
+"138
+[; ;main.c: 138:         RC2=0;
 [e = _RC2 -> -> 0 `i `b ]
-"142
-[; ;main.c: 142:         RC5=0;
+"139
+[; ;main.c: 139:         RC5=0;
 [e = _RC5 -> -> 0 `i `b ]
-"143
-[; ;main.c: 143:     }
+"140
+[; ;main.c: 140:     }
 }
 [e :U 118 ]
-[e :U 116 ]
-"144
-[; ;main.c: 144: }
+"141
+[; ;main.c: 141: }
 [e :UE 114 ]
 }
-"147
-[; ;main.c: 147: void heaterOn()
+"144
+[; ;main.c: 144: void heaterOn()
 [v _heaterOn `(v ~T0 @X0 1 ef ]
-"148
-[; ;main.c: 148: {
+"145
+[; ;main.c: 145: {
 {
 [e :U _heaterOn ]
 [f ]
-"149
-[; ;main.c: 149:     RC2=1;
+"146
+[; ;main.c: 146:     RC2=1;
 [e = _RC2 -> -> 1 `i `b ]
-"150
-[; ;main.c: 150:     RC5=0;
+"147
+[; ;main.c: 147:     RC5=0;
 [e = _RC5 -> -> 0 `i `b ]
-"151
-[; ;main.c: 151: }
+"148
+[; ;main.c: 148: }
 [e :UE 119 ]
 }
-"153
-[; ;main.c: 153: void coolerOn()
+"150
+[; ;main.c: 150: void coolerOn()
 [v _coolerOn `(v ~T0 @X0 1 ef ]
-"154
-[; ;main.c: 154: {
+"151
+[; ;main.c: 151: {
 {
 [e :U _coolerOn ]
 [f ]
-"155
-[; ;main.c: 155:     RC5 = 1;
+"152
+[; ;main.c: 152:     RC5 = 1;
 [e = _RC5 -> -> 1 `i `b ]
-"156
-[; ;main.c: 156:     RC2=0;
+"153
+[; ;main.c: 153:     RC2=0;
 [e = _RC2 -> -> 0 `i `b ]
-"158
-[; ;main.c: 158: }
+"155
+[; ;main.c: 155: }
 [e :UE 120 ]
 }
-"161
-[; ;main.c: 161: void on_state()
+"158
+[; ;main.c: 158: void on_state()
 [v _on_state `(v ~T0 @X0 1 ef ]
-"162
-[; ;main.c: 162: {
+"159
+[; ;main.c: 159: {
 {
 [e :U _on_state ]
 [f ]
-"163
-[; ;main.c: 163:     TMR1ON = 1;
+"160
+[; ;main.c: 160:     TMR1ON = 1;
 [e = _TMR1ON -> -> 1 `i `b ]
-"164
-[; ;main.c: 164:     if(PORTBbits.RB3==0||PORTBbits.RB4==0)
+"161
+[; ;main.c: 161:     if(PORTBbits.RB3==0||PORTBbits.RB4==0)
 [e $ ! || == -> . . _PORTBbits 0 3 `i -> 0 `i == -> . . _PORTBbits 0 4 `i -> 0 `i 122  ]
-"165
-[; ;main.c: 165:     {
+"162
+[; ;main.c: 162:     {
 {
-"166
-[; ;main.c: 166:         state=SETTING_STATE;
+"163
+[; ;main.c: 163:         state=SETTING_STATE;
 [e = _state -> . `E896 2 `uc ]
-"167
-[; ;main.c: 167:         return;
+"164
+[; ;main.c: 164:         return;
 [e $UE 121  ]
-"168
-[; ;main.c: 168:     }
+"165
+[; ;main.c: 165:     }
 }
 [e :U 122 ]
-"169
-[; ;main.c: 169:     displayTempreture();
+"166
+[; ;main.c: 166:     displayTempreture();
 [e ( _displayTempreture ..  ]
-"170
-[; ;main.c: 170:     changeStatus();
+"167
+[; ;main.c: 167:     changeStatus();
 [e ( _changeStatus ..  ]
-"172
-[; ;main.c: 172:     switch (temp_state)
+"168
+[; ;main.c: 168:     switch (temp_state)
 [e $U 124  ]
-"173
-[; ;main.c: 173:     {
+"169
+[; ;main.c: 169:     {
 {
-"174
-[; ;main.c: 174:     case OK_state:
+"170
+[; ;main.c: 170:     case OK_state:
 [e :U 125 ]
-"175
-[; ;main.c: 175:         off_state();
-[e ( _off_state ..  ]
-"176
-[; ;main.c: 176:         break;
+"171
+[; ;main.c: 171:         break;
 [e $U 123  ]
-"177
-[; ;main.c: 177:     case UPOVE_state:
+"172
+[; ;main.c: 172:     case UPOVE_state:
 [e :U 126 ]
-"178
-[; ;main.c: 178:         heaterOn();
+"173
+[; ;main.c: 173:         heaterOn();
 [e ( _heaterOn ..  ]
+"174
+[; ;main.c: 174:         break;
+[e $U 123  ]
+"175
+[; ;main.c: 175:     case DOWN_state:
+[e :U 127 ]
+"176
+[; ;main.c: 176:         coolerOn();
+[e ( _coolerOn ..  ]
+"177
+[; ;main.c: 177:         break;
+[e $U 123  ]
+"178
+[; ;main.c: 178:     default:
+[e :U 128 ]
 "179
 [; ;main.c: 179:         break;
 [e $U 123  ]
 "180
-[; ;main.c: 180:     case DOWN_state:
-[e :U 127 ]
-"181
-[; ;main.c: 181:         coolerOn();
-[e ( _coolerOn ..  ]
-"182
-[; ;main.c: 182:         break;
-[e $U 123  ]
-"183
-[; ;main.c: 183:     default:
-[e :U 128 ]
-"184
-[; ;main.c: 184:         break;
-[e $U 123  ]
-"185
-[; ;main.c: 185:     }
+[; ;main.c: 180:     }
 }
 [e $U 123  ]
 [e :U 124 ]
@@ -796,193 +786,193 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ . `E900 2 127
  128 ]
 [e :U 123 ]
-"187
-[; ;main.c: 187: }
+"182
+[; ;main.c: 182: }
 [e :UE 121 ]
 }
-"189
-[; ;main.c: 189: void setting_state()
+"184
+[; ;main.c: 184: void setting_state()
 [v _setting_state `(v ~T0 @X0 1 ef ]
-"190
-[; ;main.c: 190: {
+"185
+[; ;main.c: 185: {
 {
 [e :U _setting_state ]
 [f ]
-"191
-[; ;main.c: 191:      TMR1ON = 0;
+"186
+[; ;main.c: 186:      TMR1ON = 0;
 [e = _TMR1ON -> -> 0 `i `b ]
-"192
-[; ;main.c: 192:      RC2=0;
+"187
+[; ;main.c: 187:      RC2=0;
 [e = _RC2 -> -> 0 `i `b ]
-"193
-[; ;main.c: 193:      RC5=0;
+"188
+[; ;main.c: 188:      RC5=0;
 [e = _RC5 -> -> 0 `i `b ]
-"194
-[; ;main.c: 194:      flashDisplay();
+"189
+[; ;main.c: 189:      flashDisplay();
 [e ( _flashDisplay ..  ]
-"196
-[; ;main.c: 196: }
+"191
+[; ;main.c: 191: }
 [e :UE 129 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"198
-[; ;main.c: 198: void main(void) {
+"193
+[; ;main.c: 193: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"200
-[; ;main.c: 200:     TIMER1_init ();
+"195
+[; ;main.c: 195:     TIMER1_init ();
 [e ( _TIMER1_init ..  ]
-"201
-[; ;main.c: 201:     IRQ_RB0_init ();
+"196
+[; ;main.c: 196:     IRQ_RB0_init ();
 [e ( _IRQ_RB0_init ..  ]
-"202
-[; ;main.c: 202:     I2C_Master_Init(100000);
+"197
+[; ;main.c: 197:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"205
-[; ;main.c: 205:     TRISA = 0x07;
+"200
+[; ;main.c: 200:     TRISA = 0x07;
 [e = _TRISA -> -> 7 `i `uc ]
-"207
-[; ;main.c: 207:     TRISD = 0x00;
+"202
+[; ;main.c: 202:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"209
-[; ;main.c: 209:     PORTD = 0x00;
+"204
+[; ;main.c: 204:     PORTD = 0x00;
 [e = _PORTD -> -> 0 `i `uc ]
-"211
-[; ;main.c: 211:     TRISC5 = 0;
+"206
+[; ;main.c: 206:     TRISC5 = 0;
 [e = _TRISC5 -> -> 0 `i `b ]
-"212
-[; ;main.c: 212:     TRISC2 = 0;
+"207
+[; ;main.c: 207:     TRISC2 = 0;
 [e = _TRISC2 -> -> 0 `i `b ]
-"213
-[; ;main.c: 213:     RC2 = 0;
+"208
+[; ;main.c: 208:     RC2 = 0;
 [e = _RC2 -> -> 0 `i `b ]
-"214
-[; ;main.c: 214:     RC5 = 0;
+"209
+[; ;main.c: 209:     RC5 = 0;
 [e = _RC5 -> -> 0 `i `b ]
-"215
-[; ;main.c: 215:     TRISB7 = 0;
+"210
+[; ;main.c: 210:     TRISB7 = 0;
 [e = _TRISB7 -> -> 0 `i `b ]
-"216
-[; ;main.c: 216:     TRISB3 = 1;
+"211
+[; ;main.c: 211:     TRISB3 = 1;
 [e = _TRISB3 -> -> 1 `i `b ]
-"217
-[; ;main.c: 217:     TRISB4 = 1;
+"212
+[; ;main.c: 212:     TRISB4 = 1;
 [e = _TRISB4 -> -> 1 `i `b ]
-"218
-[; ;main.c: 218:     RB7 =0;
+"213
+[; ;main.c: 213:     RB7 =0;
 [e = _RB7 -> -> 0 `i `b ]
-"219
-[; ;main.c: 219:     TRISB5 = 0;
+"214
+[; ;main.c: 214:     TRISB5 = 0;
 [e = _TRISB5 -> -> 0 `i `b ]
-"220
-[; ;main.c: 220:     RB5 =0;
+"215
+[; ;main.c: 215:     RB5 =0;
 [e = _RB5 -> -> 0 `i `b ]
-"221
-[; ;main.c: 221:     Number_Tempreture=0;
+"216
+[; ;main.c: 216:     Number_Tempreture=0;
 [e = _Number_Tempreture -> -> 0 `i `uc ]
-"222
-[; ;main.c: 222:     adc_init();
+"217
+[; ;main.c: 217:     adc_init();
 [e ( _adc_init ..  ]
-"223
-[; ;main.c: 223:     state=OFF_STATE;
+"218
+[; ;main.c: 218:     state=OFF_STATE;
 [e = _state -> . `E896 1 `uc ]
-"224
-[; ;main.c: 224:     temp_state=OK_state;
+"219
+[; ;main.c: 219:     temp_state=OK_state;
 [e = _temp_state -> . `E900 0 `uc ]
-"225
-[; ;main.c: 225:     ReadTemp=0;
+"220
+[; ;main.c: 220:     ReadTemp=0;
 [e = _ReadTemp -> -> 0 `i `uc ]
-"226
-[; ;main.c: 226:     timer1counter=0;
+"221
+[; ;main.c: 221:     timer1counter=0;
 [e = _timer1counter -> -> 0 `i `uc ]
-"227
-[; ;main.c: 227:     accumilated_tmeperature=0;
+"222
+[; ;main.c: 222:     accumilated_tmeperature=0;
 [e = _accumilated_tmeperature -> -> 0 `i `ui ]
-"228
-[; ;main.c: 228:   unsigned char flag=EEPROM_Read(0x01);
+"223
+[; ;main.c: 223:   unsigned char flag=EEPROM_Read(0x01);
 [v _flag `uc ~T0 @X0 1 a ]
 [e = _flag ( _EEPROM_Read (1 -> -> 1 `i `ui ]
-"229
-[; ;main.c: 229:   _delay((unsigned long)((500)*(8000000/4000.0)));
+"224
+[; ;main.c: 224:   _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"230
-[; ;main.c: 230:   if(flag==1)
+"225
+[; ;main.c: 225:   if(flag==1)
 [e $ ! == -> _flag `i -> 1 `i 131  ]
-"231
-[; ;main.c: 231:   {
+"226
+[; ;main.c: 226:   {
 {
-"232
-[; ;main.c: 232:       TargetTempreture=EEPROM_Read(0x00);
+"227
+[; ;main.c: 227:       TargetTempreture=EEPROM_Read(0x00);
 [e = _TargetTempreture -> ( _EEPROM_Read (1 -> -> 0 `i `ui `i ]
+"228
+[; ;main.c: 228:   }
+}
+[e $U 132  ]
+"229
+[; ;main.c: 229:   else
+[e :U 131 ]
+"230
+[; ;main.c: 230:   {
+{
+"231
+[; ;main.c: 231:     EEPROM_Write(0x01,0x01);
+[e ( _EEPROM_Write (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"232
+[; ;main.c: 232:     TargetTempreture=60;
+[e = _TargetTempreture -> 60 `i ]
 "233
 [; ;main.c: 233:   }
 }
-[e $U 132  ]
-"234
-[; ;main.c: 234:   else
-[e :U 131 ]
-"235
-[; ;main.c: 235:   {
-{
-"236
-[; ;main.c: 236:     EEPROM_Write(0x01,0x01);
-[e ( _EEPROM_Write (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"237
-[; ;main.c: 237:     TargetTempreture=60;
-[e = _TargetTempreture -> 60 `i ]
-"238
-[; ;main.c: 238:   }
-}
 [e :U 132 ]
-"240
-[; ;main.c: 240: while (1)
+"235
+[; ;main.c: 235: while (1)
 [e :U 134 ]
-"241
-[; ;main.c: 241: {
+"236
+[; ;main.c: 236: {
 {
-"242
-[; ;main.c: 242:     switch(state)
+"237
+[; ;main.c: 237:     switch(state)
 [e $U 137  ]
-"243
-[; ;main.c: 243:     {
+"238
+[; ;main.c: 238:     {
 {
-"244
-[; ;main.c: 244:         case ON_STATE:
+"239
+[; ;main.c: 239:         case ON_STATE:
 [e :U 138 ]
-"245
-[; ;main.c: 245:             on_state();
+"240
+[; ;main.c: 240:             on_state();
 [e ( _on_state ..  ]
-"246
-[; ;main.c: 246:             break;
+"241
+[; ;main.c: 241:             break;
 [e $U 136  ]
-"247
-[; ;main.c: 247:         case OFF_STATE:
+"242
+[; ;main.c: 242:         case OFF_STATE:
 [e :U 139 ]
-"248
-[; ;main.c: 248:             off_state();
+"243
+[; ;main.c: 243:             off_state();
 [e ( _off_state ..  ]
+"244
+[; ;main.c: 244:             break;
+[e $U 136  ]
+"245
+[; ;main.c: 245:         case SETTING_STATE:
+[e :U 140 ]
+"246
+[; ;main.c: 246:             setting_state();
+[e ( _setting_state ..  ]
+"247
+[; ;main.c: 247:             break;
+[e $U 136  ]
+"248
+[; ;main.c: 248:         default:
+[e :U 141 ]
 "249
 [; ;main.c: 249:             break;
 [e $U 136  ]
 "250
-[; ;main.c: 250:         case SETTING_STATE:
-[e :U 140 ]
-"251
-[; ;main.c: 251:             setting_state();
-[e ( _setting_state ..  ]
-"252
-[; ;main.c: 252:             break;
-[e $U 136  ]
-"253
-[; ;main.c: 253:         default:
-[e :U 141 ]
-"254
-[; ;main.c: 254:             break;
-[e $U 136  ]
-"255
-[; ;main.c: 255:     }
+[; ;main.c: 250:     }
 }
 [e $U 136  ]
 [e :U 137 ]
@@ -991,211 +981,211 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ . `E896 2 140
  141 ]
 [e :U 136 ]
-"257
-[; ;main.c: 257: }
+"252
+[; ;main.c: 252: }
 }
 [e :U 133 ]
 [e $U 134  ]
 [e :U 135 ]
-"258
-[; ;main.c: 258: }
+"253
+[; ;main.c: 253: }
 [e :UE 130 ]
 }
-"259
-[; ;main.c: 259: void displayTempreture()
+"254
+[; ;main.c: 254: void displayTempreture()
 [v _displayTempreture `(v ~T0 @X0 1 ef ]
-"260
-[; ;main.c: 260: {
+"255
+[; ;main.c: 255: {
 {
 [e :U _displayTempreture ]
 [f ]
-"261
-[; ;main.c: 261:     unsigned char low=TEMPRETURE%10;
+"256
+[; ;main.c: 256:     unsigned char low=TEMPRETURE%10;
 [v _low `uc ~T0 @X0 1 a ]
 [e = _low -> % _TEMPRETURE -> -> 10 `i `ui `uc ]
-"262
-[; ;main.c: 262:     unsigned char high=TEMPRETURE/10;
+"257
+[; ;main.c: 257:     unsigned char high=TEMPRETURE/10;
 [v _high `uc ~T0 @X0 1 a ]
 [e = _high -> / _TEMPRETURE -> -> 10 `i `ui `uc ]
-"263
-[; ;main.c: 263:      PORTAbits.RA5=1;
+"258
+[; ;main.c: 258:      PORTAbits.RA5=1;
 [e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-"264
-[; ;main.c: 264:     lcd_writeNumber(low);
+"259
+[; ;main.c: 259:     lcd_writeNumber(low);
 [e ( _lcd_writeNumber (1 _low ]
-"265
-[; ;main.c: 265:     _delay((unsigned long)((10)*(8000000/4000.0)));
+"260
+[; ;main.c: 260:     _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"266
-[; ;main.c: 266:     PORTAbits.RA5=0;
+"261
+[; ;main.c: 261:     PORTAbits.RA5=0;
 [e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
-"267
-[; ;main.c: 267:    lcd_writeNumber(high);
+"262
+[; ;main.c: 262:    lcd_writeNumber(high);
 [e ( _lcd_writeNumber (1 _high ]
-"268
-[; ;main.c: 268:    PORTAbits.RA4=1;
+"263
+[; ;main.c: 263:    PORTAbits.RA4=1;
 [e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
-"269
-[; ;main.c: 269:    _delay((unsigned long)((10)*(8000000/4000.0)));
+"264
+[; ;main.c: 264:    _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"270
-[; ;main.c: 270:     PORTAbits.RA4=0;
+"265
+[; ;main.c: 265:     PORTAbits.RA4=0;
 [e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-"271
-[; ;main.c: 271: }
+"266
+[; ;main.c: 266: }
 [e :UE 142 ]
 }
-"273
-[; ;main.c: 273: void displayDeiredTempreture()
+"268
+[; ;main.c: 268: void displayDeiredTempreture()
 [v _displayDeiredTempreture `(v ~T0 @X0 1 ef ]
-"274
-[; ;main.c: 274: {
+"269
+[; ;main.c: 269: {
 {
 [e :U _displayDeiredTempreture ]
 [f ]
-"275
-[; ;main.c: 275:     unsigned char low=TargetTempreture%10;
+"270
+[; ;main.c: 270:     unsigned char low=TargetTempreture%10;
 [v _low `uc ~T0 @X0 1 a ]
 [e = _low -> % _TargetTempreture -> 10 `i `uc ]
-"276
-[; ;main.c: 276:     unsigned char high=TargetTempreture/10;
+"271
+[; ;main.c: 271:     unsigned char high=TargetTempreture/10;
 [v _high `uc ~T0 @X0 1 a ]
 [e = _high -> / _TargetTempreture -> 10 `i `uc ]
-"277
-[; ;main.c: 277:      PORTAbits.RA5=1;
+"272
+[; ;main.c: 272:      PORTAbits.RA5=1;
 [e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-"278
-[; ;main.c: 278:     lcd_writeNumber(low);
+"273
+[; ;main.c: 273:     lcd_writeNumber(low);
 [e ( _lcd_writeNumber (1 _low ]
-"279
-[; ;main.c: 279:     _delay((unsigned long)((10)*(8000000/4000.0)));
+"274
+[; ;main.c: 274:     _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"280
-[; ;main.c: 280:     PORTAbits.RA5=0;
+"275
+[; ;main.c: 275:     PORTAbits.RA5=0;
 [e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
-"281
-[; ;main.c: 281:    lcd_writeNumber(high);
+"276
+[; ;main.c: 276:    lcd_writeNumber(high);
 [e ( _lcd_writeNumber (1 _high ]
-"282
-[; ;main.c: 282:    PORTAbits.RA4=1;
+"277
+[; ;main.c: 277:    PORTAbits.RA4=1;
 [e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
-"283
-[; ;main.c: 283:    _delay((unsigned long)((10)*(8000000/4000.0)));
+"278
+[; ;main.c: 278:    _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"284
-[; ;main.c: 284:     PORTAbits.RA4=0;
+"279
+[; ;main.c: 279:     PORTAbits.RA4=0;
 [e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-"285
-[; ;main.c: 285: }
+"280
+[; ;main.c: 280: }
 [e :UE 143 ]
 }
-"287
-[; ;main.c: 287: void update_tempreture ()
+"282
+[; ;main.c: 282: void update_tempreture ()
 [v _update_tempreture `(v ~T0 @X0 1 ef ]
-"288
-[; ;main.c: 288: {
+"283
+[; ;main.c: 283: {
 {
 [e :U _update_tempreture ]
 [f ]
-"289
-[; ;main.c: 289:     unsigned int temp=(adc_amostra(2)*10)/2;
+"284
+[; ;main.c: 284:     unsigned int temp=(adc_amostra(2)*10)/2;
 [v _temp `ui ~T0 @X0 1 a ]
 [e = _temp / * ( _adc_amostra (1 -> -> 2 `i `uc -> -> 10 `i `ui -> -> 2 `i `ui ]
-"290
-[; ;main.c: 290:     itoa(temp,str);
+"285
+[; ;main.c: 285:     itoa(temp,str);
 [e ( _itoa (2 , _temp &U _str ]
-"291
-[; ;main.c: 291:     unsigned char y= str[2];
+"286
+[; ;main.c: 286:     unsigned char y= str[2];
 [v _y `uc ~T0 @X0 1 a ]
 [e = _y *U + &U _str * -> -> -> 2 `i `ui `ux -> -> # *U &U _str `ui `ux ]
-"292
-[; ;main.c: 292:     unsigned char x= str[3];
+"287
+[; ;main.c: 287:     unsigned char x= str[3];
 [v _x `uc ~T0 @X0 1 a ]
 [e = _x *U + &U _str * -> -> -> 3 `i `ui `ux -> -> # *U &U _str `ui `ux ]
-"293
-[; ;main.c: 293:     accumilated_tmeperature += (y*10)+x;
+"288
+[; ;main.c: 288:     accumilated_tmeperature += (y*10)+x;
 [e =+ _accumilated_tmeperature -> + * -> _y `i -> 10 `i -> _x `i `ui ]
-"294
-[; ;main.c: 294:     return;
+"289
+[; ;main.c: 289:     return;
 [e $UE 144  ]
-"295
-[; ;main.c: 295: }
+"290
+[; ;main.c: 290: }
 [e :UE 144 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"299
-[; ;main.c: 299: void __attribute__((picinterrupt(("")))) ISR(void)
+"294
+[; ;main.c: 294: void __attribute__((picinterrupt(("")))) ISR(void)
 [v _ISR `(v ~T1 @X0 1 ef ]
-"300
-[; ;main.c: 300: {
+"295
+[; ;main.c: 295: {
 {
 [e :U _ISR ]
 [f ]
-"302
-[; ;main.c: 302:   if (INTF)
+"297
+[; ;main.c: 297:   if (INTF)
 [e $ ! _INTF 146  ]
-"303
-[; ;main.c: 303:   {
+"298
+[; ;main.c: 298:   {
 {
-"304
-[; ;main.c: 304:     INTF = 0;
+"299
+[; ;main.c: 299:     INTF = 0;
 [e = _INTF -> -> 0 `i `b ]
-"305
-[; ;main.c: 305:     switch(state)
+"300
+[; ;main.c: 300:     switch(state)
 [e $U 148  ]
-"306
-[; ;main.c: 306:     {
+"301
+[; ;main.c: 301:     {
 {
-"307
-[; ;main.c: 307:         case ON_STATE:
+"302
+[; ;main.c: 302:         case ON_STATE:
 [e :U 149 ]
-"308
-[; ;main.c: 308:             TMR1ON = 0;
+"303
+[; ;main.c: 303:             TMR1ON = 0;
 [e = _TMR1ON -> -> 0 `i `b ]
-"309
-[; ;main.c: 309:             TMR1IF = 0;
+"304
+[; ;main.c: 304:             TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
-"310
-[; ;main.c: 310:             state=OFF_STATE;
+"305
+[; ;main.c: 305:             state=OFF_STATE;
 [e = _state -> . `E896 1 `uc ]
-"311
-[; ;main.c: 311:             break;
+"306
+[; ;main.c: 306:             break;
 [e $U 147  ]
-"312
-[; ;main.c: 312:         case OFF_STATE:
+"307
+[; ;main.c: 307:         case OFF_STATE:
 [e :U 150 ]
-"313
-[; ;main.c: 313:             TMR1ON = 1;
+"308
+[; ;main.c: 308:             TMR1ON = 1;
 [e = _TMR1ON -> -> 1 `i `b ]
-"314
-[; ;main.c: 314:             state=ON_STATE;
+"309
+[; ;main.c: 309:             state=ON_STATE;
 [e = _state -> . `E896 0 `uc ]
+"310
+[; ;main.c: 310:             break;
+[e $U 147  ]
+"311
+[; ;main.c: 311:         case SETTING_STATE:
+[e :U 151 ]
+"312
+[; ;main.c: 312:             TMR1ON = 0;
+[e = _TMR1ON -> -> 0 `i `b ]
+"313
+[; ;main.c: 313:             TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"314
+[; ;main.c: 314:             state=OFF_STATE;
+[e = _state -> . `E896 1 `uc ]
 "315
 [; ;main.c: 315:             break;
 [e $U 147  ]
 "316
-[; ;main.c: 316:         case SETTING_STATE:
-[e :U 151 ]
-"317
-[; ;main.c: 317:             TMR1ON = 0;
-[e = _TMR1ON -> -> 0 `i `b ]
-"318
-[; ;main.c: 318:             TMR1IF = 0;
-[e = _TMR1IF -> -> 0 `i `b ]
-"319
-[; ;main.c: 319:             state=OFF_STATE;
-[e = _state -> . `E896 1 `uc ]
-"320
-[; ;main.c: 320:             break;
-[e $U 147  ]
-"321
-[; ;main.c: 321:         default:
+[; ;main.c: 316:         default:
 [e :U 152 ]
-"322
-[; ;main.c: 322:             break;
+"317
+[; ;main.c: 317:             break;
 [e $U 147  ]
-"323
-[; ;main.c: 323:     }
+"318
+[; ;main.c: 318:     }
 }
 [e $U 147  ]
 [e :U 148 ]
@@ -1204,122 +1194,122 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ . `E896 2 151
  152 ]
 [e :U 147 ]
-"326
-[; ;main.c: 326:     }
+"321
+[; ;main.c: 321:     }
 }
 [e :U 146 ]
-"329
-[; ;main.c: 329:    if (TMR1IF)
+"324
+[; ;main.c: 324:    if (TMR1IF)
 [e $ ! _TMR1IF 153  ]
-"330
-[; ;main.c: 330:    {
+"325
+[; ;main.c: 325:    {
 {
-"331
-[; ;main.c: 331:            TMR1IF = 0;
+"326
+[; ;main.c: 326:            TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
-"332
-[; ;main.c: 332:            timer1counter++;
+"327
+[; ;main.c: 327:            timer1counter++;
 [e ++ _timer1counter -> -> 1 `i `uc ]
-"333
-[; ;main.c: 333:            ReadTemp=0;
+"328
+[; ;main.c: 328:            ReadTemp=0;
 [e = _ReadTemp -> -> 0 `i `uc ]
-"334
-[; ;main.c: 334:            if (timer1counter == 4){
+"329
+[; ;main.c: 329:            if (timer1counter == 4){
 [e $ ! == -> _timer1counter `i -> 4 `i 154  ]
 {
-"335
-[; ;main.c: 335:                 ReadTemp=1;
+"330
+[; ;main.c: 330:                 ReadTemp=1;
 [e = _ReadTemp -> -> 1 `i `uc ]
-"336
-[; ;main.c: 336:                 Number_Tempreture++;
+"331
+[; ;main.c: 331:                 Number_Tempreture++;
 [e ++ _Number_Tempreture -> -> 1 `i `uc ]
-"337
-[; ;main.c: 337:                 timer1counter = 0;
+"332
+[; ;main.c: 332:                 timer1counter = 0;
 [e = _timer1counter -> -> 0 `i `uc ]
-"338
-[; ;main.c: 338:                 update_tempreture();
+"333
+[; ;main.c: 333:                 update_tempreture();
 [e ( _update_tempreture ..  ]
-"339
-[; ;main.c: 339:            }
+"334
+[; ;main.c: 334:            }
 }
 [e :U 154 ]
-"340
-[; ;main.c: 340:             if(Number_Tempreture==10)
+"335
+[; ;main.c: 335:             if(Number_Tempreture==10)
 [e $ ! == -> _Number_Tempreture `i -> 10 `i 155  ]
-"341
-[; ;main.c: 341:             {
+"336
+[; ;main.c: 336:             {
 {
-"342
-[; ;main.c: 342:                TEMPRETURE=accumilated_tmeperature/10;
+"337
+[; ;main.c: 337:                TEMPRETURE=accumilated_tmeperature/10;
 [e = _TEMPRETURE / _accumilated_tmeperature -> -> 10 `i `ui ]
-"344
-[; ;main.c: 344:                 RB5 = ~RB5;
+"339
+[; ;main.c: 339:                 RB5 = ~RB5;
 [e = _RB5 -> ~ -> _RB5 `ui `b ]
-"346
-[; ;main.c: 346:                 Number_Tempreture = 0;
+"341
+[; ;main.c: 341:                 Number_Tempreture = 0;
 [e = _Number_Tempreture -> -> 0 `i `uc ]
-"347
-[; ;main.c: 347:                 accumilated_tmeperature= 0;
+"342
+[; ;main.c: 342:                 accumilated_tmeperature= 0;
 [e = _accumilated_tmeperature -> -> 0 `i `ui ]
-"348
-[; ;main.c: 348:             }
+"343
+[; ;main.c: 343:             }
 }
 [e :U 155 ]
-"349
-[; ;main.c: 349:    }
+"344
+[; ;main.c: 344:    }
 }
 [e :U 153 ]
-"351
-[; ;main.c: 351: }
+"346
+[; ;main.c: 346: }
 [e :UE 145 ]
 }
-"355
-[; ;main.c: 355: void IRQ_RB0_init (){
+"350
+[; ;main.c: 350: void IRQ_RB0_init (){
 [v _IRQ_RB0_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _IRQ_RB0_init ]
 [f ]
-"357
-[; ;main.c: 357:     INTE = 1;
+"352
+[; ;main.c: 352:     INTE = 1;
 [e = _INTE -> -> 1 `i `b ]
-"359
-[; ;main.c: 359:     INTEDG = 0;
+"354
+[; ;main.c: 354:     INTEDG = 0;
 [e = _INTEDG -> -> 0 `i `b ]
-"361
-[; ;main.c: 361:     GIE = 1;
+"356
+[; ;main.c: 356:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
-"363
-[; ;main.c: 363: }
+"358
+[; ;main.c: 358: }
 [e :UE 156 ]
 }
-"365
-[; ;main.c: 365: void TIMER1_init (){
+"360
+[; ;main.c: 360: void TIMER1_init (){
 [v _TIMER1_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _TIMER1_init ]
 [f ]
-"368
-[; ;main.c: 368:     TMR1 = 15535;
+"363
+[; ;main.c: 363:     TMR1 = 15535;
 [e = _TMR1 -> -> 15535 `i `us ]
-"370
-[; ;main.c: 370:     TMR1CS = 0;
+"365
+[; ;main.c: 365:     TMR1CS = 0;
 [e = _TMR1CS -> -> 0 `i `b ]
-"372
-[; ;main.c: 372:     T1CKPS0 = 0;
+"367
+[; ;main.c: 367:     T1CKPS0 = 0;
 [e = _T1CKPS0 -> -> 0 `i `b ]
-"373
-[; ;main.c: 373:     T1CKPS1 = 0;
+"368
+[; ;main.c: 368:     T1CKPS1 = 0;
 [e = _T1CKPS1 -> -> 0 `i `b ]
-"376
-[; ;main.c: 376:     TMR1IE = 1;
+"371
+[; ;main.c: 371:     TMR1IE = 1;
 [e = _TMR1IE -> -> 1 `i `b ]
-"377
-[; ;main.c: 377:     TMR1IF = 0;
+"372
+[; ;main.c: 372:     TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
-"378
-[; ;main.c: 378:     PEIE = 1;
+"373
+[; ;main.c: 373:     PEIE = 1;
 [e = _PEIE -> -> 1 `i `b ]
-"380
-[; ;main.c: 380: }
+"375
+[; ;main.c: 375: }
 [e :UE 157 ]
 }
