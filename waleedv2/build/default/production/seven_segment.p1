@@ -2,6 +2,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "340 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 340: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"172
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 172:     struct {
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 ]
+"171
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 171: typedef union {
+[u S5 `S6 1 ]
+[n S5 . . ]
+"181
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 181: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
+[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
+[v F842 `(v ~T0 @X0 1 tf1`ul ]
+"92 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/pic.h
+[v __delay `JF842 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -243,4 +258,102 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17
 [; ;seven_segment.c: 17: }
 [e :UE 95 ]
+}
+"19
+[; ;seven_segment.c: 19: void displayTempreture(unsigned int TEMPRETURE)
+[v _displayTempreture `(v ~T0 @X0 1 ef1`ui ]
+"20
+[; ;seven_segment.c: 20: {
+{
+[e :U _displayTempreture ]
+"19
+[; ;seven_segment.c: 19: void displayTempreture(unsigned int TEMPRETURE)
+[v _TEMPRETURE `ui ~T0 @X0 1 r1 ]
+"20
+[; ;seven_segment.c: 20: {
+[f ]
+"21
+[; ;seven_segment.c: 21:     unsigned char low=TEMPRETURE%10;
+[v _low `uc ~T0 @X0 1 a ]
+[e = _low -> % _TEMPRETURE -> -> 10 `i `ui `uc ]
+"22
+[; ;seven_segment.c: 22:     unsigned char high=TEMPRETURE/10;
+[v _high `uc ~T0 @X0 1 a ]
+[e = _high -> / _TEMPRETURE -> -> 10 `i `ui `uc ]
+"23
+[; ;seven_segment.c: 23:      PORTAbits.RA5=1;
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+"24
+[; ;seven_segment.c: 24:     lcd_writeNumber(low);
+[e ( _lcd_writeNumber (1 _low ]
+"25
+[; ;seven_segment.c: 25:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"26
+[; ;seven_segment.c: 26:     PORTAbits.RA5=0;
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+"27
+[; ;seven_segment.c: 27:     lcd_writeNumber(high);
+[e ( _lcd_writeNumber (1 _high ]
+"28
+[; ;seven_segment.c: 28:     PORTAbits.RA4=1;
+[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+"29
+[; ;seven_segment.c: 29:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"30
+[; ;seven_segment.c: 30:     PORTAbits.RA4=0;
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+"31
+[; ;seven_segment.c: 31: }
+[e :UE 98 ]
+}
+"33
+[; ;seven_segment.c: 33: void displayDeiredTempreture(int TargetTempreture)
+[v _displayDeiredTempreture `(v ~T0 @X0 1 ef1`i ]
+"34
+[; ;seven_segment.c: 34: {
+{
+[e :U _displayDeiredTempreture ]
+"33
+[; ;seven_segment.c: 33: void displayDeiredTempreture(int TargetTempreture)
+[v _TargetTempreture `i ~T0 @X0 1 r1 ]
+"34
+[; ;seven_segment.c: 34: {
+[f ]
+"35
+[; ;seven_segment.c: 35:     unsigned char low=TargetTempreture%10;
+[v _low `uc ~T0 @X0 1 a ]
+[e = _low -> % _TargetTempreture -> 10 `i `uc ]
+"36
+[; ;seven_segment.c: 36:     unsigned char high=TargetTempreture/10;
+[v _high `uc ~T0 @X0 1 a ]
+[e = _high -> / _TargetTempreture -> 10 `i `uc ]
+"37
+[; ;seven_segment.c: 37:      PORTAbits.RA5=1;
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+"38
+[; ;seven_segment.c: 38:     lcd_writeNumber(low);
+[e ( _lcd_writeNumber (1 _low ]
+"39
+[; ;seven_segment.c: 39:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"40
+[; ;seven_segment.c: 40:     PORTAbits.RA5=0;
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+"41
+[; ;seven_segment.c: 41:     lcd_writeNumber(high);
+[e ( _lcd_writeNumber (1 _high ]
+"42
+[; ;seven_segment.c: 42:     PORTAbits.RA4=1;
+[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+"43
+[; ;seven_segment.c: 43:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"44
+[; ;seven_segment.c: 44:     PORTAbits.RA4=0;
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+"45
+[; ;seven_segment.c: 45: }
+[e :UE 99 ]
 }

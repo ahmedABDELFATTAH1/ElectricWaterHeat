@@ -1,4 +1,25 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"634 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 634: extern volatile unsigned short TMR1 __attribute__((address(0x00E)));
+[v _TMR1 `Vus ~T0 @X0 0 e@14 ]
+"2884
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 2884: extern volatile __bit TMR1CS __attribute__((address(0x81)));
+[v _TMR1CS `Vb ~T0 @X0 0 e@129 ]
+"2857
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 2857: extern volatile __bit T1CKPS0 __attribute__((address(0x84)));
+[v _T1CKPS0 `Vb ~T0 @X0 0 e@132 ]
+"2860
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 2860: extern volatile __bit T1CKPS1 __attribute__((address(0x85)));
+[v _T1CKPS1 `Vb ~T0 @X0 0 e@133 ]
+"2887
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 2887: extern volatile __bit TMR1IE __attribute__((address(0x460)));
+[v _TMR1IE `Vb ~T0 @X0 0 e@1120 ]
+"2890
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 2890: extern volatile __bit TMR1IF __attribute__((address(0x60)));
+[v _TMR1IF `Vb ~T0 @X0 0 e@96 ]
+"2629
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 2629: extern volatile __bit PEIE __attribute__((address(0x5E)));
+[v _PEIE `Vb ~T0 @X0 0 e@94 ]
 "54 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -179,34 +200,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2363
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"27 itoa.c
-[; ;itoa.c: 27: void itoa(unsigned int val, unsigned char* str )
-[v _itoa `(v ~T0 @X0 1 ef2`ui`*uc ]
-"28
-[; ;itoa.c: 28: {
+"3 timer.c
+[; ;timer.c: 3: void TIMER1_init (){
+[v _TIMER1_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _itoa ]
-"27
-[; ;itoa.c: 27: void itoa(unsigned int val, unsigned char* str )
-[v _val `ui ~T0 @X0 1 r1 ]
-[v _str `*uc ~T0 @X0 1 r2 ]
-"28
-[; ;itoa.c: 28: {
+[e :U _TIMER1_init ]
 [f ]
-"32
-[; ;itoa.c: 32:   str[2]=((val%1000)/100);
-[e = *U + _str * -> -> 2 `i `x -> -> # *U _str `i `x -> / % _val -> -> 1000 `i `ui -> -> 100 `i `ui `uc ]
-"33
-[; ;itoa.c: 33:   str[3]=((val%100)/10);
-[e = *U + _str * -> -> 3 `i `x -> -> # *U _str `i `x -> / % _val -> -> 100 `i `ui -> -> 10 `i `ui `uc ]
-"34
-[; ;itoa.c: 34:   if (str[3] != 0)
-[e $ ! != -> *U + _str * -> -> 3 `i `x -> -> # *U _str `i `x `i -> 0 `i 96  ]
-"35
-[; ;itoa.c: 35:       str[3]-=1;
-[e =- *U + _str * -> -> 3 `i `x -> -> # *U _str `i `x -> -> 1 `i `uc ]
-[e :U 96 ]
-"39
-[; ;itoa.c: 39: }
+"6
+[; ;timer.c: 6:     TMR1 = 15535;
+[e = _TMR1 -> -> 15535 `i `us ]
+"8
+[; ;timer.c: 8:     TMR1CS = 0;
+[e = _TMR1CS -> -> 0 `i `b ]
+"10
+[; ;timer.c: 10:     T1CKPS0 = 0;
+[e = _T1CKPS0 -> -> 0 `i `b ]
+"11
+[; ;timer.c: 11:     T1CKPS1 = 0;
+[e = _T1CKPS1 -> -> 0 `i `b ]
+"13
+[; ;timer.c: 13:     TMR1IE = 1;
+[e = _TMR1IE -> -> 1 `i `b ]
+"14
+[; ;timer.c: 14:     TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"15
+[; ;timer.c: 15:     PEIE = 1;
+[e = _PEIE -> -> 1 `i `b ]
+"16
+[; ;timer.c: 16: }
 [e :UE 95 ]
 }

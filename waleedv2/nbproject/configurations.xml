@@ -4,13 +4,14 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>config.h</itemPath>
       <itemPath>adc.h</itemPath>
-      <itemPath>itoa.h</itemPath>
-      <itemPath>lcd.h</itemPath>
-      <itemPath>7-Segment.h</itemPath>
-      <itemPath>seven_segment.h</itemPath>
+      <itemPath>config.h</itemPath>
+      <itemPath>cooler.h</itemPath>
       <itemPath>ext_eeprom.h</itemPath>
+      <itemPath>heater.h</itemPath>
+      <itemPath>read_converter.h</itemPath>
+      <itemPath>seven_segment.h</itemPath>
+      <itemPath>timer.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,13 +20,14 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>main.c</itemPath>
       <itemPath>adc.c</itemPath>
-      <itemPath>itoa.c</itemPath>
-      <itemPath>lcd.c</itemPath>
-      <itemPath>7-Segment.c</itemPath>
-      <itemPath>seven_segment.c</itemPath>
+      <itemPath>cooler.c</itemPath>
       <itemPath>ext_eeprom.c</itemPath>
+      <itemPath>heater.c</itemPath>
+      <itemPath>main.c</itemPath>
+      <itemPath>read_converter.c</itemPath>
+      <itemPath>seven_segment.c</itemPath>
+      <itemPath>timer.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

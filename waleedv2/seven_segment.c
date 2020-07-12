@@ -15,3 +15,31 @@ void lcd_writeNumber(unsigned char number)
         PORTD=0;
     }
 }
+
+void displayTempreture(unsigned int TEMPRETURE)
+{
+    unsigned char low=TEMPRETURE%10;
+    unsigned char high=TEMPRETURE/10;
+     PORTAbits.RA5=1;   
+    lcd_writeNumber(low);     
+    __delay_ms(10);
+    PORTAbits.RA5=0;
+    lcd_writeNumber(high);
+    PORTAbits.RA4=1;    
+    __delay_ms(10);
+    PORTAbits.RA4=0;
+}
+
+void displayDeiredTempreture(int TargetTempreture)
+{
+    unsigned char low=TargetTempreture%10;
+    unsigned char high=TargetTempreture/10;
+     PORTAbits.RA5=1;   
+    lcd_writeNumber(low);     
+    __delay_ms(10);
+    PORTAbits.RA5=0;
+    lcd_writeNumber(high);
+    PORTAbits.RA4=1;    
+    __delay_ms(10);
+    PORTAbits.RA4=0;
+}
